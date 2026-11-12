@@ -784,13 +784,12 @@ a{color:inherit}
 <label>Чек основного продукта, ₽</label><input type="number" min="0" id="check" value="50000">
 <label>Что уже есть</label>
 <div class="chk" id="have"><label><input type="checkbox" value="рилс">рилс</label><label><input type="checkbox" value="кодовое слово">кодовое слово</label><label><input type="checkbox" value="канал">канал</label><label><input type="checkbox" value="прогрев">прогрев</label><label><input type="checkbox" value="вебинар">вебинар</label><label><input type="checkbox" value="бот">бот</label><label><input type="checkbox" value="лид-магнит">лид-магнит</label><label><input type="checkbox" value="мини-продукты">мини-продукты</label><label><input type="checkbox" value="отдел продаж">отдел продаж</label></div>
-<label>5 мини-продуктов на автомате, цены ₽ (поменяйте)</label>
-<div class="row" id="minis"></div>
+<label>Средний чек мини-продукта, ₽</label><input type="number" min="0" id="miniCheck" value="3990">
 </div>
 <div>
 <div class="box gold"><div class="small">Не хватает до цели в месяц</div><div class="res" id="gap"></div><div class="small" id="aud" style="margin-top:6px"></div><div id="miss" style="margin-top:10px"></div></div>
 <div style="margin-top:10px">Сценарий: <div class="seg" id="seg"><button data-s="0">осторожный</button><button data-s="1" class="on">средний</button><button data-s="2">хороший</button></div></div>
-<div class="box" style="margin-top:10px"><b class="t">А. Автопродажи</b><p class="small">рилс → кодовое слово → бот с проверкой подписки → лид-магнит → 5 мини-продуктов → основной продукт</p><div class="fn" id="fnA"></div><div id="resA"></div></div>
+<div class="box" style="margin-top:10px"><b class="t">А. Автопродажи</b><p class="small">рилс → кодовое слово → бот с проверкой подписки → лид-магнит → мини-продукт → основной продукт</p><div class="fn" id="fnA"></div><div id="resA"></div></div>
 </div></div>
 <div class="two" style="margin-top:14px">
 <div class="box"><b class="t">Б. Вебинар</b><div class="row"><div><label>Эфир → оплата, %</label><input type="number" min="0" step="0.1" id="cWeb" placeholder="ваша цифра"></div></div><div class="fn" id="fnB"></div><div id="resB"></div></div>
@@ -838,14 +837,12 @@ var NICHES={
 "найм, рекрутинг":[["Калькулятор заработка на вахте","https://kursk-24.github.io/vahta-podmoskovie/"]],
 "другое":[["Тест или калькулятор под вашу методику"]]};
 Object.keys(NICHES).forEach(function(n){var o=document.createElement('option');o.textContent=n;$('niche').appendChild(o)});
-var MN=[["PDF-гайд",990],["практикум в записи",1490],["личный расчёт",1990],["шаблоны и чек-листы",990],["мини-курс",2990]];
-MN.forEach(function(m,i){var d=document.createElement('div');d.innerHTML='<label style="margin-top:0">'+m[0]+'</label><input type="number" min="0" id="m'+i+'" value="'+m[1]+'">';$('minis').appendChild(d)});
 function v(id){var x=parseFloat($(id).value);return isNaN(x)?0:x}
 function row(name,n,p,src){return '<div style="--p:'+Math.max(4,Math.min(100,p))+'%"><span>'+(src?'<abbr title="'+src+'">'+name+'</abbr>':name)+'</span><b>'+fmt(n)+'</b></div>'}
 function mags(){var L=NICHES[$('niche').value]||[];$('mags').innerHTML=L.map(function(m){return m[1]?'<a href="'+m[1]+'" target="_blank" rel="noopener"><span class="tag2">живой пример</span><br>'+m[0]+'<small>откройте и попробуйте</small></a>':'<div><span class="tag2 idea">соберём под вас</span><br>'+m[0]+'</div>'}).join('')}
 function calc(){
  var s=SC[sc],now=v('rNow'),want=v('rWant'),check=v('check'),gap=Math.max(0,want-now);
- var mini=0;for(var i=0;i<5;i++)mini+=v('m'+i);mini/=5;
+ var mini=v('miniCheck');
  var aud=v('sTG')+v('sIG')+v('sVK')+v('sTT')+v('sYT');
  var have=[].slice.call(document.querySelectorAll('#have input:checked')).map(function(x){return x.value});
  var need=['рилс','кодовое слово','бот','канал','лид-магнит','прогрев','мини-продукты'].filter(function(x){return have.indexOf(x)<0});
@@ -854,7 +851,7 @@ function calc(){
  var kBot=.87,perLead=kBot*s.sub*s.mag*s.mini*(mini+s.main*check);
  var L=gap>0&&perLead>0?Math.ceil(gap/perLead):0;
  var bot=L*kBot,sub=bot*s.sub,mag=sub*s.mag,mb=mag*s.mini,mainb=mb*s.main;
- $('fnA').innerHTML=row('кодовое слово',L,100)+row('перешли в бот',bot,bot/L*100||0,SRC.bot)+row('подписались на канал',sub,sub/L*100||0,SRC.sub[sc])+row('сделали расчёт',mag,mag/L*100||0,SRC.mag[sc])+row('купили мини-продукт',mb,mb/L*100||0,SRC.mini)+row('купили основной продукт',mainb,mainb/L*100||0,SRC.main);
+ $('fnA').innerHTML=row('кодовое слово',L,100)+row('перешли в бот',bot,bot/L*100||0,SRC.bot)+row('подписались на канал',sub,sub/L*100||0,SRC.sub[sc])+row('забрали лид-магнит',mag,mag/L*100||0,SRC.mag[sc])+row('купили мини-продукт',mb,mb/L*100||0,SRC.mini)+row('купили основной продукт',mainb,mainb/L*100||0,SRC.main);
  $('resA').innerHTML=gap>0?'<p style="color:var(--fg)">Чтобы закрыть разрыв, нужно <b>'+fmt(L)+'</b> человек в месяц с кодовым словом, это <b>'+fmt(L/30)+'</b> в день</p>':'';
  $('aud').textContent=aud>0&&L>0?'Это '+fmt(L/aud*100)+'% от ваших '+fmt(aud)+' подписчиков каждый месяц, поэтому нужен постоянный поток новых людей из контента':'';
  var cw=v('cWeb')/100;
