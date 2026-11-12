@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Golos+Text:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
 <style>
-:root{--bg:#0e090a;--bg2:#160e10;--card:#1e1417;--card2:#261a1e;--line:#3a2a2f;--fg:#f4ece4;--muted:#b3a39c;--dim:#7d6c66;--red:#e0313f;--gold:#d9ae6b;--gold2:#f2d6a2;--paper:#fbf6ef;--ink:#24171a;--ease:cubic-bezier(.23,1,.32,1)}
+:root{--bg:#0e090a;--card:#1e1417;--card2:#261a1e;--line:#3a2a2f;--fg:#f4ece4;--muted:#b3a39c;--dim:#7d6c66;--red:#e0313f;--gold:#d9ae6b;--gold2:#f2d6a2;--paper:#fbf6ef;--ink:#24171a;--ease:cubic-bezier(.23,1,.32,1)}
 *{box-sizing:border-box}
 html{scroll-snap-type:y proximity;scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.5 "Golos Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -17,13 +17,13 @@ body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.5 "Golos Text
 .w{width:100%;max-width:1160px;margin:0 auto;padding:0 16px;position:relative}
 h1,h2,h3{font-family:Unbounded,system-ui,sans-serif;line-height:1.08;margin:0 0 16px;text-wrap:balance}
 h1{font-size:clamp(32px,6.6vw,78px);font-weight:800;letter-spacing:-.01em}
-h2{font-size:clamp(26px,4.6vw,52px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4.4vw,50px);font-weight:800;letter-spacing:-.01em}
 h3{font-size:clamp(16px,2vw,20px);font-weight:700;color:var(--gold2)}
 p{margin:0 0 10px;text-wrap:pretty}
 .no{font:700 13px/1 Unbounded,sans-serif;color:var(--gold);letter-spacing:.08em;margin-bottom:18px;display:flex;gap:10px;align-items:center}
 .no:before{content:"";width:28px;height:1px;background:var(--gold)}
 .g{background:linear-gradient(95deg,var(--gold2),var(--gold) 50%,#e8604f);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:clamp(17px,2.1vw,22px);color:var(--muted);max-width:760px}
+.lead{font-size:clamp(17px,2.1vw,22px);color:var(--muted);max-width:780px}
 .muted{color:var(--muted)}.small{font-size:14px;color:var(--muted)}
 .two{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
@@ -34,30 +34,11 @@ p{margin:0 0 10px;text-wrap:pretty}
 .num{font:800 clamp(30px,5vw,56px)/1 Unbounded,sans-serif;color:var(--gold2);margin-bottom:8px;letter-spacing:-.02em}
 img{max-width:100%;display:block;border-radius:16px}
 a{color:var(--gold2)}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chips span{border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:6px 13px;font-size:14.5px;line-height:1.25}
-.chips.on span{border-color:#6b5532;background:#2a2116;color:var(--gold2)}
-.cnt{font:700 12px Unbounded,sans-serif;color:var(--gold);margin-left:8px}
 .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
 .flow span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:15px}
 .flow i{color:var(--gold);font-style:normal}
-/* полоса скринов */
-.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:thin}
-.shots figure{flex:0 0 auto;margin:0;scroll-snap-align:start;max-width:min(62vw,240px)}
-.shots img{border:1px solid var(--line);height:min(40vh,360px);width:auto;max-width:100%;object-fit:cover;object-position:top}
-@media(max-width:800px){.shots img{height:340px}}
-.shots figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.35}
-.shots figcaption b{color:var(--gold2);font-weight:600;font-family:Unbounded,sans-serif;font-size:12px;display:block;margin-bottom:2px}
-.swipe{font-size:13px;color:var(--gold);margin:6px 0 8px}
-/* раньше / сейчас */
-.rs{display:grid;gap:18px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);margin-top:20px}
-@media(max-width:800px){.rs{grid-template-columns:1fr}}
-.was{background:transparent;border:1px dashed #4a383d;border-radius:18px;padding:20px}
-.was .lbl,.now .lbl{font:700 11px Unbounded,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
-.was .lbl{color:var(--dim)}.now .lbl{color:var(--gold)}
-.was p{color:var(--muted);margin:0 0 8px}
-.was .who{font:700 clamp(18px,2.2vw,24px)/1.2 Unbounded,sans-serif;color:#cdbdb6;margin-bottom:10px}
-.now{background:linear-gradient(160deg,#2a1c15,#1e1417 60%);border:1.5px solid #6b5532;border-radius:18px;padding:20px}
+.cap{font-size:13.5px;color:var(--muted);line-height:1.35;margin-top:8px}
+.cap b{display:block;color:var(--gold2);font:700 13px Unbounded,sans-serif;margin-bottom:2px}
 /* обложка */
 .hero{background:radial-gradient(90% 70% at 85% 10%,#3a0f18 0%,transparent 60%),radial-gradient(60% 50% at 0% 100%,#2a1a0c 0%,transparent 60%),var(--bg)}
 .hero h1 s{text-decoration:none;position:relative;color:#8f7d76}
@@ -66,75 +47,110 @@ a{color:var(--gold2)}
 .duo{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px}
 .duo div{display:flex;gap:12px;align-items:center}
 .duo img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
-/* облако на фото */
+/* облако мыслей */
 .cloudwrap{position:relative;margin-top:8px;border-radius:22px;overflow:hidden}
-.cloudwrap>img{width:100%;height:min(70vh,640px);object-fit:cover;object-position:62% 40%;border-radius:22px;filter:brightness(.92)}
-.cloudwrap:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,9,10,.55),transparent 55%);pointer-events:none}
-.bub{position:absolute;z-index:2;background:var(--paper);color:var(--ink);border-radius:22px;padding:8px 14px;font-size:14.5px;line-height:1.25;font-weight:500;max-width:min(240px,22vw);box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;transform:translateY(10px) scale(.92);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.bub:before,.bub:after{content:"";position:absolute;background:var(--paper);border-radius:50%}
-.bub:before{width:12px;height:12px;bottom:-14px;right:30px}
-.bub:after{width:6px;height:6px;bottom:-24px;right:22px}
-.bub.l:before{right:auto;left:30px}.bub.l:after{right:auto;left:22px}
-.bub.big{font-size:17px;font-weight:600}
-.in .bub{opacity:1;transform:none}
-@media(max-width:800px){.cloudwrap>img{height:300px}.cloudwrap:after{display:none}.bubs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.bub{position:static;max-width:none;font-size:14px;padding:8px 13px;opacity:1;transform:none}.bub:before,.bub:after{display:none}}
-/* команда раньше */
+.cloudwrap>img{width:100%;height:min(70vh,640px);object-fit:cover;object-position:62% 40%;border-radius:22px}
+.bub{position:absolute;z-index:2;color:#fff;background:rgba(18,10,12,.34);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-radius:999px;padding:8px 16px;font-size:15px;line-height:1.25;font-weight:500;max-width:min(260px,24vw);text-shadow:0 1px 6px rgba(0,0,0,.5);opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.bub.big{font-size:17px;font-weight:600;border-color:rgba(242,214,162,.55)}
+.in .bub{opacity:1;transform:rotate(var(--r,0deg))}
+.in .bub{animation:fl 7s ease-in-out infinite alternate}
+@keyframes fl{to{translate:0 -6px}}
+@media(max-width:800px){.cloudwrap>img{height:320px}.bubs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.bub{position:static;max-width:none;font-size:14px;padding:7px 13px;opacity:1;transform:none;background:var(--card2);backdrop-filter:none;animation:none}}
+/* раньше */
+.was-tag{display:inline-block;font:800 clamp(14px,1.6vw,18px)/1 Unbounded,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#1a0f10;background:var(--gold);padding:9px 16px;border-radius:999px;margin-bottom:18px}
 .team{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));margin-top:18px}
 .team div{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--card)}
 .team b{display:block;font:700 14px Unbounded,sans-serif;margin-bottom:4px}
 .team small{color:var(--muted);font-size:13px;line-height:1.3;display:block}
-.team .smm{border:1.5px solid var(--red);background:#2a1215}
+.team .smm{border:1.5px solid var(--red);background:#2a1215;animation:blink 1.6s ease-in-out infinite}
 .team .smm b{color:#ff8b8b}
+@keyframes blink{0%,100%{box-shadow:0 0 0 0 rgba(224,49,63,0)}50%{box-shadow:0 0 0 6px rgba(224,49,63,.35),0 0 28px rgba(224,49,63,.45)}}
+/* шаги-пример */
+.steps3{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px;align-items:stretch}
+@media(max-width:860px){.steps3{grid-template-columns:1fr}}
+.steps3 .box{position:relative}
+.steps3 .k{font:700 11px Unbounded,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
+.steps3 .eq{font:800 22px Unbounded,sans-serif;color:var(--gold);position:absolute;right:-17px;top:50%;transform:translateY(-50%);z-index:2}
+@media(max-width:860px){.steps3 .eq{display:none}}
 /* обложки рынка */
-.covers{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(46%,170px),1fr))}
+.covers{display:grid;gap:14px;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:760px){.covers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .covers figure{margin:0}
-.covers img{aspect-ratio:4/5;object-fit:cover;width:100%;border:1px solid var(--line);border-radius:12px;background:#fff}
-.covers figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.3}
-.covers figcaption b{display:block;color:var(--gold2);font:700 15px Unbounded,sans-serif}
-.niche{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));margin-top:14px}
+.covers{max-width:860px}
+.covers img{aspect-ratio:4/5;object-fit:cover;width:100%;max-height:30vh;border:1px solid var(--line);border-radius:12px;background:#fff}
+.x{font:800 clamp(22px,2.6vw,30px)/1 Unbounded,sans-serif;color:var(--gold2);margin-top:10px}
+.x small{font:500 13px "Golos Text",sans-serif;color:var(--muted);display:block;margin-top:4px;line-height:1.3}
+.niche{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));margin-top:16px}
 .niche .box{padding:16px}
 .niche .tag{display:inline-block;font:700 11px Unbounded,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.niche q{display:block;color:var(--fg);font-size:15.5px;margin-bottom:8px;quotes:"«" "»"}
-.niche .m{font:700 15px Unbounded,sans-serif;color:var(--gold2)}
-/* лестница продуктов */
-.ladder{display:grid;gap:10px;margin-top:16px}
-.ladder div{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--card)}
-.ladder div:nth-child(1){margin-left:0;border-color:var(--gold)}
-.ladder div:nth-child(2){margin-left:4%}.ladder div:nth-child(3){margin-left:8%}.ladder div:nth-child(4){margin-left:12%}
-.ladder b{font:700 14px Unbounded,sans-serif;color:var(--gold2)}
-.ladder span{color:var(--muted);font-size:15px}
-@media(max-width:640px){.ladder div{grid-template-columns:1fr;gap:4px;margin-left:0!important}}
-/* лид-магниты */
-.mag{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));margin-top:12px}
-.mag a,.mag div{display:block;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:15px;transition:border-color .2s,transform .2s var(--ease)}
-.mag a{border-color:#6b5532}.mag a:hover{border-color:var(--gold);transform:translateY(-2px)}
-.mag small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
-.tag2{display:inline-block;font:700 10.5px Unbounded,sans-serif;padding:3px 8px;border-radius:999px;background:var(--gold);color:#1a0f10;margin-bottom:6px}
-.tag2.idea{background:var(--line);color:var(--fg)}
-/* большое число */
+.niche p{color:var(--fg);font-size:15.5px}
+/* лестница */
+.ladder{display:grid;gap:12px;margin-top:18px}
+.ladder .lv{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--card)}
+.ladder .lv:first-child{border-color:var(--gold);background:linear-gradient(160deg,#2a1c15,#1e1417 60%)}
+.ladder b{font:700 15px Unbounded,sans-serif;color:var(--gold2);display:block;margin-bottom:8px}
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pills span{border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:6px 13px;font-size:15px}
+/* телефоны */
+.phones{display:grid;gap:16px;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));align-items:start}
+@media(max-width:760px){.phones{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.phones img{width:auto;max-width:100%;height:min(46vh,420px);aspect-ratio:9/16;object-fit:cover;object-position:top;border:1px solid var(--line);margin:0 auto}
+.phones figure{text-align:center}
+.lm img{height:min(38vh,360px)}
+@media(max-width:760px){.phones img{height:300px}}
+/* воронка */
+.fw{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;align-items:flex-start}
+.fw figure{flex:0 0 auto;width:calc(min(50vh,400px)*.4625);margin:0;scroll-snap-align:start}
+.fw img{width:100%;height:min(50vh,400px);object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:14px}
+.fw .ar{flex:0 0 34px;align-self:center;margin-top:calc(min(50vh,400px)*-.18);text-align:center;color:var(--gold);font:800 22px Unbounded,sans-serif}
+.fw figcaption{min-height:58px}
+@media(max-width:760px){.fw figure{width:170px}.fw img{height:368px}.fw .ar{margin-top:-60px}}
+.swipe{font-size:13px;color:var(--gold);margin:6px 0 8px}
+/* лента цехов */
+.belt{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:22px}
+.belt span{font:700 11.5px Unbounded,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
+.belt span.on{background:var(--gold);color:#1a0f10;border-color:var(--gold)}
+.belt i{width:14px;height:1px;background:var(--line)}
+.ceh{display:grid;gap:22px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:start}
+@media(max-width:860px){.ceh{grid-template-columns:1fr}}
+.old{margin-top:14px;font-size:15px;color:var(--dim)}
+.old b{color:var(--muted);font-weight:600}
+.agents{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:560px){.agents{grid-template-columns:1fr}}
+.agents div{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:12px 14px;font-size:15px}
+.agents div b{display:block;color:var(--gold2);font-weight:600}
+.agents div small{color:var(--muted);font-size:13.5px}
+.verbs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.verbs span{font:700 clamp(14px,1.7vw,18px) Unbounded,sans-serif;padding:10px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.verbs span:nth-child(n+3){border-color:#6b5532}.verbs span:last-child{background:var(--gold);color:#1a0f10;border-color:var(--gold)}
+/* PDF против интерактива */
+.vs{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:16px}
+@media(max-width:700px){.vs{grid-template-columns:1fr}}
+.vs ul{margin:0;padding-left:18px;color:var(--muted)}.vs li{margin-bottom:6px}
 .huge{white-space:nowrap;font:800 clamp(56px,9vw,128px)/.9 Unbounded,sans-serif;letter-spacing:-.04em}
 /* хук */
 .chain{counter-reset:c;display:grid;gap:8px;margin-top:16px}
-.chain div{counter-increment:c;display:flex;gap:14px;align-items:flex-start;padding:12px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.chain div{counter-increment:c;display:flex;gap:14px;align-items:flex-start;padding:11px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
 .chain div:before{content:counter(c);font:800 14px Unbounded,sans-serif;color:#1a0f10;background:var(--gold);border-radius:50%;min-width:28px;height:28px;display:grid;place-items:center}
 .chain div.hk{border-color:var(--red);background:#2a1215}
 .chain div.hk:before{background:var(--red);color:#fff}
-.q{font:700 clamp(20px,2.8vw,30px)/1.25 Unbounded,sans-serif;margin-top:22px;color:var(--fg)}
-/* таблица */
-table{border-collapse:collapse;width:100%;font-size:15px}
-th,td{border-bottom:1px solid var(--line);padding:11px 8px;text-align:left;vertical-align:top}
-th{font-family:Unbounded,sans-serif;font-size:13px;color:var(--gold2);font-weight:700}
-td:first-child{color:var(--muted);width:26%}
-.tbl{overflow-x:auto}
+.q{font:700 clamp(20px,2.8vw,30px)/1.25 Unbounded,sans-serif;margin-top:20px;color:var(--fg)}
+.quotes{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 4px}
+.quotes span{background:var(--paper);color:var(--ink);border-radius:16px;padding:9px 15px;font-weight:600;font-size:15.5px}
+/* неделя */
+.week{display:grid;gap:10px;margin-top:18px;counter-reset:w}
+.week div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.week div:before{counter-increment:w;content:counter(w);font:800 18px Unbounded,sans-serif;color:var(--gold2)}
+.week b{font-weight:600}.week small{color:var(--muted);font-size:14px;display:block}
+.week .hl{border-color:var(--gold)}
 /* навигация */
 #bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--red));z-index:20;width:0;transition:width .3s var(--ease)}
 #cnt{position:fixed;right:12px;bottom:12px;z-index:20;font:700 12px Unbounded,sans-serif;color:var(--muted);background:rgba(14,9,10,.88);border:1px solid var(--line);border-radius:999px;padding:7px 12px;display:flex;gap:10px;align-items:center;backdrop-filter:blur(6px)}
 #cnt button{all:unset;cursor:pointer;color:var(--gold2);font-size:17px;padding:0 5px}
-/* появление */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .in .rv{opacity:1;transform:none}
 .in .rv.d1{transition-delay:.12s}.in .rv.d2{transition-delay:.24s}.in .rv.d3{transition-delay:.36s}
-@media(prefers-reduced-motion:reduce){.rv,.bub{opacity:1!important;transform:none!important;transition:none!important}.hero h1 s:after{transform:scaleX(1);transition:none}}
+@media(prefers-reduced-motion:reduce){.rv,.bub{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}.team .smm{animation:none}.hero h1 s:after{transform:scaleX(1);transition:none}}
 /* калькулятор */
 .calc label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
 .calc input[type=number],.calc input[type=text],.calc select{width:100%;background:#120c0e;border:1px solid var(--line);color:var(--fg);border-radius:10px;padding:10px;font:16px "Golos Text",sans-serif}
@@ -152,6 +168,12 @@ td:first-child{color:var(--muted);width:26%}
 .res{font:800 clamp(22px,3.4vw,32px)/1.15 Unbounded,sans-serif;color:var(--gold2)}
 .warn{color:#f3b27a;font-size:14px}
 .pill{display:inline-block;border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:5px 12px;margin:4px 4px 0 0;font-size:14px}
+.mag{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));margin-top:12px}
+.mag a,.mag div{display:block;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px;transition:border-color .2s,transform .2s var(--ease)}
+.mag a{border-color:#6b5532}.mag a:hover{border-color:var(--gold);transform:translateY(-2px)}
+.mag small{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
+.tag2{display:inline-block;font:700 10.5px Unbounded,sans-serif;padding:3px 8px;border-radius:999px;background:var(--gold);color:#1a0f10;margin-bottom:6px}
+.tag2.idea{background:var(--line);color:var(--fg)}
 .ava{width:100%;max-width:400px;aspect-ratio:1;object-fit:cover;object-position:50% 20%;border:1px solid var(--line)}
 .cta{display:inline-block;margin-top:22px;padding:17px 28px;border-radius:14px;background:linear-gradient(95deg,#f2d6a2,#d9ae6b);color:#1a0f10;font:700 17px Unbounded,sans-serif;text-decoration:none}
 .foot{font-size:12px;color:var(--dim)}
@@ -161,49 +183,46 @@ td:first-child{color:var(--muted);width:26%}
 <div id="bar"></div>
 <div id="cnt"><button id="prev" aria-label="Назад">‹</button><span id="pos">1</span><button id="next" aria-label="Вперёд">›</button></div>
 
-<!-- 1. Обложка-тезис -->
+<!-- Обложка -->
 <section class="s hero"><div class="w">
 <div class="no rv">контент-завод на нейронках</div>
 <h1 class="rv d1">Контент в 2026 году - это не <s>«написал и смонтировал»</s></h1>
 <p class="lead rv d2">Чтобы контент продавал, за каждым постом должна стоять целая цепочка работы. Раньше её делала команда. Теперь её забирает завод</p>
 <div class="duo rv d3">
 <div><img src="img/elena.jpg" alt="Елена Курскова"><div><b>Елена Курскова</b><br><span class="small">контент-завод, трафик, воронки</span></div></div>
-<div><img src="img/roma.jpg" alt="Роман Смирнов" style="object-position:50% 20%"><div><b>Роман Смирнов</b><br><span class="small">смыслы, стратегии, вебинары</span></div></div>
+<div><img src="img/roma.jpg" alt="Роман Смирнов" style="object-position:50% 20%"><div><b>Роман Смирнов</b><br><span class="small">смыслы, стратегии, вебинары, трафик, воронки</span></div></div>
 </div>
 </div></section>
 
-<!-- 2. Облако мыслей -->
+<!-- Облако мыслей -->
 <section class="s"><div class="w">
 <div class="no">01 · с чем к нам приходят</div>
 <h2>Что из этого <span class="g">про вас?</span></h2>
 <div class="cloudwrap" id="cloud">
 <img src="img/geroinya.jpg" alt="Женщина вечером работает за ноутбуком" loading="lazy">
 <div class="bubs">
-<div class="bub big l" style="left:3%;top:5%">Ищу SMM-щика, бюджет 30-40 тысяч</div>
-<div class="bub" style="left:27%;top:11%">Пишу хуки, а дальше пусть он сам</div>
-<div class="bub l" style="left:3%;top:18%">Сейчас это я и волонтёры на выкладке</div>
-<div class="bub" style="left:27%;top:24%">Мне нужен оператор всего этого добра</div>
-<div class="bub l" style="left:3%;top:31%">Не знаю, о чём писать</div>
-<div class="bub big" style="left:27%;top:37%">Лайки есть, а продаж нет</div>
-<div class="bub l" style="left:3%;top:44%">Визуала нужно много, а делать некому</div>
-<div class="bub" style="left:27%;top:50%">Рилс - это кринж, сниматься не хочу</div>
-<div class="bub l" style="left:3%;top:57%">Четыре маркетолога пришли, и никаких результатов</div>
-<div class="bub" style="left:27%;top:63%">Выгораю от контента</div>
-<div class="bub big l" style="left:3%;top:70%">Народ идёт, а заявок нет</div>
-<div class="bub" style="left:27%;top:76%">Сколько ещё денег на рекламу?</div>
-<div class="bub l" style="left:3%;top:83%">Я не технарь, не разберусь</div>
-<div class="bub" style="left:27%;top:89%">Соцсети есть, но не продают</div>
+<div class="bub big" style="left:3%;top:6%;--r:-2deg">Ищу SMM-щика, бюджет 30-40 тысяч</div>
+<div class="bub" style="left:31%;top:15%;--r:1.5deg">Пишу хуки, а дальше пусть он сам</div>
+<div class="bub" style="left:69%;top:5%;--r:-1deg">Мне нужен оператор всего этого добра</div>
+<div class="bub" style="left:7%;top:29%;--r:1deg">Сейчас это я и волонтёры на выкладке</div>
+<div class="bub" style="left:79%;top:24%;--r:2deg">Не знаю, о чём писать</div>
+<div class="bub big" style="left:22%;top:43%;--r:-1.5deg">Лайки есть, а продаж нет</div>
+<div class="bub" style="left:3%;top:57%;--r:2deg">Визуала много, а делать некому</div>
+<div class="bub" style="left:80%;top:47%;--r:-2deg">Рилс - это кринж, сниматься не хочу</div>
+<div class="bub" style="left:9%;top:75%;--r:-1deg">Четыре маркетолога пришли, и никаких результатов</div>
+<div class="bub big" style="left:36%;top:87%;--r:1deg">Народ идёт, а заявок нет</div>
+<div class="bub" style="left:80%;top:76%;--r:1.5deg">Я не технарь, не разберусь</div>
 </div>
 </div>
 </div></section>
 
-<!-- 3. Как это делалось раньше -->
+<!-- Как было раньше -->
 <section class="s"><div class="w">
-<div class="no">02 · как было раньше</div>
-<h2>Чтобы контент продавал, нужна <span class="g">команда из 5+ человек</span></h2>
-<p class="lead">Каждый делает свой кусок вручную и из своей головы. И каждому нужно платить</p>
+<div class="was-tag">Как было раньше</div>
+<h2>Чтобы контент продавал, нужна была <span class="g">команда из 5+ человек</span></h2>
+<p class="lead">Каждый делал свой кусок вручную и из своей головы. И каждому нужно было платить</p>
 <div class="team">
-<div><b>Аналитик</b><small>ищет темы, которые залетают</small></div>
+<div><b>Аналитик</b><small>искал темы, которые залетают</small></div>
 <div><b>Маркетолог</b><small>стратегия, воронка, продукты</small></div>
 <div><b>Продюсер</b><small>смыслы и упаковка эксперта</small></div>
 <div><b>Копирайтер</b><small>посты, статьи, письма, бот</small></div>
@@ -213,298 +232,313 @@ td:first-child{color:var(--muted);width:26%}
 <div><b>Программист</b><small>калькуляторы и тесты</small></div>
 <div><b>Веб-дизайнер</b><small>лендинги и страницы продуктов</small></div>
 <div><b>SEO-специалист</b><small>статьи в поиске</small></div>
-<div class="smm"><b>SMM-щик</b><small>выкладка. Это всего один кусок из всей цепочки</small></div>
+<div class="smm"><b>SMM-щик</b><small>выкладка, тексты, монтаж. Всего один кусок цепочки</small></div>
 <div><b>Ассистент</b><small>сроки, планы, отчёты</small></div>
 </div>
 <p class="q">Сейчас эту цепочку целиком забирает контент-завод</p>
 </div></section>
 
-<!-- 4. Две точки входа -->
+<!-- Две вещи -->
 <section class="s"><div class="w">
-<div class="no">03 · с чего начинается завод</div>
-<h2>Всё начинается <span class="g">с двух вещей</span></h2>
+<div class="no">02 · с чего начинается завод</div>
+<h2>Банально, но всё начинается <span class="g">с двух вещей</span></h2>
 <div class="two" style="margin-top:20px">
-<div class="box gold rv"><b class="t">Распаковка эксперта</b><p>Ваш метод, ваши кейсы, ваши слова. Завод пишет вашим голосом, а не языком нейросети</p><div class="chips" style="margin-top:14px"><span>Распаковка экспертности</span><span>Голос по постам</span><span>Продукты и оффер</span><span>Исследование аудитории</span></div></div>
-<div class="box gold rv d1"><b class="t">Аналитика рынка</b><p>Что залетает у конкурентов прямо сейчас: темы, форматы, лид-магниты, продукты и цены</p><div class="chips" style="margin-top:14px"><span>Глубокий ресёрч</span><span>Радар конкурентов</span><span>Ежедневный разбор роликов</span><span>Найди виралку</span><span>Радары форматов</span></div></div>
+<div class="box gold rv"><div class="num">1</div><b class="t">Распаковка того, что уже работает</b><p>Не с нуля. Смотрим, что у вас уже получается: какие темы набирают, что продаётся, за что вас выбирают</p></div>
+<div class="box gold rv d1"><div class="num">2</div><b class="t">Сквозная аналитика рынка</b><p>За последний нужный период, потому что темы меняются очень быстро. Плюс зарубежный рынок. Охваты, смыслы, воронки и продукты конкурентов на больших данных, а не парсер по одной теме, как раньше</p></div>
 </div>
-<p class="lead" style="margin-top:22px;color:var(--fg)">Мы уже разобрали 5 ниш: <b>астрология, нумерология, нутрициология, психология, маркетинг</b></p>
+<p class="lead" style="margin-top:22px;color:var(--fg)">Такой полный расклад раньше стоил в агентстве около <b class="g">250 000 ₽</b></p>
+<p class="small">Уже разобраны ниши: астрология, нумерология, нутрициология, психология, маркетинг</p>
 </div></section>
 
-<!-- 4а. Соединяем две истории -->
+<!-- Совпадение -->
 <section class="s"><div class="w">
-<div class="no">04 · соединяем две истории</div>
-<h2>Что у вас заходит + <span class="g">что залетает у рынка</span></h2>
-<div class="grid" style="margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))">
-<div class="box rv"><b class="t">Что у вас уже заходит</b><p>Пример астролога, с которым работаем: карусели к знаку в его сезон за 90 дней</p><div class="grid" style="margin-top:12px;grid-template-columns:1fr 1fr"><div><div class="num" style="font-size:30px">145 тыс.</div><p class="small">Львы</p></div><div><div class="num" style="font-size:30px">117 тыс.</div><p class="small">Девы</p></div></div></div>
-<div class="box rv d1"><b class="t">Что залетает у рынка</b><p>Тот же знак, другая форма. Путь по годам 2023-2027</p><div style="display:flex;gap:10px;margin-top:12px;align-items:flex-end"><img src="img/r-deva.jpg" alt="Обложка карусели «Дева» конкурента" style="width:46%;border:1px solid var(--line)" loading="lazy"><div><div class="num" style="font-size:30px">60 565</div><p class="small">лайков, в 3 раза выше обычного у автора</p></div></div></div>
-<div class="box gold rv d2"><b class="t">Как сделать ещё лучше</b><p>Тему оставляем вашу, форму берём залётную. Так завод усиливает то, что у вас уже работает, а не придумывает с нуля</p></div>
+<div class="no">03 · как это работает на примере</div>
+<h2>Ваша тема + подача, <span class="g">которая уже залетела</span></h2>
+<p class="lead">Пример астролога, с которым мы работаем. Ноябрь 2026</p>
+<div class="steps3">
+<div class="box rv"><span class="k">что у неё уже работает</span><p style="color:var(--fg)">Лучше всего у неё набирают карусели про знак зодиака в его сезон</p><div class="x">145 тыс.<small>просмотров у карусели про Львов, у Дев 117 тыс.</small></div><span class="eq">+</span></div>
+<div class="box rv d1"><span class="k">что залетает у рынка</span><div style="display:flex;gap:12px;align-items:flex-start"><img src="img/r-deva.jpg" alt="Обложка карусели «Дева»: путь по годам 2023-2027" style="width:42%;border:1px solid var(--line);border-radius:10px" loading="lazy"><div><p style="color:var(--fg)">У другого астролога та же тема в новой подаче: путь знака по годам 2023-2027</p><div class="x">в 3 раза<small>больше лайков, чем обычно у этого автора</small></div></div></div><span class="eq">=</span></div>
+<div class="box gold rv d2"><span class="k">что делаем</span><p style="color:var(--fg)">Её тему (знак в сезон) подаём в залетевшей форме (путь по годам)</p><p style="margin-top:10px">Тема уже доказала, что интересна её аудитории. Подача уже доказала, что её досматривают и сохраняют. Вместо догадки две проверенные части</p></div>
 </div>
-<p class="small" style="margin-top:12px">Данные Instagram<a href="#ig" style="color:inherit">*</a> на ноябрь 2026, «выше обычного» = лайки поста к медиане последних 20 постов аккаунта</p>
 </div></section>
 
-<!-- 4а2. Темы по нишам -->
+<!-- Темы по нишам -->
 <section class="s"><div class="w">
-<div class="no">05 · что залетает в нишах</div>
+<div class="no">04 · что залетает в нишах</div>
 <h2>Темы <span class="g">не из головы</span></h2>
+<p class="lead">Считаем не лайки, а во сколько раз пост набрал больше, чем обычно у этого же автора. Так видно, что залетела тема, а не просто большой аккаунт</p>
 <div class="covers" style="margin-top:16px">
-<figure><img src="img/r-rozhd.jpg" alt="Обложка «Рождённые 3, 9, 16, 19, 26»" loading="lazy"><figcaption><b>в 27 раз</b>нумерология, «Рождённые 3, 9, 16…: 2026 против 2027»</figcaption></figure>
-<figure><img src="img/r-nesladko.jpg" alt="Обложка «Знаки, которым придётся несладко»" loading="lazy"><figcaption><b>413 комментариев</b>«Знаки, которым придётся несладко в 2027»</figcaption></figure>
-<figure><img src="img/r-dengi.jpg" alt="Обложка «Деньги в ноябре»" loading="lazy"><figcaption><b>7 847 лайков</b>«Деньги в ноябре: для кого осень золотая»</figcaption></figure>
-<figure><img src="img/r-vodoley.jpg" alt="Обложка «Водолей. Прогноз на 2027»" loading="lazy"><figcaption><b>в 11 раз</b>«Водолей. Год, когда появится важный человек»</figcaption></figure>
+<figure><img src="img/r-rozhd.jpg" alt="Обложка «Рождённые 3, 9, 16, 19, 26»" loading="lazy"><div class="x">в 27 раз<small>больше лайков, чем обычно у автора. Нумерология</small></div></figure>
+<figure><img src="img/r-vodoley.jpg" alt="Обложка «Водолей. Прогноз на 2027»" loading="lazy"><div class="x">в 11 раз<small>больше лайков, чем обычно. Прогноз знаку на 2027</small></div></figure>
+<figure><img src="img/r-nesladko.jpg" alt="Обложка «Знаки, которым придётся несладко»" loading="lazy"><div class="x">413<small>комментариев, в 8 раз больше обычного</small></div></figure>
+<figure><img src="img/r-dengi.jpg" alt="Обложка «Деньги в ноябре»" loading="lazy"><div class="x">7 847<small>лайков, в 3,5 раза больше обычного</small></div></figure>
 </div>
 <div class="niche">
-<div class="box"><span class="tag">нумерология</span><q>Раху, голова дракона по дате рождения</q><span class="m">845 комментариев, в 16 раз выше обычного</span></div>
-<div class="box"><span class="tag">нутрициология</span><q>Вешу 50 кг в 38 лет без спортзала и диет</q><span class="m">в 6 раз выше обычного</span></div>
-<div class="box"><span class="tag">психология</span><q>Провокационное утверждение и диалог клиента с экспертом</q><span class="m">5,4 млн и 2,4 млн просмотров</span></div>
-<div class="box"><span class="tag">маркетинг</span><q>Конкурент выпускает 35 рилсов в неделю, до 12 в день</q><span class="m">вот с каким темпом соревнуемся</span></div>
+<div class="box"><span class="tag">нумерология</span><p>Пост «Раху, голова дракона по дате рождения» собрал 845 комментариев: в 16 раз больше, чем обычно у автора</p></div>
+<div class="box"><span class="tag">нутрициология</span><p>Ролик «Вешу 50 кг в 38 лет без спортзала и диет» набрал в 6 раз больше обычного</p></div>
+<div class="box"><span class="tag">психология</span><p>Больше всего охвата у рилс-провокации (5,4 млн просмотров) и диалога клиента с экспертом (2,4 млн)</p></div>
+<div class="box"><span class="tag">маркетинг</span><p>Конкурент в нише продвижения выпускает 35 рилсов в неделю, до 12 в день</p></div>
 </div>
+<p class="small" style="margin-top:12px">Instagram<a href="#ig" style="color:inherit">*</a> и Telegram, сентябрь-ноябрь 2026. «Обычно» = медиана последних постов того же аккаунта</p>
 </div></section>
 
-<!-- 4д. Американский рынок -->
+<!-- Американский рынок -->
 <section class="s"><div class="w">
-<div class="no">06 · американский рынок</div>
+<div class="no">05 · зарубежный рынок</div>
 <h2>Форматы появляются там <span class="g">на месяцы раньше</span></h2>
 <div class="flow" style="margin-top:18px"><span>ловим залетевший ролик или карусель на английском</span><i>→</i><span>переводим</span><i>→</i><span>озвучиваем голосом эксперта</span><i>→</i><span>выкладываем, пока в России этого не видели</span><i>→</i><span>охваты и лиды</span></div>
-<div class="chips on" style="margin-top:14px"><span>Радары каруселей и Threads</span><span>Уникализатор каруселей с английского</span><span>Повтор залетевших YouTube-роликов</span><span>Адаптация и перевод</span><span>Аватар и голос</span></div>
 </div></section>
 
-<!-- 4б. Продукты -->
+<!-- Продукты -->
 <section class="s"><div class="w">
-<div class="no">07 · продукты</div>
-<h2>Из ресёрча собираем <span class="g">линейку продуктов</span></h2>
-<p class="lead">Флагман наверху и мини-продукты под ним. Рядом цены рынка, чтобы видеть, где вы стоите</p>
+<div class="no">06 · продукты</div>
+<h2>Линейка продуктов <span class="g">на стыке вашего и рынка</span></h2>
+<p class="lead">Смотрим, что у вас уже есть и что покупают на рынке. Где это сходится, где нет, и как сделать круче. Под каждый продукт собирается своя воронка</p>
 <div class="ladder">
-<div class="rv"><b>Флагман</b><span>марафон в трёх тарифах 6 290 / 11 900 / 26 900 ₽, 12-недельное обучение, курс 14 990 ₽</span></div>
-<div class="rv d1"><b>Консультация</b><span>от 7 000 до 10 000 ₽</span></div>
-<div class="rv d2"><b>Клуб, подписка</b><span>2 900-3 200 ₽ в месяц</span></div>
-<div class="rv d3"><b>Мини-продукт</b><span>PDF-разбор по дате 990 ₽, марафон 995 ₽ сразу под расчётом, мини-курс по одной теме</span></div>
+<div class="lv rv"><b>Флагман</b><div class="pills"><span>курс</span><span>наставничество</span><span>марафон с тарифами</span><span>годовое сопровождение</span></div></div>
+<div class="lv rv d1"><b>Мини-продукты, которые ведут к флагману</b><div class="pills"><span>консультация</span><span>клуб по подписке</span><span>личный разбор</span><span>PDF-разбор по дате</span><span>практикум в записи</span><span>мини-курс по одной теме</span></div></div>
 </div>
-<p class="small" style="margin-top:12px">Публичные цены экспертов в астрологии и нумерологии, октябрь-ноябрь 2026</p>
 </div></section>
 
-<!-- 4в. Конвертеры -->
+<!-- Конвертеры -->
 <section class="s"><div class="w">
-<div class="no">08 · конвертеры</div>
-<h2>Что ведёт <span class="g">к каждому продукту</span></h2>
-<p class="lead">Одна боль, один конвертер, свой продукт. Калькуляторы, тесты, статьи, бесплатные уроки. Откройте любой и попробуйте</p>
+<div class="no">07 · лид-магниты</div>
+<h2>К каждому продукту ведут <span class="g">несколько лид-магнитов</span></h2>
+<p class="lead">Калькулятор, тест, статья, бесплатный урок. Один такой лид-магнит собирается за вечер</p>
+<div class="phones lm" style="--n:3;margin-top:12px">
+<figure style="margin:0"><img src="img/l-karma.jpg" alt="Калькулятор «Кармическая задача 2027»" loading="lazy"><div class="cap"><b>Кармическая задача 2027</b>расчёт по дате рождения</div></figure>
+<figure style="margin:0"><img src="img/l-prognoz.jpg" alt="Прогноз на месяц" loading="lazy"><div class="cap"><b>Прогноз на месяц</b>по реальным планетам на дату</div></figure>
+<figure style="margin:0"><img src="img/l-kamen.jpg" alt="Камень из Кибиры" loading="lazy"><div class="cap"><b>Камень из Кибиры</b>древний оракул: вопрос и ответ</div></figure>
+</div>
 <div class="mag">
-<a href="https://kursk-24.github.io/karma-2027/" target="_blank" rel="noopener"><span class="tag2">астрология</span><br>Кармическая задача 2027<small>расчёт по дате рождения</small></a>
-<a href="https://kursk-24.github.io/prognoz-sekretnaya/" target="_blank" rel="noopener"><span class="tag2">астрология</span><br>Прогноз на месяц<small>по реальным планетам на дату</small></a>
-<a href="https://kursk-24.github.io/kod-deneg/" target="_blank" rel="noopener"><span class="tag2">астрология</span><br>Код ваших денег<small>по дате рождения</small></a>
-<a href="https://kursk-24.github.io/kod-lyubvi-denezhnyj-kod/" target="_blank" rel="noopener"><span class="tag2">нумерология</span><br>Денежный код<small>расчёт по дате</small></a>
-<a href="https://kursk-24.github.io/kod-lyubvi-sovmestimost/" target="_blank" rel="noopener"><span class="tag2">нумерология</span><br>Совместимость по датам<small>для двух людей</small></a>
-<a href="https://kursk-24.github.io/test-zhelezo/" target="_blank" rel="noopener"><span class="tag2">нутрициология</span><br>Хватает ли тебе железа?<small>экспресс-тест</small></a>
-<a href="https://kursk-24.github.io/vahta-podmoskovie/" target="_blank" rel="noopener"><span class="tag2">рекрутинг</span><br>Калькулятор заработка на вахте<small>доход по сменам</small></a>
-<a href="https://kursk-24.github.io/diagnostika-krug/" target="_blank" rel="noopener"><span class="tag2">маркетинг</span><br>Диагностика «Круг»<small>где буксуют продажи</small></a>
+<a href="https://kursk-24.github.io/karma-2027/" target="_blank" rel="noopener"><span class="tag2">астрология</span><br>Кармическая задача 2027</a>
+<a href="https://kursk-24.github.io/kod-deneg/" target="_blank" rel="noopener"><span class="tag2">астрология</span><br>Код ваших денег</a>
+<a href="https://kursk-24.github.io/kod-lyubvi-sovmestimost/" target="_blank" rel="noopener"><span class="tag2">нумерология</span><br>Совместимость по датам</a>
+<a href="https://kursk-24.github.io/test-zhelezo/" target="_blank" rel="noopener"><span class="tag2">нутрициология</span><br>Хватает ли тебе железа?</a>
+<a href="https://kursk-24.github.io/vahta-podmoskovie/" target="_blank" rel="noopener"><span class="tag2">рекрутинг</span><br>Заработок на вахте</a>
+<a href="https://kursk-24.github.io/diagnostika-krug/" target="_blank" rel="noopener"><span class="tag2">маркетинг</span><br>Диагностика «Круг»</a>
 </div>
 </div></section>
 
-<!-- 4г. Конвертер за один день + два способа -->
+<!-- PDF против интерактива -->
 <section class="s"><div class="w">
-<div class="no">09 · под капотом простого калькулятора</div>
-<div class="two" style="align-items:center">
-<div>
-<div class="huge g rv">30 290</div>
-<p class="lead rv d1" style="color:var(--fg)">разных разборов на 30 316 дат рождения в одном калькуляторе. Собран за один день</p>
-<p class="small">Калькулятор «Кармическая задача 2027», проверка всех дат с 1930 по 2012 год</p>
+<div class="no">08 · под капотом простого калькулятора</div>
+<h2>Чем интерактив <span class="g">сильнее PDF из бота</span></h2>
+<div class="vs">
+<div class="box"><b class="t">PDF-файл из бота</b><ul><li>один текст для всех</li><li>скачал и забыл</li><li>не видно, открыл ли его человек</li></ul></div>
+<div class="box gold"><b class="t">Интерактивный лид-магнит</b><ul><li>личный результат под дату или ответы человека</li><li>человек сам вводит данные и вовлекается</li><li>каждый шаг виден в аналитике: расчёт делают 78% зашедших</li></ul></div>
 </div>
-<img src="img/v6b-rasshifrovka.jpg" alt="Личный разбор в калькуляторе" style="max-width:260px;max-height:48vh;object-fit:cover;object-position:top;justify-self:center;border:1px solid var(--line)" loading="lazy">
-</div>
-<h3 style="margin-top:26px">Два способа, как нейронка работает в калькуляторе</h3>
-<div class="two">
-<div class="box"><b class="t">Тексты написаны заранее</b><p>Нейронка один раз пишет тексты голосом эксперта, а код собирает из них разбор под каждую дату. Каждый расчёт стоит 0 ₽, хостинг бесплатный</p></div>
-<div class="box"><b class="t">Нейронка отвечает вживую</b><p>Текст рождается в момент запроса, у каждого человека свой. У каждого расчёта есть себестоимость, нужен ключ и свой сервер</p></div>
+<div class="two" style="margin-top:22px;align-items:center">
+<div><div class="huge g">30 290</div><p class="lead" style="color:var(--fg);margin-top:8px">уникальных текстов под каждую дату рождения прописано в одном калькуляторе. За вечер</p><p class="small">«Кармическая задача 2027», проверка всех дат с 1930 по 2012 год. 78%: Метрика калькулятора, 25.10-12.11.2026</p></div>
+<div class="grid" style="grid-template-columns:1fr 1fr"><div class="box"><b class="t">За 0 ₽</b><p>тексты написаны заранее, расчёт бесплатный при любом потоке</p></div><div class="box"><b class="t">С бюджетом</b><p>нейронка отвечает вживую, у каждого расчёта своя стоимость</p></div></div>
 </div>
 </div></section>
 
-<!-- 4д. Воронка в боте из видео -->
+<!-- Воронка изнутри -->
 <section class="s"><div class="w">
-<div class="no">10 · воронка изнутри</div>
+<div class="no">09 · воронка изнутри</div>
 <h2>Завод сам собирает <span class="g">воронку в боте</span></h2>
-<p class="lead">Путь одного человека от карусели до продукта. Автоответ на кодовое слово приходит меньше чем за полминуты</p>
+<p class="lead">Путь одного человека от карусели до продукта</p>
 <div class="swipe">листайте →</div>
-<div class="shots">
-<figure><img src="img/vv-14.jpg" alt="Карусель" loading="lazy"><figcaption><b>1. Контент</b>любая единица: карусель, ленивый ролик, говорящая голова</figcaption></figure>
-<figure><img src="img/v1-komment.jpg" alt="Кодовое слово" loading="lazy" style="object-position:left top"><figcaption><b>2. Кодовое слово</b>и автоответ в комментариях, это ещё и бустит ролик</figcaption></figure>
-<figure><img src="img/v2-direct.jpg" alt="Директ" loading="lazy"><figcaption><b>3. Директ</b>«Подготовила для тебя расчёт, жми кнопку»</figcaption></figure>
-<figure><img src="img/v3-bot.jpg" alt="Бот" loading="lazy"><figcaption><b>4. Бот</b>приветствие под тему эксперта</figcaption></figure>
-<figure><img src="img/v4-podpiska.jpg" alt="Проверка подписки" loading="lazy"><figcaption><b>5. Проверка подписки</b>на Telegram-канал</figcaption></figure>
-<figure><img src="img/v5-forma.jpg" alt="Калькулятор" loading="lazy"><figcaption><b>6. Калькулятор</b>дата рождения</figcaption></figure>
-<figure><img src="img/v6-rezultat.jpg" alt="Результат" loading="lazy"><figcaption><b>7. Личный разбор</b>раньше такое делали программисты</figcaption></figure>
-<figure><img src="img/vv-155.jpg" alt="Смыслы прогрева" loading="lazy"><figcaption><b>8. Смыслы прогрева</b>что было в 9, 18 и 27 лет</figcaption></figure>
-<figure><img src="img/v7-produkt.jpg" alt="Следующий шаг" loading="lazy"><figcaption><b>9. Следующий шаг</b>продукт эксперта</figcaption></figure>
-<figure><img src="img/v8-ceny.jpg" alt="Страница продукта" loading="lazy"><figcaption><b>10. Что получит человек</b>состав, цена, срочность</figcaption></figure>
-<figure><img src="img/vv-212.jpg" alt="Трекер года" loading="lazy"><figcaption><b>11. Кнопка</b>сразу пишет эксперту</figcaption></figure>
+<div class="fw">
+<figure><img src="img/vv-14.jpg" alt="Карусель" loading="lazy"><figcaption class="cap"><b>1. Контент</b>карусель, ролик, говорящая голова</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v1-komment.jpg" alt="Кодовое слово" loading="lazy" style="object-fit:contain;background:#fff"><figcaption class="cap"><b>2. Кодовое слово</b>и автоответ за полминуты</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v2-direct.jpg" alt="Директ" loading="lazy"><figcaption class="cap"><b>3. Директ</b>«Подготовила тебе расчёт»</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v3-bot.jpg" alt="Бот" loading="lazy"><figcaption class="cap"><b>4. Бот</b>приветствие эксперта</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v4-podpiska.jpg" alt="Проверка подписки" loading="lazy"><figcaption class="cap"><b>5. Подписка</b>проверка канала</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v5-forma.jpg" alt="Калькулятор" loading="lazy"><figcaption class="cap"><b>6. Калькулятор</b>дата рождения</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v6-rezultat.jpg" alt="Результат" loading="lazy"><figcaption class="cap"><b>7. Личный разбор</b>раньше это делал программист</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/vv-155.jpg" alt="Смыслы прогрева" loading="lazy"><figcaption class="cap"><b>8. Прогрев</b>что было в 9, 18, 27 лет</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v7-produkt.jpg" alt="Продукт" loading="lazy"><figcaption class="cap"><b>9. Продукт</b>следующий шаг</figcaption></figure><div class="ar">→</div>
+<figure><img src="img/v8-ceny.jpg" alt="Страница продукта" loading="lazy"><figcaption class="cap"><b>10. Что получит</b>состав, цена, срочность</figcaption></figure>
 </div>
 <p class="small">Из директа в бот переходят 87% (замер воронки астролога, 25.10-09.11.2026)</p>
 </div></section>
 
 <!-- МЕСТО ПОД ВОРОНКУ КОНКУРЕНТА: рилс → кодовое слово → лид-магнит → мини-продукт → вебинар → услуга или обучение. Вставить скрин, когда Елена найдёт файл, иначе удалить этот комментарий -->
 
-<!-- 4е. Итог первой недели -->
+<!-- Первая неделя -->
 <section class="s"><div class="w">
-<div class="no">11 · с первой недели</div>
-<h2>Что у вас будет <span class="g">до первого поста</span></h2>
-<div class="grid" style="margin-top:18px">
-<div class="box rv"><div class="num">1</div><b class="t">Ваш метод вашими словами</b></div>
-<div class="box rv d1"><div class="num">2</div><b class="t">Банк тем, которые уже залетели</b></div>
-<div class="box rv d2"><div class="num">3</div><b class="t">Линейка продуктов с ценами рынка</b></div>
-<div class="box rv d3"><div class="num">4</div><b class="t">Конвертер под каждый продукт</b></div>
-<div class="box gold rv d3"><div class="num">5</div><b class="t">Воронка в боте</b></div>
+<div class="no">10 · старт</div>
+<h2>Что происходит <span class="g">с первой недели</span></h2>
+<div class="week">
+<div class="rv"><span><b>Разбираем все ваши соцсети</b><small>что работает, где теряются люди</small></span></div>
+<div class="rv d1"><span><b>Анонсируем аудитории новую движуху</b><small>чтобы подписчики ждали перемен</small></span></div>
+<div class="rv d1"><span><b>Параллельно анализ рынка и ваших продуктов</b><small>темы, форматы, цены, конкуренты</small></span></div>
+<div class="rv d2"><span><b>Начинаем переупаковку</b><small>профили, смыслы, линейка продуктов</small></span></div>
+<div class="rv d2"><span><b>Создаём интерактивные лид-магниты</b><small>под каждый продукт</small></span></div>
+<div class="rv d3"><span><b>Упаковываем всё в воронку</b><small>кодовое слово, бот, прогрев, продукт</small></span></div>
+<div class="hl rv d3"><span><b>Апгрейдим продукты, которые уже есть</b><small>закрываем точки входа и точки слива</small></span></div>
 </div>
 </div></section>
 
-<!-- Цех: смыслы и заголовки -->
+<!-- Цех заголовков -->
 <section class="s"><div class="w">
-<div class="no">12 · цех смыслов и заголовков</div>
-<h2>Заголовок решает, <span class="g">увидят ли пост</span></h2>
-<div class="rs">
-<div class="was"><div class="lbl">раньше</div><div class="who">Продюсер и копирайтер</div><p>Придумывали заголовки из головы и надеялись, что зайдёт</p></div>
-<div class="now"><div class="lbl">сейчас<span class="cnt">7 инструментов</span></div><div class="chips on"><span>Банк заголовков конкурентов</span><span>Проверка заголовка по 12 условиям</span><span>Крючки и заголовки</span><span>Нейроописание по 35 правилам</span><span>План публикаций</span><span>Совет по продажам</span><span>Закономерности виральности</span></div></div>
+<div class="belt"><span class="on">заголовки</span><i></i><span>тексты</span><i></i><span>карусели</span><i></i><span>монтажная</span><i></i><span>воронки</span><i></i><span>телефон</span><i></i><span>аналитика</span></div>
+<div class="ceh">
+<div><div class="no">цех 1 · смыслы и заголовки</div><h2>Заголовок <span class="g">решает всё</span></h2>
+<div class="verbs"><span>увидят ли</span><span>откроют ли</span><span>досмотрят ли рилс</span><span>нажмут ли</span><span>заберут ли материал</span></div>
+<p class="old"><b>Раньше:</b> продюсер и копирайтер придумывали заголовки из головы</p></div>
+<div class="agents">
+<div><b>Банк залетевших заголовков</b><small>реальные тексты с экрана у конкурентов вашей ниши</small></div>
+<div><b>Проверка по 12 условиям</b><small>слабый заголовок не доходит до публикации</small></div>
+<div><b>Агент нейроописаний</b><small>35 правил, 1800-2000 знаков, чтобы ролик нашли в поиске</small></div>
+<div><b>Агент хуков</b><small>первые секунды ролика и первая строка поста</small></div>
+</div>
 </div>
 </div></section>
 
-<!-- Цех: тексты -->
+<!-- Цех текстов -->
 <section class="s"><div class="w">
-<div class="no">13 · цех текстов</div>
-<h2>Тексты <span class="g">вашим голосом</span></h2>
-<div class="rs">
-<div class="was"><div class="lbl">раньше</div><div class="who">Копирайтер</div><p>Один человек на посты, письма, статьи и бота. Или вы сами вечером</p></div>
-<div class="now"><div class="lbl">сейчас<span class="cnt">13 инструментов</span></div><div class="chips on"><span>Пост</span><span>Продающий пост</span><span>Польза с мягкой продажей</span><span>Сторителлинг</span><span>Разоблачение мифа</span><span>Кейс клиента</span><span>Новость в пост</span><span>Длинная статья</span><span>Письмо</span><span>Сообщение бота</span><span>Посты для Threads</span><span>Шапка профиля</span><span>Чистка нейроштампов</span></div></div>
+<div class="belt"><span>заголовки</span><i></i><span class="on">тексты</span><i></i><span>карусели</span><i></i><span>монтажная</span><i></i><span>воронки</span><i></i><span>телефон</span><i></i><span>аналитика</span></div>
+<div class="ceh">
+<div><div class="no">цех 2 · тексты</div><h2>Прогревающий и продающий контент <span class="g">вашим голосом</span></h2>
+<div class="grid" style="grid-template-columns:1fr 1fr;margin-top:8px"><div class="box"><div class="num">23</div><p>формата прогревающих и продающих постов</p></div><div class="box"><div class="num">9</div><p>структур копирайтинга</p></div></div>
+<p class="old"><b>Раньше:</b> один копирайтер на всё или вы сами вечером</p></div>
+<div class="agents">
+<div><b>Агент Telegram-контента</b><small>прогрев и продажи в канале</small></div>
+<div><b>Агент Threads</b><small>короткие посты и ветки</small></div>
+<div><b>Агент ВКонтакте</b><small>посты и статьи</small></div>
+<div><b>Сценарии говорящих рилс</b><small>под вашу съёмку или двойника</small></div>
+<div><b>Сценарии ленивых рилс</b><small>текст на экране и подложка</small></div>
+<div><b>Сценарии каруселей</b><small>слайд за слайдом</small></div>
+<div><b>Агент сообщений бота</b><small>прогрев и дожим в воронке</small></div>
+<div><b>Агент статей</b><small>для Яндекса и Дзена</small></div>
+</div>
 </div>
 </div></section>
 
-<!-- Цех: визуал -->
+<!-- Цех каруселей -->
 <section class="s"><div class="w">
-<div class="no">14 · цех визуала</div>
-<h2>Карусели и картинки <span class="g">без дизайнера</span></h2>
-<div class="rs">
-<div class="was"><div class="lbl">раньше</div><div class="who">Дизайнер</div><p>Шаблоны в Canva, очередь на правки, одна карусель в несколько дней</p></div>
-<div class="now"><div class="lbl">сейчас<span class="cnt">7 инструментов</span></div><div class="chips on"><span>Карусель</span><span>Уникализатор каруселей</span><span>Картинка-пост</span><span>Сторис</span><span>Брендбук</span><span>Анимация картинки</span><span>Реклама и фото товара</span></div></div>
-</div>
-<div class="shots" style="margin-top:16px">
-<figure><img src="img/c1.jpg" alt="Карусель" loading="lazy" ></figure>
-<figure><img src="img/c2.jpg" alt="Карусель" loading="lazy" ></figure>
-<figure><img src="img/c3.jpg" alt="Карусель" loading="lazy" ></figure>
-<figure><img src="img/c4.jpg" alt="Карусель" loading="lazy" ></figure>
-<figure><img src="img/c5.jpg" alt="Карусель" loading="lazy" ></figure>
+<div class="belt"><span>заголовки</span><i></i><span>тексты</span><i></i><span class="on">карусели</span><i></i><span>монтажная</span><i></i><span>воронки</span><i></i><span>телефон</span><i></i><span>аналитика</span></div>
+<div class="no">цех 3 · карусели</div>
+<h2>Сколько угодно каруселей <span class="g">за вечер</span></h2>
+<p class="lead">В разных стилях и под любую вашу идею: статичные, анимационные, интерактивные, по образцу залетевшей у конкурента</p>
+<p class="old"><b>Раньше:</b> дизайнер, очередь на правки и одна карусель в несколько дней</p>
+<div class="phones" style="--n:5;margin-top:14px">
+<img src="img/c1.jpg" alt="Карусель" loading="lazy" style="aspect-ratio:4/5"><img src="img/c2.jpg" alt="Карусель" loading="lazy" style="aspect-ratio:4/5"><img src="img/c3.jpg" alt="Карусель" loading="lazy" style="aspect-ratio:4/5"><img src="img/c4.jpg" alt="Карусель" loading="lazy" style="aspect-ratio:4/5"><img src="img/c5.jpg" alt="Карусель" loading="lazy" style="aspect-ratio:4/5">
 </div>
 </div></section>
 
-<!-- Цех: видео -->
+<!-- Монтажная -->
 <section class="s"><div class="w">
-<div class="no">15 · монтажная</div>
-<h2>Ролики <span class="g">с вами и без вас</span></h2>
-<div class="rs">
-<div class="was"><div class="lbl">раньше</div><div class="who">Монтажёр, моушн-дизайнер, аниматор</div><p>Три специалиста и съёмка каждую неделю</p></div>
-<div class="now"><div class="lbl">сейчас<span class="cnt">12 инструментов</span></div><div class="chips on"><span>Сценарий ролика</span><span>Монтаж разговорного ролика</span><span>Ролик без лица</span><span>Цифровой двойник</span><span>Образ для двойника</span><span>Повтор залетевшего ролика</span><span>Субтитры и плашки</span><span>Мультики в 6 форматах</span><span>ИИ-видео без съёмки</span><span>Размножение рекламы</span><span>Нарезка из длинного видео</span><span>Моушн-графика</span></div></div>
+<div class="belt"><span>заголовки</span><i></i><span>тексты</span><i></i><span>карусели</span><i></i><span class="on">монтажная</span><i></i><span>воронки</span><i></i><span>телефон</span><i></i><span>аналитика</span></div>
+<div class="ceh">
+<div><div class="no">цех 4 · монтажная</div><h2>Ролики <span class="g">с вами и без вас</span></h2>
+<p class="lead">Говорящие ролики из вашей записи: паузы и запинки вырезаны, вставки добавлены. Ленивые рилс без съёмки. Цифровой двойник, мультики, ИИ-видео</p>
+<p class="old"><b>Раньше:</b> монтажёр, моушн-дизайнер, аниматор и съёмка каждую неделю</p></div>
+<div class="phones" style="--n:2">
+<figure style="margin:0"><img src="img/o-reels1.jpg" alt="Ролики астролога" loading="lazy"><div class="cap"><b>Ролики одного эксперта</b>просмотры на каждом</div></figure>
+<figure style="margin:0"><img src="img/o-reels2.jpg" alt="Ролики астролога" loading="lazy"><div class="cap"><b>До 239 тыс.</b>просмотров у одного ролика</div></figure>
 </div>
-<div class="shots" style="margin-top:16px">
-<figure><img src="img/t5-lenivye.jpg" alt="Ленивые ролики" loading="lazy"><figcaption><b>Ролик без съёмки</b>подложка, заголовок, нейроописание</figcaption></figure>
-<figure><img src="img/t6-rolik.jpg" alt="Готовый ролик" loading="lazy"><figcaption><b>Вертикальный ролик</b>для Reels, Shorts, VK Клипов</figcaption></figure>
-<figure><img src="img/t7-govoryashchiy.jpg" alt="Говорящий ролик" loading="lazy"><figcaption><b>Говорящий ролик</b>паузы вырезаны, вставки добавлены</figcaption></figure>
-</div>
-</div></section>
-
-<!-- Цех: воронки -->
-<section class="s"><div class="w">
-<div class="no">16 · цех воронок</div>
-<h2>Боты, лендинги, <span class="g">калькуляторы</span></h2>
-<div class="rs">
-<div class="was"><div class="lbl">раньше</div><div class="who">Технарь, программист, веб-дизайнер</div><p>Конструкторы ботов, Tilda, квиз-сервисы, и каждый со своей подпиской</p></div>
-<div class="now"><div class="lbl">сейчас<span class="cnt">9 инструментов</span></div><div class="chips on"><span>Telegram-воронка</span><span>Воронка в директ</span><span>Комментарий в личку</span><span>Свой бот воронок и рассылок</span><span>Email-воронка</span><span>Калькуляторы и тесты</span><span>Сайт и лендинг</span><span>26 проверок лендинга</span><span>Юрист для запуска</span></div></div>
 </div>
 </div></section>
 
-<!-- Завод в Telegram -->
+<!-- Цех воронок -->
 <section class="s"><div class="w">
-<div class="no">17 · как с ним работать</div>
-<h2>Ваш отдел маркетинга <span class="g">в телефоне</span></h2>
-<p class="lead">У каждого формата своя тема. План дня в 9:00, отчёт в 21:00. Правки текстом или голосом</p>
-<div class="shots" style="margin-top:12px">
-<figure><img src="img/t1-temy.jpg" alt="Темы" loading="lazy"><figcaption><b>Темы</b>по проектам и форматам</figcaption></figure>
-<figure><img src="img/t2-plan.jpg" alt="План дня" loading="lazy"><figcaption><b>План дня</b>с галочками «сделано»</figcaption></figure>
-<figure><img src="img/t3-karusel.jpg" alt="Карусель" loading="lazy"><figcaption><b>Готовая карусель</b>и описание к ней</figcaption></figure>
-<figure><img src="img/t4-telec.jpg" alt="Карусели к знаку" loading="lazy"><figcaption><b>Карусели к знаку</b>правки и принятие работы в чате</figcaption></figure>
+<div class="belt"><span>заголовки</span><i></i><span>тексты</span><i></i><span>карусели</span><i></i><span>монтажная</span><i></i><span class="on">воронки</span><i></i><span>телефон</span><i></i><span>аналитика</span></div>
+<div class="ceh">
+<div><div class="no">цех 5 · воронки</div><h2>Боты, лендинги, <span class="g">калькуляторы</span></h2>
+<p class="old"><b>Раньше:</b> технарь, программист, веб-дизайнер и подписка на каждый конструктор</p></div>
+<div class="agents">
+<div><b>Бот с проверкой подписки</b><small>человек остаётся в канале</small></div>
+<div><b>Автоответ на кодовое слово</b><small>комментарий превращается в разговор в директе</small></div>
+<div><b>Прогрев и дожим в боте</b><small>по шагам, с задержками</small></div>
+<div><b>Калькуляторы и тесты</b><small>за вечер, под вашу методику</small></div>
+<div><b>Лендинги и страницы продуктов</b><small>от смысла до кнопки оплаты</small></div>
+<div><b>Проверка страницы</b><small>26 проверок, почему не продаёт</small></div>
 </div>
-<p class="q" style="font-size:clamp(18px,2.4vw,26px)">«Гуляю с собакой, играю с детьми, встречаюсь с друзьями, а в телефоне у меня карманный SMM»</p>
-<p class="small">Елена Курскова</p>
+</div>
 </div></section>
 
-<!-- Цех: выкладка и поиск -->
+<!-- Завод в телефоне -->
 <section class="s"><div class="w">
-<div class="no">18 · выкладка и поиск</div>
+<div class="belt"><span>заголовки</span><i></i><span>тексты</span><i></i><span>карусели</span><i></i><span>монтажная</span><i></i><span>воронки</span><i></i><span class="on">телефон</span><i></i><span>аналитика</span></div>
+<div class="no">как с ним работать</div>
+<h2>Контент-завод <span class="g">в телефоне</span></h2>
+<p class="lead">Нейронка присылает готовый контент прямо в Telegram по разным темам, темы может создать сама. Вы правите с телефона текстом или голосом, как будто это ваш сотрудник</p>
+<div class="phones" style="--n:4;margin-top:14px">
+<figure style="margin:0"><img src="img/t1-temy.jpg" alt="Темы" loading="lazy"><div class="cap"><b>Темы</b>по проектам и форматам</div></figure>
+<figure style="margin:0"><img src="img/t2-plan.jpg" alt="План дня" loading="lazy"><div class="cap"><b>План дня</b>с галочками «сделано»</div></figure>
+<figure style="margin:0"><img src="img/t3-karusel.jpg" alt="Карусель" loading="lazy"><div class="cap"><b>Готовая карусель</b>и описание</div></figure>
+<figure style="margin:0"><img src="img/t5-lenivye.jpg" alt="Ленивые рилс" loading="lazy"><div class="cap"><b>Ленивый рилс</b>правки в чате</div></figure>
+</div>
+</div></section>
+
+<!-- Выкладка -->
+<section class="s"><div class="w">
+<div class="no">выкладка и поиск</div>
 <h2>Выкладка во все соцсети <span class="g">из одной очереди</span></h2>
-<div class="rs">
-<div class="was"><div class="lbl">раньше</div><div class="who">SMM-щик, SEO-специалист, ассистент</div><p>Выкладка руками в каждую соцсеть, статьи в поиск отдельным подрядчиком</p></div>
-<div class="now"><div class="lbl">сейчас<span class="cnt">5 инструментов</span></div><div class="chips on"><span>Автопостинг: Instagram*, Telegram, ВК, YouTube, TikTok, Threads</span><span>Статьи в Яндексе</span><span>Статья на Дзен</span><span>Статьи на площадки</span><span>Планировщик сроков</span></div></div>
-</div>
+<div class="flow" style="margin-top:16px"><span>Instagram<a href="#ig" style="color:inherit;text-decoration:none">*</a></span><span>Telegram</span><span>ВКонтакте</span><span>YouTube Shorts</span><span>TikTok</span><span>Threads</span><span>Дзен</span><span>статьи в Яндексе</span></div>
+<p class="old"><b>Раньше:</b> SMM-щик выкладывал руками в каждую соцсеть, статьи в поиск делал отдельный подрядчик</p>
 </div></section>
 
-<!-- Цех: аналитика -->
+<!-- Аналитика -->
 <section class="s"><div class="w">
-<div class="no">19 · аналитика</div>
+<div class="belt"><span>заголовки</span><i></i><span>тексты</span><i></i><span>карусели</span><i></i><span>монтажная</span><i></i><span>воронки</span><i></i><span>телефон</span><i></i><span class="on">аналитика</span></div>
+<div class="no">цех 7 · аналитика</div>
 <h2>Цифры <span class="g">вместо ощущений</span></h2>
-<div class="two" style="margin-top:14px;align-items:center">
-<div class="box" style="background:var(--paper);color:var(--ink);font-size:clamp(18px,2.4vw,24px);font-weight:600;border:0">«Последний месяц Instagram<a href="#ig" style="color:inherit;text-decoration:none">*</a> очень плохо работает»<div style="font-size:14px;font-weight:400;margin-top:8px;color:#6e5a52">ощущение клиента</div></div>
-<div class="grid"><div class="box"><div class="num">+38%</div><p>просмотров в день: было 11 540, стало 15 877</p></div><div class="box"><div class="num">+78%</div><p>реакций в день: было 296, стало 527</p></div></div>
+<div class="steps3" style="grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.1fr)">
+<div class="box" style="background:var(--paper);color:var(--ink);border:0"><span class="k" style="color:#9a6b2f">ощущение клиента</span><p style="color:var(--ink);font:700 clamp(18px,2vw,22px)/1.3 Unbounded,sans-serif">«Последний месяц Instagram<a href="#ig" style="color:inherit;text-decoration:none">*</a> очень плохо работает»</p></div>
+<div class="box gold"><span class="k">что показали цифры</span><div class="num">+38%</div><p>просмотров в день: было 11 540 до старта, стало 15 877</p><div class="num" style="margin-top:14px;font-size:clamp(26px,3.4vw,40px)">+78%</div><p>реакций в день: было 296, стало 527</p></div>
+<div><img src="img/a-panel-7d.jpg" alt="Панель Instagram: 111 139 просмотров за 7 дней" style="border:1px solid var(--line)" loading="lazy"><div class="cap"><b>Как посчитано</b>111 139 просмотров за 7 дней ÷ 7 = 15 877 в день. До старта 11 540 в день, панель 20.09-05.10</div></div>
 </div>
-<p class="small" style="margin-top:12px">Панель Instagram<a href="#ig" style="color:inherit">*</a>, в среднем за день: до старта 20.09-05.10 и 06-12.11.2026; реакции: первые две недели работы и 06-12.11</p>
-<div class="chips on" style="margin-top:14px"><span>Аналитика архива</span><span>Метрика по каждому шагу воронки</span><span>Сводка по конкурентам</span><span>Отчёт раз в месяц</span></div>
+<div class="two" style="margin-top:16px;align-items:center"><img src="img/a-otchet.jpg" alt="Отчёт клиенту по цифрам" style="border:1px solid var(--line);max-height:26vh;width:100%;object-fit:cover;object-position:top" loading="lazy"><p class="lead" style="color:var(--fg)">Клиент регулярно получает такой отчёт: что растёт, что у него набирает больше всего, что делаем дальше</p></div>
 </div></section>
 
-<!-- Запрос: только хуки -->
+<!-- Только хуки -->
 <section class="s"><div class="w">
-<div class="no">20 · «нам нужны только хуки»</div>
-<h2>Что на самом деле стоит <span class="g">за одним хуком</span></h2>
+<div class="no">запрос · «нам нужны только хуки»</div>
+<h2>Хуки отдельно <span class="g">не работают</span></h2>
+<p class="lead">Хуки пишет один человек, а дальше начинается:</p>
+<div class="quotes"><span>«Нам не нравится»</span><span>«Мы так не пишем»</span><span>«Это не наши смыслы»</span></div>
 <div class="chain">
-<div>Банк заголовков, которые уже залетели у конкурентов в вашей нише</div>
-<div>Рерайт под эксперта и проверка по 12 условиям</div>
+<div>Распаковка эксперта: ваши смыслы и ваш голос</div>
+<div>Банк заголовков, которые уже залетели у конкурентов вашей ниши</div>
 <div class="hk">Хук. Человек остановился</div>
-<div>Нейроописание по 35 правилам, 1800-2000 знаков</div>
-<div>Кодовое слово, бот, проверка подписки</div>
-<div>Конвертер: калькулятор, тест или статья</div>
-<div>Продукт и прогрев к нему</div>
+<div>Нейроописание, кодовое слово, бот</div>
+<div>Лид-магнит и продукт с прогревом</div>
 </div>
 <p class="q">Хук привёл человека. А что он увидит дальше?</p>
 </div></section>
 
-<!-- Запрос: только выкладка -->
+<!-- Только выкладка -->
 <section class="s"><div class="w">
-<div class="no">21 · «нам нужна только выкладка»</div>
+<div class="no">запрос · «нам нужна только выкладка»</div>
 <h2>Выложить - <span class="g">последний шаг из десяти</span></h2>
-<div class="flow" style="margin-top:18px"><span>тема из ресёрча</span><i>→</i><span>заголовок</span><i>→</i><span>формат</span><i>→</i><span>текст</span><i>→</i><span>визуал или ролик</span><i>→</i><span>кодовое слово</span><i>→</i><span>бот</span><i>→</i><span>конвертер</span><i>→</i><span>продукт</span><i>→</i><span style="border-color:var(--red)">выкладка</span></div>
+<div class="flow" style="margin-top:18px"><span>тема из ресёрча</span><i>→</i><span>заголовок</span><i>→</i><span>формат</span><i>→</i><span>текст</span><i>→</i><span>визуал или ролик</span><i>→</i><span>кодовое слово</span><i>→</i><span>бот</span><i>→</i><span>лид-магнит</span><i>→</i><span>продукт</span><i>→</i><span style="border-color:var(--red)">выкладка</span></div>
 <p class="lead" style="margin-top:12px;color:var(--fg)">Без остальных девяти выкладка даёт просмотры, а не заявки. Завод делает всю цепочку, а выкладка уходит по расписанию сама</p>
 </div></section>
 
 <!-- Кейс Прядко -->
 <section class="s"><div class="w">
-<div class="no">22 · кейс · астролог, трафик</div>
+<div class="no">кейс · астролог, трафик</div>
 <h2>С 140 до <span class="g">3 477 подписчиков</span></h2>
 <div class="grid" style="margin:12px 0"><div class="box"><div class="num">323 тыс.</div><p>просмотров у одного ролика</p></div><div class="box"><div class="num">до 863</div><p>кодовых слов под одним роликом, это 863 человека в воронку с одного видео</p></div></div>
-<div class="shots">
-<figure><img src="img/p-profil.jpg" alt="Профиль" loading="lazy"><figcaption><b>3 477</b>подписчиков, закреп 323 / 106 / 47 тыс.</figcaption></figure>
-<figure><img src="img/p-deva.jpg" alt="Ролик Дева" loading="lazy"><figcaption><b>863</b>комментария</figcaption></figure>
-<figure><img src="img/p-rak.jpg" alt="Ролик Рак" loading="lazy"><figcaption><b>346</b>комментариев</figcaption></figure>
-<figure><img src="img/p-vodoley.jpg" alt="Ролик Водолей" loading="lazy"><figcaption><b>310</b>комментариев</figcaption></figure>
-<figure><img src="img/p-vesy.jpg" alt="Ролик Весы" loading="lazy"><figcaption><b>293</b>комментария</figcaption></figure>
+<div class="phones" style="--n:5">
+<figure style="margin:0"><img src="img/p-profil.jpg" alt="Профиль" loading="lazy"><div class="cap"><b>3 477</b>подписчиков</div></figure>
+<figure style="margin:0"><img src="img/p-deva.jpg" alt="Ролик Дева" loading="lazy"><div class="cap"><b>863</b>комментария</div></figure>
+<figure style="margin:0"><img src="img/p-rak.jpg" alt="Ролик Рак" loading="lazy"><div class="cap"><b>346</b>комментариев</div></figure>
+<figure style="margin:0"><img src="img/p-vodoley.jpg" alt="Ролик Водолей" loading="lazy"><div class="cap"><b>310</b>комментариев</div></figure>
+<figure style="margin:0"><img src="img/p-vesy.jpg" alt="Ролик Весы" loading="lazy"><div class="cap"><b>293</b>комментария</div></figure>
 </div>
 </div></section>
 
 <!-- Кейс Рома -->
 <section class="s"><div class="w">
-<div class="no">23 · кейс · смыслы, которые продают</div>
+<div class="no">кейс · смыслы, которые продают</div>
 <div class="two" style="align-items:center">
 <img class="ava" src="img/roma.jpg" alt="Роман Смирнов" loading="lazy">
 <div><h2>Роман <span class="g">Смирнов</span></h2>
-<div class="grid"><div class="box"><div class="num">100+</div><p>вебинаров продюсером</p></div><div class="box"><div class="num">45%</div><p>рекордная конверсия живого вебинара</p></div><div class="box"><div class="num">16-20%</div><p>рекорд автовебинара на дистанции месяца</p></div></div>
-<p class="muted" style="margin-top:12px">Продюсер, маркетолог, наставник. Стратегии, смыслы, воронки и вебинары, которые продают</p></div>
+<p class="muted">Продюсер, маркетолог, наставник. Смыслы, стратегии, вебинары, трафик и воронки, которые продают</p>
+<div class="grid" style="margin-top:12px;grid-template-columns:1fr 1fr"><div class="box"><div class="num">100+</div><p>вебинаров продюсером</p></div><div class="box"><div class="num" style="white-space:nowrap;font-size:clamp(26px,3.6vw,44px)">10 000</div><p>часов в вебинаростроении</p></div><div class="box"><div class="num">45%</div><p>рекордная конверсия живого вебинара</p></div><div class="box"><div class="num" style="white-space:nowrap;font-size:clamp(26px,3.6vw,44px)">16-20%</div><p>рекорд автовебинара на дистанции месяца</p></div></div>
+<p class="muted" style="margin-top:12px">Помогал Маричевой с уроками, вебинарами и онлайн-шоу, приложил руку к первому онлайн-вебинару Аяза. Запускал Настю Pixy Зайчикову, делал презентации для Катрин Форс, онлайн-шоу-марафоны для Ромы и Илоны Дрожь</p></div>
 </div>
 </div></section>
 
 <!-- Кейс Оксана -->
 <section class="s"><div class="w">
-<div class="no">24 · кейс · астролог, всё вместе</div>
+<div class="no">кейс · астролог, всё вместе</div>
 <h2><span class="g">22 950 ₽</span> с одного поста</h2>
 <p class="lead">С одного поста в Telegram-канале: 4 покупки PDF-прогноза по 3 990 ₽ и личный разбор за 6 990 ₽</p>
 <div class="grid" style="margin:12px 0"><div class="box"><div class="num">+26%</div><p>просмотров роликов в день</p></div><div class="box"><div class="num">×5</div><p>взаимодействий с роликами в день</p></div><div class="box"><div class="num">×4</div><p>реакций на 100 просмотров</p></div></div>
@@ -514,7 +548,7 @@ td:first-child{color:var(--muted);width:26%}
 
 <!-- Калькулятор -->
 <section class="s" id="calc"><div class="w calc">
-<div class="no">25 · ваш расчёт</div>
+<div class="no">ваш расчёт</div>
 <h2>Ваша воронка <span class="g">и ваш доход</span></h2>
 <div class="two" style="margin-top:10px">
 <div class="box">
@@ -545,11 +579,11 @@ td:first-child{color:var(--muted);width:26%}
 
 <!-- Делаем, а не учим -->
 <section class="s"><div class="w">
-<div class="no">26 · как работаем</div>
+<div class="no">как работаем</div>
 <h2>Делаем, <span class="g">а не учим</span></h2>
 <div class="two" style="margin-top:16px">
-<div class="was"><div class="lbl">курс</div><div class="who">Вы учитесь и собираете сами</div><p>Смотрите уроки, разбираетесь в инструментах, тратите вечера</p></div>
-<div class="now"><div class="lbl">мы</div><div class="who" style="font:700 clamp(18px,2.2vw,24px)/1.2 Unbounded,sans-serif;margin-bottom:10px">Ставим завод и ведём его</div><p class="muted" style="margin:0">Вы только одобряете. Без вашего «да» ничего не публикуется и никому не пишется</p></div>
+<div class="box"><b class="t" style="color:var(--dim)">курс</b><div style="font:700 clamp(18px,2.2vw,24px)/1.2 Unbounded,sans-serif;margin-bottom:10px">Вы учитесь и собираете сами</div><p>Смотрите уроки, разбираетесь в инструментах, тратите вечера</p></div>
+<div class="box gold"><b class="t">мы</b><div style="font:700 clamp(18px,2.2vw,24px)/1.2 Unbounded,sans-serif;margin-bottom:10px">Ставим завод и ведём его</div><p class="muted" style="margin:0">Вы только одобряете. Без вашего «да» ничего не публикуется и никому не пишется</p></div>
 </div>
 <div class="grid" style="margin-top:16px">
 <div class="box"><div class="num">1</div><b class="t">Разбор и стратегия</b><p>рынок, конкуренты, ваши цифры</p></div>
