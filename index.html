@@ -71,7 +71,7 @@ a{color:inherit}
 .chainx span.hl{border-color:var(--or);color:var(--or2)}
 .chainx i{color:var(--or);font-style:normal;font-weight:700}
 /* команда раньше */
-.roles{display:grid;gap:10px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:26px}
+.roles{display:grid;gap:10px;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:26px}
 @media(max-width:700px){.roles{grid-template-columns:1fr 1fr}}
 .roles div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
 .roles b{display:block;font-size:16px}.roles small{color:var(--muted);font-size:13.5px;line-height:1.3;display:block;margin-top:2px}
@@ -279,6 +279,10 @@ a{color:inherit}
 .sk li{border-left:2px solid #d9ae6b;padding:2px 0 2px 10px;line-height:1.3}
 .sk li b{display:block;font-size:14.5px}
 .sk li span{font-size:13px;color:var(--muted)}
+.pains2{max-width:1080px;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+@media(max-width:760px){.pains2{grid-template-columns:1fr}}
+.pains2 div:last-child{border-bottom:1px solid var(--line)}
+.loopq{margin:14px 0 4px;padding:14px 18px;border-radius:14px;background:var(--dark);color:#fff;font:600 clamp(18px,2vw,22px)/1.3 Oswald,sans-serif;text-transform:uppercase;border-left:4px solid #e0603f}
 /* разноцветная палитра */
 .or,.huge,.cap b.o,.duo2 b,.mini b,.res,.calc .g,.calc h2 span.g,.mods em,.pains em{background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
 .dk .or,.dk .huge,.dk .cap b.o,.dk .duo2 b,.sale b,.scale b i{background:var(--grd);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -320,11 +324,17 @@ a{color:inherit}
 <section class="sec"><div class="w ct">
 <div class="eb">с чем к нам приходят</div>
 <h2>Контент делается,<br>а продаж <span class="or">так и нет</span></h2>
-<div class="pains" style="text-align:left">
+<div class="pains pains2" style="text-align:left">
 <div class="rv"><em>01</em><span><b>«Ищу SMM-щика, бюджет 30-40 тысяч»</b><p>Он закроет выкладку, тексты и монтаж. Это один кусок цепочки из шести</p></span></div>
 <div class="rv"><em>02</em><span><b>«Лайки есть, а продаж нет»</b><p>Контент не ведёт в воронку, и человек уходит после просмотра</p></span></div>
 <div class="rv"><em>03</em><span><b>«Не знаю, о чём писать»</b><p>Темы берутся из головы, а не из того, что уже залетело в нише</p></span></div>
 <div class="rv"><em>04</em><span><b>«Рилс - это кринж, сниматься не хочу»</b><p>Кажется, что без съёмок не будет и контента</p></span></div>
+<div class="rv"><em>05</em><span><b>«Народ идёт, а заявок нет»</b><p>Охват есть, а пути от просмотра до заявки нет</p></span></div>
+<div class="rv"><em>06</em><span><b>«Пишу хуки, а дальше пусть он сам»</b><p>Хук остановил человека, а дальше его никто не ведёт</p></span></div>
+<div class="rv"><em>07</em><span><b>«Сейчас это я и волонтёры на выкладке»</b><p>Всё держится на эксперте, и он выгорает</p></span></div>
+<div class="rv"><em>08</em><span><b>«Визуала много, а делать некому»</b><p>Идеи есть, рук на дизайн и монтаж нет</p></span></div>
+<div class="rv"><em>09</em><span><b>«Четыре маркетолога пришли, и никаких результатов»</b><p>Каждый делал свой кусок, системы не было</p></span></div>
+<div class="rv"><em>10</em><span><b>«Я не технарь, не разберусь»</b><p>Боты, воронки и аналитика кажутся слишком сложными</p></span></div>
 </div>
 </div></section>
 
@@ -341,10 +351,11 @@ a{color:inherit}
 <div>
 <div class="eb">почему нейронки</div>
 <h2>Замкнутый круг, <span class="or">в который упирались все</span></h2>
-<p class="lead">За 6 лет через мои руки прошло больше 1 000 проектов. Мы исследовали рынок вручную, делали упаковку, создавали продукты и упирались в трафик. Если продажи шли, тут же хромал контент, и снова не было трафика</p>
-<div class="loop"><span>рынок вручную</span><i>→</i><span>упаковка</span><i>→</i><span>продукты</span><i>→</i><span class="hl">нет трафика</span><i>→</i><span>продажи</span><i>→</i><span>хромает контент</span><i>↺</i></div>
+<p class="lead">За 7 лет нашего опыта через наши с Ромой руки прошло больше 2&nbsp;500 проектов. С каждым мы исследовали рынок вручную, делали распаковку и упаковку, создавали продукты и всегда упирались в трафик</p>
+<div class="loopq">Если продажи шли, тут же хромал контент, и снова не было трафика</div>
+<div class="loop"><span>рынок вручную</span><i>→</i><span>распаковка и упаковка</span><i>→</i><span>продукты</span><i>→</i><span class="hl">нет трафика</span><i>→</i><span>продажи</span><i>→</i><span>хромает контент</span><i>↺</i></div>
 <p class="lead" style="color:var(--ink);font-weight:600">Держать поток бесплатно, на органике, тяжело всем. Без нейронок почти невозможно</p>
-<p class="small" style="margin-top:8px">Елена Курскова, продюсер и маркетолог, автор программы АСП</p>
+<p class="small" style="margin-top:8px">Елена Курскова и Роман Смирнов</p>
 </div>
 <div class="pains" style="margin-top:0">
 <div class="rv"><em>01</em><span><b>Сначала данные, потом воронка</b><p>Проверяем темы и подачи на рынке до того, как строить. Не угадываем месяцами</p></span></div>
@@ -357,7 +368,7 @@ a{color:inherit}
 <!-- КАК БЫЛО РАНЬШЕ -->
 <section class="sec"><div class="w">
 <div class="eb">как было раньше</div>
-<h2>Нужна была команда <span class="or">из 5+ человек</span></h2>
+<h2>Нужна была команда <span class="or">из 10 человек</span></h2>
 <p class="lead">Каждый делал свой кусок вручную и из своей головы. И каждому зарплата</p>
 <div class="roles">
 <div><b>Аналитик</b><small>искал темы, которые залетают</small></div>
@@ -368,6 +379,7 @@ a{color:inherit}
 <div><b>Монтажёр</b><small>ролики, субтитры, вставки</small></div>
 <div><b>Технарь</b><small>боты, автоответы, рассылки</small></div>
 <div><b>Программист</b><small>калькуляторы и тесты</small></div>
+<div><b>Продажник</b><small>диагностики, дожим, оплаты</small></div>
 <div class="smm"><b>SMM-щик</b><small>выкладка, тексты, монтаж. Один кусок цепочки</small></div>
 </div>
 </div></section>
