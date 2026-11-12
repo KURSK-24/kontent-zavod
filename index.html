@@ -265,6 +265,20 @@ a{color:inherit}
 .loop span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:14.5px;font-weight:500}
 .loop span.hl{border-color:#d6334a;color:#b0263b}
 .loop i{font-style:normal;color:#c98a3a;font-weight:700}
+.sks{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:24px;align-items:start}
+@media(max-width:760px){.sks{grid-template-columns:1fr}}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 18px}
+.sk summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:center;padding:16px 0;font:600 20px Oswald,sans-serif;text-transform:uppercase}
+.sk summary::-webkit-details-marker{display:none}
+.sk summary em{font-style:normal;font-size:22px}
+.sk summary i{margin-left:auto;font:700 14px Inter,sans-serif;font-style:normal;background:var(--orbg);color:#9a6420;border-radius:999px;padding:3px 10px}
+.sk summary:after{content:"+";font:400 24px Inter,sans-serif;color:#c98a3a;transition:transform .2s}
+.sk[open] summary:after{transform:rotate(45deg)}
+.sk ul{list-style:none;margin:0;padding:0 0 16px;display:grid;gap:8px;grid-template-columns:1fr 1fr}
+@media(max-width:560px){.sk ul{grid-template-columns:1fr}}
+.sk li{border-left:2px solid #d9ae6b;padding:2px 0 2px 10px;line-height:1.3}
+.sk li b{display:block;font-size:14.5px}
+.sk li span{font-size:13px;color:var(--muted)}
 /* разноцветная палитра */
 .or,.huge,.cap b.o,.duo2 b,.mini b,.res,.calc .g,.calc h2 span.g,.mods em,.pains em{background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
 .dk .or,.dk .huge,.dk .cap b.o,.dk .duo2 b,.sale b,.scale b i{background:var(--grd);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -318,7 +332,7 @@ a{color:inherit}
 <section class="sec dk"><div class="w ct">
 <h2>Контент - лишь <span class="or">один цех из шести</span></h2>
 <p class="lead">Без аналитики, продуктов, воронок и продаж он даёт просмотры, а не заявки</p>
-<div class="chainx"><span>Аналитика</span><i>→</i><span>Рынок</span><i>→</i><span>Продукты</span><i>→</i><span>Воронки</span><i>→</i><span class="hl">Контент</span><i>→</i><span>Продажи</span></div>
+<div class="chainx"><span>Рынок</span><i>→</i><span>Продукты</span><i>→</i><span>Воронки</span><i>→</i><span class="hl">Контент</span><i>→</i><span>Продажи</span><i>→</i><span>Аналитика</span></div>
 </div></section>
 
 <!-- ПОЧЕМУ НЕЙРОНКИ -->
@@ -374,40 +388,19 @@ a{color:inherit}
 <div class="eb">как устроен завод</div>
 <h2>Шесть цехов -<br>одна цепочка</h2>
 <div class="mods" style="text-align:left">
-<a href="#c1" class="rv"><div class="ic">📊</div><em>01</em><b>Аналитика</b><p>сквозная: что у вас уже работает и где теряются люди</p></a>
-<a href="#c2" class="rv"><div class="ic">🔎</div><em>02</em><b>Рынок</b><p>темы и подачи, которые уже доказали спрос</p></a>
-<a href="#c3" class="rv"><div class="ic">📦</div><em>03</em><b>Продукты</b><p>флагман и мини-продукты, которые к нему ведут</p></a>
-<a href="#c4" class="rv"><div class="ic">🌀</div><em>04</em><b>Воронки</b><p>лид-магниты, бот и автоматизация</p></a>
-<a href="#c5" class="rv"><div class="ic">🎬</div><em>05</em><b>Контент</b><p>каждый день во все соцсети</p></a>
-<a href="#c6" class="rv"><div class="ic">💰</div><em>06</em><b>Продажи</b><p>доходимость до оплаты по каждому шагу</p></a>
-</div>
-</div></section>
-
-<!-- ЦЕХ 1 АНАЛИТИКА -->
-<section class="sec wh" id="c1"><div class="w">
-<div class="ceh">
-<div>
-<div class="num-tag"><em>1</em><span>цех · сквозная аналитика</span></div>
-<h2>Сначала цифры, <span class="or">а не ощущения</span></h2>
-<p class="goal"><b>Цель:</b> увидеть, что у вас уже работает и где теряются люди</p>
-<div class="chips"><span>разбор всех ваших соцсетей</span><span>сквозная аналитика за нужный период</span><span>что продаётся, а что нет</span><span>точки входа и точки слива</span></div>
-</div>
-<div class="resp" style="margin-top:0"><span><b>результат</b><p>Видно, от чего отталкиваемся: ваши реальные цифры до старта</p></span></div>
-</div>
-<div class="case" style="margin-top:28px">
-<div>
-<p class="quote">«Последний месяц Instagram* очень плохо работает»</p>
-<p class="small">ощущение клиента</p>
-<div class="duo2" style="margin-top:14px"><div class="card"><b>+38%</b><span>просмотров в день: было 11 540, стало 15 877</span></div><div class="card"><b>+78%</b><span>реакций в день: было 296, стало 527</span></div></div>
-</div>
-<figure style="margin:0"><img loading="lazy" src="img/a-panel-7d.jpg" alt="Панель Instagram: 111 139 просмотров за 7 дней" style="border-radius:14px;border:1px solid var(--line)"><div class="cap"><b>111 139 просмотров за 7 дней ÷ 7 = 15 877 в день</b>до старта 11 540 в день, панель 20.09-05.10</div></figure>
+<a href="#c1" class="rv"><div class="ic">🔎</div><em>01</em><b>Аналитика рынка</b><p>темы и подачи, которые уже доказали спрос</p></a>
+<a href="#c2" class="rv"><div class="ic">📦</div><em>02</em><b>Продукты</b><p>флагманы и мини-продукты, которые к ним ведут</p></a>
+<a href="#c3" class="rv"><div class="ic">🌀</div><em>03</em><b>Воронки</b><p>лид-магниты, путь от креатива до оплаты, автоматизация</p></a>
+<a href="#c4" class="rv"><div class="ic">🎬</div><em>04</em><b>Контент</b><p>минимум в 3-5 соцсетях каждый день</p></a>
+<a href="#c5" class="rv"><div class="ic">💰</div><em>05</em><b>Продажи</b><p>доходимость до оплаты по каждому шагу</p></a>
+<a href="#c6" class="rv"><div class="ic">📊</div><em>06</em><b>Сквозная аналитика</b><p>что растёт, что просело и что делаем дальше</p></a>
 </div>
 </div></section>
 
 <!-- ЦЕХ 1 -->
-<section class="sec" id="c2"><div class="w ceh">
+<section class="sec wh" id="c1"><div class="w ceh">
 <div>
-<div class="num-tag"><em>2</em><span>цех · аналитика рынка</span></div>
+<div class="num-tag"><em>1</em><span>цех · аналитика рынка</span></div>
 <h2>Стратегия за часы, <span class="or">а не за месяцы</span></h2>
 <p class="goal"><b>Цель:</b> найти темы и подачи, которые уже доказали спрос в вашей нише</p>
 <div class="chips"><span>разбор ваших соцсетей</span><span>сотни постов конкурентов</span><span>Telegram-каналы конкурентов</span><span>банк залетевших заголовков</span><span>зарубежный рынок</span><span>стратегия к первой встрече</span></div>
@@ -425,9 +418,9 @@ a{color:inherit}
 </div></section>
 
 <!-- ЦЕХ 2 -->
-<section class="sec wh" id="c3"><div class="w ceh">
+<section class="sec" id="c2"><div class="w ceh">
 <div>
-<div class="num-tag"><em>3</em><span>цех · продукты: флагман и мини-продукты</span></div>
+<div class="num-tag"><em>2</em><span>цех · продукты: флагманы и мини-продукты</span></div>
 <h2>Линейка <span class="or">на стыке вашего и рынка</span></h2>
 <p class="goal"><b>Цель:</b> линейка, где каждый мини-продукт ведёт к флагману</p>
 <div class="chips"><span>распаковка эксперта</span><span>офферы</span><span>цены по рынку</span><span>страницы продуктов до кнопки оплаты</span></div>
@@ -444,10 +437,10 @@ a{color:inherit}
 </div></section>
 
 <!-- ЦЕХ 3 -->
-<section class="sec" id="c4"><div class="w">
+<section class="sec wh" id="c3"><div class="w">
 <div class="ceh">
 <div>
-<div class="num-tag"><em>4</em><span>цех · воронки: лид-магниты</span></div>
+<div class="num-tag"><em>3</em><span>цех · воронки: лид-магниты</span></div>
 <h2>Лид-магнит <span class="or">за вечер</span></h2>
 <p class="goal"><b>Цель:</b> дать человеку личный результат и привести к продукту</p>
 <div class="chips"><span>калькуляторы по дате рождения</span><span>тесты и диагностики</span><span>расчёты по анкете</span><span>несколько под каждый продукт</span><span>Метрика на каждом шаге</span></div>
@@ -479,8 +472,8 @@ a{color:inherit}
 <section class="sec dk" id="c4b"><div class="w">
 <div class="ceh">
 <div>
-<div class="num-tag"><em>4</em><span>цех · воронки: путь до оплаты</span></div>
-<h2>От ролика до оплаты <span class="or">без эксперта</span></h2>
+<div class="num-tag"><em>3</em><span>цех · воронки: путь от креатива до оплаты</span></div>
+<h2>От креатива до оплаты <span class="or">без эксперта</span></h2>
 <p class="goal"><b>Цель:</b> провести человека по шагам до покупки</p>
 <div class="chips"><span>кодовое слово и автоответ</span><span>бот с проверкой подписки</span><span>прогрев и дожим</span><span>лендинги и оплата</span></div>
 <div class="resp"><span><b>результат</b><p>Из директа в бот переходят 87%. Оплаты приходят на автомате</p></span></div>
@@ -515,7 +508,7 @@ a{color:inherit}
 <section class="sec wh"><div class="w">
 <div class="ceh">
 <div>
-<div class="num-tag"><em>4</em><span>цех · воронки: автоматизация</span></div>
+<div class="num-tag"><em>3</em><span>цех · воронки: автоматизация процесса</span></div>
 <h2>Всё на автомате <span class="or">и в вашем Telegram</span></h2>
 <p class="lead">Автоответы, бот, прогрев и выкладка по расписанию. Задачи заводу даёте голосом с телефона, как сотруднику</p>
 <div class="chips" style="margin-top:14px"><span>автоответ на кодовое слово</span><span>бот с проверкой подписки</span><span>прогрев и дожим по расписанию</span><span>выкладка в 8 соцсетей</span><span>план дня и отчёт в Telegram</span></div>
@@ -530,11 +523,11 @@ a{color:inherit}
 </div></section>
 
 <!-- ЦЕХ 5 -->
-<section class="sec" id="c5"><div class="w">
+<section class="sec" id="c4"><div class="w">
 <div class="ceh">
 <div>
-<div class="num-tag"><em>5</em><span>цех · контент</span></div>
-<h2>Каждый день <span class="or">во все соцсети</span></h2>
+<div class="num-tag"><em>4</em><span>цех · контент</span></div>
+<h2>Каждый день <span class="or">минимум в 3-5 соцсетях</span></h2>
 <p class="goal"><b>Цель:</b> контент вашим голосом по темам, которые уже залетели</p>
 <div class="resp"><span><b>результат</b><p>10 каруселей за день вместе с ресёрчем рынка. 23 формата постов и 9 структур копирайтинга</p></span></div>
 </div>
@@ -554,11 +547,28 @@ a{color:inherit}
 </div>
 </div></section>
 
-<!-- ЦЕХ 6 ПРОДАЖИ -->
-<section class="sec wh" id="c6"><div class="w">
+<!-- SEO -->
+<section class="sec dk"><div class="w">
 <div class="ceh">
 <div>
-<div class="num-tag"><em>6</em><span>цех · продажи</span></div>
+<div class="num-tag"><em>4</em><span>цех · контент: SEO</span></div>
+<h2>Статьи в поиске <span class="or">за вечер, а не за годы</span></h2>
+<p class="goal"><b>Цель:</b> люди находят эксперта сами, через Яндекс и Дзен, и каждая статья ведёт в бот</p>
+<div class="chips"><span>замер спроса</span><span>конвейер статей</span><span>индексация</span><span>статьи на Дзен</span><span>VC, TenChat, Хабр</span><span>кодовое слово в боте</span></div>
+</div>
+<div>
+<div class="duo2"><div class="card"><b>до 40</b><span>статей за вечер</span></div><div class="card"><b style="white-space:nowrap;font-size:clamp(28px,3.4vw,40px)">600-2&nbsp;200</b><span>статей у лидеров ниши астрологии. Копили годами</span></div></div>
+<div class="note"><span>Пишем десятками, а выкладываем ровным темпом 1-2 в день: так сайт растёт в поиске и не попадает под фильтр</span></div>
+<p class="small" style="margin-top:8px">Лидеры ниши: анализ поиска для астролога, 28.09.2026</p>
+</div>
+</div>
+</div></section>
+
+<!-- ЦЕХ 6 ПРОДАЖИ -->
+<section class="sec wh" id="c5"><div class="w">
+<div class="ceh">
+<div>
+<div class="num-tag"><em>5</em><span>цех · продажи</span></div>
 <h2>Видно, где человек <span class="or">покупает</span></h2>
 <p class="goal"><b>Цель:</b> довести до оплаты и усиливать шаги, которые продают</p>
 <div class="chips"><span>Метрика по каждому шагу воронки</span><span>отчёт через 2 недели и через месяц</span></div>
@@ -570,6 +580,27 @@ a{color:inherit}
 <div class="sale"><span>Продажи с одного поста<br>4 PDF-прогноза и 1 личный разбор</span><b>22 950 ₽</b></div>
 </div>
 
+</div>
+</div></section>
+
+<!-- ЦЕХ 1 АНАЛИТИКА -->
+<section class="sec" id="c6"><div class="w">
+<div class="ceh">
+<div>
+<div class="num-tag"><em>6</em><span>цех · сквозная аналитика</span></div>
+<h2>Цифры <span class="or">вместо ощущений</span></h2>
+<p class="goal"><b>Цель:</b> видеть всю цепочку от охвата до оплаты и усиливать то, что работает</p>
+<div class="chips"><span>все ваши соцсети в одном отчёте</span><span>сквозная аналитика за нужный период</span><span>что продаётся, а что нет</span><span>точки входа и точки слива</span><span>отчёт через 2 недели и через месяц</span></div>
+</div>
+<div class="resp" style="margin-top:0"><span><b>результат</b><p>Цифры вместо ощущений: что растёт, что просело и что делаем дальше</p></span></div>
+</div>
+<div class="case" style="margin-top:28px">
+<div>
+<p class="quote">«Последний месяц Instagram* очень плохо работает»</p>
+<p class="small">ощущение клиента</p>
+<div class="duo2" style="margin-top:14px"><div class="card"><b>+38%</b><span>просмотров в день: было 11 540, стало 15 877</span></div><div class="card"><b>+78%</b><span>реакций в день: было 296, стало 527</span></div></div>
+</div>
+<figure style="margin:0"><img loading="lazy" src="img/a-panel-7d.jpg" alt="Панель Instagram: 111 139 просмотров за 7 дней" style="border-radius:14px;border:1px solid var(--line)"><div class="cap"><b>111 139 просмотров за 7 дней ÷ 7 = 15 877 в день</b>до старта 11 540 в день, панель 20.09-05.10</div></figure>
 </div>
 </div></section>
 
@@ -604,7 +635,22 @@ a{color:inherit}
 <div><b>30 290</b><span>текстов в одном калькуляторе</span></div>
 <div><b>8</b><span>соцсетей, куда выкладка идёт по расписанию</span></div>
 </div>
-<div class="note" style="text-align:left;max-width:760px;margin-left:auto;margin-right:auto"><span>Статьи пишем десятками, а выкладываем 1-2 в день: так сайт растёт в поиске, а не попадает под фильтр</span></div>
+
+</div></section>
+
+<!-- НАВЫКИ -->
+<section class="sec wh"><div class="w">
+<div class="eb">что внутри завода</div>
+<h2>241 навык, <span class="or">и каждый для дела</span></h2>
+<p class="lead">Нажмите на цех, чтобы раскрыть список</p>
+<div class="sks">
+<details class="sk"><summary><em>🔎</em>Аналитика рынка<i>12</i></summary><ul><li><b>Глубокий ресёрч</b><span>исследование ниши по 12 шагам с источниками</span></li><li><b>Ресёрч ниши</b><span>рынок, конкуренты, цены, спрос</span></li><li><b>Исследование ЦА</b><span>сегменты аудитории и её живой язык</span></li><li><b>Сбор постов</b><span>архив Instagram* и Telegram своих и конкурентов</span></li><li><b>Радар конкурентов</b><span>что выходит у конкурентов каждый день</span></li><li><b>Радар каруселей</b><span>какие карусели залетели в нише</span></li><li><b>Радар Threads</b><span>залетевшие ветки и темы</span></li><li><b>Поиск виралок</b><span>ролики и карусели с охватами по теме</span></li><li><b>Аналитика архива</b><span>что зашло, что нет и почему</span></li><li><b>Распознавалка постов</b><span>текст с обложек и экранов</span></li><li><b>Свёртка конкурентов</b><span>смыслы, воронки и продукты конкурента</span></li><li><b>Анализ тона</b><span>как звучит автор и аудитория</span></li></ul></details>
+<details class="sk"><summary><em>📦</em>Продукты<i>6</i></summary><ul><li><b>Распаковка эксперта</b><span>смыслы, метод, кейсы, голос</span></li><li><b>Линейка и оффер</b><span>флагман, мини-продукты, цены по рынку</span></li><li><b>Запуск продукта</b><span>путь от идеи до удержания</span></li><li><b>Совет по продажам</b><span>оффер, цена, переговоры по методам мастеров</span></li><li><b>Карта возражений</b><span>что мешает купить и как ответить</span></li><li><b>Упаковка кейсов</b><span>кейс клиента в продающую историю</span></li></ul></details>
+<details class="sk"><summary><em>🌀</em>Воронки<i>10</i></summary><ul><li><b>Воронка в Telegram</b><span>бот, прогрев, дожим по шагам</span></li><li><b>Кодовое слово</b><span>автоответ в директ и переход в бот</span></li><li><b>Сообщения бота</b><span>тексты прогрева и напоминаний</span></li><li><b>Email-воронка</b><span>цепочка писем</span></li><li><b>Лендинги</b><span>страница продукта от смысла до кнопки оплаты</span></li><li><b>Калькуляторы и тесты</b><span>интерактивные лид-магниты за вечер</span></li><li><b>26 проверок страницы</b><span>почему страница не продаёт</span></li><li><b>Юрист</b><span>оферта, согласия и проверка сайта на нарушения</span></li><li><b>Автопостинг</b><span>выкладка в соцсети по расписанию</span></li><li><b>Конвейер агентов</b><span>задача проходит 4 агента с проверкой</span></li></ul></details>
+<details class="sk"><summary><em>🎬</em>Контент<i>18</i></summary><ul><li><b>Посты</b><span>Telegram и LinkedIn в вашем голосе</span></li><li><b>Карусели</b><span>слайд за слайдом в любом стиле</span></li><li><b>Карусели с рынка</b><span>залетевшая карусель конкурента под ваш бренд</span></li><li><b>Threads и X</b><span>короткие посты и ветки</span></li><li><b>Статьи</b><span>длинные тексты для поиска и блога</span></li><li><b>Хуки и заголовки</b><span>10 вариантов первой строки на каждую единицу</span></li><li><b>Антиклише</b><span>убирает нейросетевые обороты</span></li><li><b>Контент-план</b><span>сетка на неделю или месяц</span></li><li><b>Ньюсджекинг</b><span>пост на свежую новость</span></li><li><b>Сторителлинг</b><span>история, которая прогревает</span></li><li><b>Продающий пост</b><span>9 блоков продажи</span></li><li><b>Говорящие ролики</b><span>монтаж вашей записи: паузы, вставки, субтитры</span></li><li><b>Ролики без лица</b><span>монтаж на белом листе и ленивые рилс</span></li><li><b>Цифровой двойник</b><span>ролик вашим образом без съёмки</span></li><li><b>Мультики</b><span>6 форматов мультфильмов</span></li><li><b>Видеостудия</b><span>рендер роликов по шаблонам</span></li><li><b>Ремейк вирального YouTube</b><span>чужой залетевший ролик в вашем голосе</span></li><li><b>Брендкит</b><span>цвета, шрифты, визуал бренда</span></li></ul></details>
+<details class="sk"><summary><em>📈</em>SEO и площадки<i>4</i></summary><ul><li><b>SEO-движок</b><span>статьи в Яндекс: спрос, конвейер, индексация, замеры</span></li><li><b>Дзен</b><span>статьи под правила ленты и дочитывания</span></li><li><b>VC, TenChat, Хабр</b><span>статья под каждую площадку</span></li><li><b>Перевод и локализация</b><span>контент для зарубежного рынка</span></li></ul></details>
+<details class="sk"><summary><em>🛠</em>Вспомогательные<i>191</i></summary><ul><li><b>Дизайн и вёрстка</b><span>сайты, лендинги, мобильные экраны</span></li><li><b>Анимация</b><span>движение на страницах и в роликах</span></li><li><b>Видеодвижок</b><span>сборка роликов из кода</span></li><li><b>Генерация картинок и видео</b><span>фото, оживление, клипы</span></li><li><b>Проверка сайтов</b><span>скорость, доступность, поиск</span></li><li><b>Документы</b><span>PDF, презентации, таблицы</span></li></ul></details>
+</div>
 </div></section>
 
 <!-- ЭКСПЕРТ -->
