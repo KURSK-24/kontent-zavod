@@ -6,318 +6,326 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Контент-завод на нейронках</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Golos+Text:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-:root{--bg:#0e090a;--card:#1e1417;--card2:#261a1e;--line:#3a2a2f;--fg:#f4ece4;--muted:#b3a39c;--dim:#7d6c66;--red:#e0313f;--gold:#d9ae6b;--gold2:#f2d6a2;--paper:#fbf6ef;--ink:#24171a;--ease:cubic-bezier(.23,1,.32,1)}
+:root{--dark:#141211;--dark2:#1f1c1a;--light:#f0ede8;--card:#fff;--ink:#1b1916;--muted:#6f6a63;--dmuted:#a8a29a;--or:#e2552b;--or2:#ff7d4a;--orbg:#fbe6dc;--line:#e3ddd4;--dline:#2f2b28;--ease:cubic-bezier(.23,1,.32,1)}
 *{box-sizing:border-box}
-html{scroll-snap-type:y proximity;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.5 "Golos Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-.s{min-height:100vh;min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:48px 0;position:relative;overflow:hidden}
-.s+.s{border-top:1px solid #241a1d}
-.w{width:100%;max-width:1160px;margin:0 auto;padding:0 16px;position:relative}
-h1,h2,h3{font-family:Unbounded,system-ui,sans-serif;line-height:1.08;margin:0 0 16px;text-wrap:balance}
-h1{font-size:clamp(32px,6.6vw,78px);font-weight:800;letter-spacing:-.01em}
-h2{font-size:clamp(26px,4.4vw,50px);font-weight:800;letter-spacing:-.01em}
-h3{font-size:clamp(16px,2vw,20px);font-weight:700;color:var(--gold2)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--light);color:var(--ink);font:400 16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.w{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+.nw{max-width:860px}
+sec,section{display:block}
+.sec{padding:clamp(56px,9vw,104px) 0;position:relative}
+.dk{background:var(--dark);color:#f3efe9}
+.wh{background:#faf8f5}
+h1,h2,h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-weight:700;line-height:1.02;margin:0 0 16px;letter-spacing:.005em;text-wrap:balance}
+h1{font-size:clamp(40px,7.4vw,92px)}
+h2{font-size:clamp(32px,4.8vw,58px)}
+h3{font-size:clamp(20px,2.2vw,26px);font-weight:600;line-height:1.1}
+.ct{text-align:center}.ct h2,.ct .lead{margin-left:auto;margin-right:auto}
 p{margin:0 0 10px;text-wrap:pretty}
-.no{font:700 13px/1 Unbounded,sans-serif;color:var(--gold);letter-spacing:.08em;margin-bottom:18px;display:flex;gap:10px;align-items:center}
-.no:before{content:"";width:28px;height:1px;background:var(--gold)}
-.g{background:linear-gradient(95deg,var(--gold2),var(--gold) 50%,#e8604f);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:clamp(17px,2.1vw,22px);color:var(--muted);max-width:780px}
-.muted{color:var(--muted)}.small{font-size:14px;color:var(--muted)}
-.two{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
-.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-.box p{color:var(--muted);margin:0}
-.box b.t{display:block;font-family:Unbounded,sans-serif;font-size:15px;font-weight:700;color:var(--gold2);margin-bottom:8px}
-.gold{border:1.5px solid var(--gold)}
-.num{font:800 clamp(30px,5vw,56px)/1 Unbounded,sans-serif;color:var(--gold2);margin-bottom:8px;letter-spacing:-.02em}
-img{max-width:100%;display:block;border-radius:16px}
-a{color:var(--gold2)}
-.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
-.flow span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:15px}
-.flow i{color:var(--gold);font-style:normal}
-.cap{font-size:13.5px;color:var(--muted);line-height:1.35;margin-top:8px}
-.cap b{display:block;color:var(--gold2);font:700 13px Unbounded,sans-serif;margin-bottom:2px}
-/* обложка */
-.hero{background:radial-gradient(90% 70% at 85% 10%,#3a0f18 0%,transparent 60%),radial-gradient(60% 50% at 0% 100%,#2a1a0c 0%,transparent 60%),var(--bg)}
-.hero h1 s{text-decoration:none;position:relative;color:#8f7d76}
-.hero h1 s:after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.09em;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .9s .5s var(--ease)}
-.hero.in h1 s:after{transform:scaleX(1)}
-.duo{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px}
-.duo div{display:flex;gap:12px;align-items:center}
-.duo img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
-/* облако мыслей */
-.cloudwrap{position:relative;margin-top:8px;border-radius:22px;overflow:hidden}
-.cloudwrap>img{width:100%;height:min(70vh,640px);object-fit:cover;object-position:62% 40%;border-radius:22px}
-.bub{position:absolute;z-index:2;color:#fff;background:rgba(18,10,12,.34);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-radius:999px;padding:8px 16px;font-size:15px;line-height:1.25;font-weight:500;max-width:min(260px,24vw);text-shadow:0 1px 6px rgba(0,0,0,.5);opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.bub.big{font-size:17px;font-weight:600;border-color:rgba(242,214,162,.55)}
-.in .bub{opacity:1;transform:rotate(var(--r,0deg))}
-.in .bub{animation:fl 7s ease-in-out infinite alternate}
-@keyframes fl{to{translate:0 -6px}}
-@media(max-width:800px){.cloudwrap>img{height:320px}.bubs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.bub{position:static;max-width:none;font-size:14px;padding:7px 13px;opacity:1;transform:none;background:var(--card2);backdrop-filter:none;animation:none}}
-/* раньше */
-.was-tag{display:inline-block;font:800 clamp(14px,1.6vw,18px)/1 Unbounded,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#1a0f10;background:var(--gold);padding:9px 16px;border-radius:999px;margin-bottom:18px}
-.team{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));margin-top:18px}
-.team div{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--card)}
-.team b{display:block;font:700 14px Unbounded,sans-serif;margin-bottom:4px}
-.team small{color:var(--muted);font-size:13px;line-height:1.3;display:block}
-.team .smm{border:1.5px solid var(--red);background:#2a1215;animation:blink 1.6s ease-in-out infinite}
-.team .smm b{color:#ff8b8b}
-@keyframes blink{0%,100%{box-shadow:0 0 0 0 rgba(224,49,63,0)}50%{box-shadow:0 0 0 6px rgba(224,49,63,.35),0 0 28px rgba(224,49,63,.45)}}
-/* шаги-пример */
-.steps3{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px;align-items:stretch}
-@media(max-width:860px){.steps3{grid-template-columns:1fr}}
-.steps3 .box{position:relative}
-.steps3 .k{font:700 11px Unbounded,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
-.steps3 .eq{font:800 22px Unbounded,sans-serif;color:var(--gold);position:absolute;right:-17px;top:50%;transform:translateY(-50%);z-index:2}
-@media(max-width:860px){.steps3 .eq{display:none}}
-/* обложки рынка */
-.covers{display:grid;gap:14px;grid-template-columns:repeat(4,minmax(0,1fr))}
-@media(max-width:760px){.covers{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.covers figure{margin:0}
-.covers{max-width:860px}
-.covers img{aspect-ratio:4/5;object-fit:cover;width:100%;max-height:26vh;border:1px solid var(--line);border-radius:12px;background:#fff}
-.x{font:800 clamp(22px,2.6vw,30px)/1 Unbounded,sans-serif;color:var(--gold2);margin-top:10px}
-.x small{font:500 13px "Golos Text",sans-serif;color:var(--muted);display:block;margin-top:4px;line-height:1.3}
-.niche{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));margin-top:16px}
-.niche .box{padding:16px}
-.niche .tag{display:inline-block;font:700 11px Unbounded,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.niche p{color:var(--fg);font-size:15.5px}
-/* лестница */
-.ladder{display:grid;gap:12px;margin-top:18px}
-.ladder .lv{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--card)}
-.ladder .lv:first-child{border-color:var(--gold);background:linear-gradient(160deg,#2a1c15,#1e1417 60%)}
-.ladder b{font:700 15px Unbounded,sans-serif;color:var(--gold2);display:block;margin-bottom:8px}
-.pills{display:flex;flex-wrap:wrap;gap:7px}
-.pills span{border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:6px 13px;font-size:15px}
-/* телефоны */
-.phones{display:grid;gap:16px;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));align-items:start}
-@media(max-width:760px){.phones{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.phones img{width:auto;max-width:100%;height:min(46vh,420px);aspect-ratio:9/16;object-fit:cover;object-position:top;border:1px solid var(--line);margin:0 auto}
-.phones figure{text-align:center}
-.lm img{height:min(38vh,360px)}
-@media(max-width:760px){.phones img{height:300px}}
-/* воронка */
-.fw{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;align-items:flex-start}
-.fw figure{flex:0 0 auto;width:calc(min(50vh,400px)*.4625);margin:0;scroll-snap-align:start}
-.fw img{width:100%;height:min(50vh,400px);object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:14px}
-.fw .ar{flex:0 0 34px;align-self:center;margin-top:calc(min(50vh,400px)*-.18);text-align:center;color:var(--gold);font:800 22px Unbounded,sans-serif}
-.fw figcaption{min-height:58px}
-@media(max-width:760px){.fw figure{width:170px}.fw img{height:368px}.fw .ar{margin-top:-60px}}
-.swipe{font-size:13px;color:var(--gold);margin:6px 0 8px}
-/* лента цехов */
-.belt{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:22px}
-.belt span{font:700 11.5px Unbounded,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
-.belt span.on{background:var(--gold);color:#1a0f10;border-color:var(--gold)}
-.belt i{width:14px;height:1px;background:var(--line)}
-.ceh{display:grid;gap:22px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:start}
-@media(max-width:860px){.ceh{grid-template-columns:1fr}}
-.old{margin-top:14px;font-size:15px;color:var(--dim)}
-.old b{color:var(--muted);font-weight:600}
-.agents{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media(max-width:560px){.agents{grid-template-columns:1fr}}
-.agents div{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:12px 14px;font-size:15px}
-.agents div b{display:block;color:var(--gold2);font-weight:600}
-.agents div small{color:var(--muted);font-size:13.5px}
-.verbs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
-.verbs span{font:700 clamp(14px,1.7vw,18px) Unbounded,sans-serif;padding:10px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
-.verbs span:nth-child(n+3){border-color:#6b5532}.verbs span:last-child{background:var(--gold);color:#1a0f10;border-color:var(--gold)}
-/* PDF против интерактива */
-.vs{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:16px}
-@media(max-width:700px){.vs{grid-template-columns:1fr}}
-.vs ul{margin:0;padding-left:18px;color:var(--muted)}.vs li{margin-bottom:6px}
-.huge{white-space:nowrap;font:800 clamp(56px,9vw,128px)/.9 Unbounded,sans-serif;letter-spacing:-.04em}
-/* хук */
-.chain{counter-reset:c;display:grid;gap:8px;margin-top:16px}
-.chain div{counter-increment:c;display:flex;gap:14px;align-items:flex-start;padding:11px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
-.chain div:before{content:counter(c);font:800 14px Unbounded,sans-serif;color:#1a0f10;background:var(--gold);border-radius:50%;min-width:28px;height:28px;display:grid;place-items:center}
-.chain div.hk{border-color:var(--red);background:#2a1215}
-.chain div.hk:before{background:var(--red);color:#fff}
-.q{font:700 clamp(20px,2.8vw,30px)/1.25 Unbounded,sans-serif;margin-top:20px;color:var(--fg)}
-.quotes{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 4px}
-.quotes span{background:var(--paper);color:var(--ink);border-radius:16px;padding:9px 15px;font-weight:600;font-size:15.5px}
-/* неделя */
-.week{display:grid;gap:10px;margin-top:18px;counter-reset:w}
-.week div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
-.week div:before{counter-increment:w;content:counter(w);font:800 18px Unbounded,sans-serif;color:var(--gold2)}
-.week b{font-weight:600}.week small{color:var(--muted);font-size:14px;display:block}
-.week .hl{border-color:var(--gold)}
-/* навигация */
-#bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--red));z-index:20;width:0;transition:width .3s var(--ease)}
-#cnt{position:fixed;right:12px;bottom:12px;z-index:20;font:700 12px Unbounded,sans-serif;color:var(--muted);background:rgba(14,9,10,.88);border:1px solid var(--line);border-radius:999px;padding:7px 12px;display:flex;gap:10px;align-items:center;backdrop-filter:blur(6px)}
-#cnt button{all:unset;cursor:pointer;color:var(--gold2);font-size:17px;padding:0 5px}
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.eb{font:700 12px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--or);margin-bottom:14px}
+.or{color:var(--or)}
+.lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:720px}
+.dk .lead{color:var(--dmuted)}
+.small{font-size:13.5px;color:var(--muted);line-height:1.4}
+.dk .small{color:var(--dmuted)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.btn{display:inline-block;background:var(--or);color:#fff;text-decoration:none;font:600 16px Inter,sans-serif;padding:15px 28px;border-radius:12px;box-shadow:0 10px 30px -10px rgba(226,85,43,.7);transition:transform .2s var(--ease),background .2s}
+.btn:hover{background:#cc4721;transform:translateY(-2px)}
+.pillx{display:inline-flex;gap:8px;align-items:center;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--dline);border-radius:999px;padding:8px 14px;color:#e9e3dc}
+.pillx:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--or)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.dk .card{background:var(--dark2);border-color:var(--dline)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .in .rv{opacity:1;transform:none}
-.in .rv.d1{transition-delay:.12s}.in .rv.d2{transition-delay:.24s}.in .rv.d3{transition-delay:.36s}
-@media(prefers-reduced-motion:reduce){.rv,.bub{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}.team .smm{animation:none}.hero h1 s:after{transform:scaleX(1);transition:none}}
-/* калькулятор */
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--or);z-index:30;width:0}
+/* hero */
+.hero{min-height:92vh;min-height:92svh;display:flex;align-items:center;background:radial-gradient(60% 55% at 50% 35%,rgba(226,85,43,.22),transparent 70%),var(--dark);overflow:hidden}
+.hero .w{text-align:center}
+.hero h1{margin:22px auto 18px;max-width:980px}
+.hero .lead{margin:0 auto 26px}
+.duo{display:flex;justify-content:center;gap:12px 26px;flex-wrap:wrap;margin-top:30px}
+.duo div{display:flex;gap:10px;align-items:center;text-align:left}
+.duo img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid var(--or)}
+.duo b{display:block;font-size:15px}.duo span{font-size:13px;color:var(--dmuted)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--dline)}
+.strip div{padding:26px 14px;text-align:center;border-right:1px solid var(--dline)}
+.strip div:last-child{border:0}
+.strip b{display:block;font:700 clamp(34px,4.6vw,56px)/1 Oswald,sans-serif;color:#fff}
+.strip b i{font-style:normal;color:var(--or)}
+.strip span{display:block;font-size:13px;color:var(--dmuted);margin-top:6px;line-height:1.3}
+@media(max-width:700px){.strip{grid-template-columns:1fr 1fr}.strip div:nth-child(2){border-right:0}.strip div:nth-child(-n+2){border-bottom:1px solid var(--dline)}}
+/* боли */
+.pains{max-width:820px;margin:34px auto 0}
+.pains div{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.pains div:last-child{border:0}
+.pains em{font:700 50px/1 Oswald,sans-serif;color:var(--or);font-style:normal}
+.pains b{display:block;font-size:18px;margin-bottom:4px}
+.pains p{margin:0;color:var(--muted)}
+@media(max-width:600px){.pains div{grid-template-columns:52px 1fr;gap:10px}.pains em{font-size:38px}}
+/* цепочка */
+.chainx{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:center;margin-top:26px}
+.chainx span{font:600 clamp(16px,2vw,22px) Oswald,sans-serif;text-transform:uppercase;border:1px solid var(--dline);background:var(--dark2);border-radius:10px;padding:10px 16px}
+.chainx span.hl{border-color:var(--or);color:var(--or2)}
+.chainx i{color:var(--or);font-style:normal;font-weight:700}
+/* команда раньше */
+.roles{display:grid;gap:10px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:26px}
+@media(max-width:700px){.roles{grid-template-columns:1fr 1fr}}
+.roles div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.roles b{display:block;font-size:16px}.roles small{color:var(--muted);font-size:13.5px;line-height:1.3;display:block;margin-top:2px}
+.roles .smm{border:1.5px solid var(--or);background:var(--orbg)}
+/* три карточки и 6 цехов */
+.cards3{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px}
+@media(max-width:800px){.cards3{grid-template-columns:1fr}}
+.cards3 .card b{display:block;font:600 22px/1.1 Oswald,sans-serif;text-transform:uppercase;margin-bottom:8px}
+.cards3 .card.hl{border-color:var(--or)}
+.mods{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px}
+@media(max-width:860px){.mods{grid-template-columns:1fr 1fr;gap:10px}}
+.mods a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative;transition:transform .2s var(--ease),border-color .2s}
+.mods a:hover{transform:translateY(-3px);border-color:var(--or)}
+.mods .ic{width:40px;height:40px;border-radius:10px;background:var(--orbg);display:grid;place-items:center;font-size:20px;margin-bottom:12px}
+.mods em{position:absolute;right:18px;top:16px;font:700 30px/1 Oswald,sans-serif;color:var(--or);font-style:normal}
+.mods b{display:block;font-size:17px;margin-bottom:4px}
+.mods p{margin:0;font-size:14px;color:var(--muted);line-height:1.4}
+@media(max-width:560px){.mods a{padding:14px}.mods em{font-size:22px;right:12px;top:12px}.mods .ic{width:34px;height:34px;font-size:17px}.mods b{font-size:15px}.mods p{font-size:13px}}
+/* цех */
+.ceh{display:grid;gap:28px 40px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start}
+@media(max-width:900px){.ceh{grid-template-columns:1fr;gap:20px}}
+.num-tag{display:inline-flex;gap:10px;align-items:center;margin-bottom:12px}
+.num-tag em{width:38px;height:38px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font:700 17px Oswald,sans-serif;font-style:normal}
+.num-tag span{font:600 12.5px Inter,sans-serif;background:var(--orbg);color:#b8421f;border-radius:999px;padding:5px 11px}
+.dk .num-tag span{background:#3a2219;color:var(--or2)}
+.goal{font-size:17px;margin:0 0 16px}
+.goal b{color:var(--or)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:500}
+.dk .chips span{background:var(--dark2);border-color:var(--dline)}
+.resp{margin-top:18px;display:flex;gap:12px;align-items:flex-start;background:var(--dark);color:#f3efe9;border-radius:14px;padding:16px 18px}
+.dk .resp{background:#2a1a14;border:1px solid #5a2b1b}
+.resp:before{content:"✓";flex:0 0 26px;height:26px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.resp b{display:block;font:700 11px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--or2);margin-bottom:3px}
+.resp p{margin:0;font-weight:500;line-height:1.4}
+.shots{display:grid;gap:12px;grid-template-columns:repeat(var(--n,2),minmax(0,1fr))}
+@media(max-width:600px){.shots{grid-template-columns:1fr 1fr;gap:8px}}
+.shots figure{margin:0}
+.shots img{width:100%;border-radius:12px;border:1px solid var(--line);background:#fff;object-fit:cover;object-position:top;aspect-ratio:var(--ar,4/5)}
+.dk .shots img{border-color:var(--dline)}
+.cap{font-size:13px;color:var(--muted);line-height:1.35;margin-top:7px}
+.dk .cap{color:var(--dmuted)}
+.cap b{display:block;color:var(--ink);font-size:14px}
+.dk .cap b{color:#fff}
+.cap b.o{color:var(--or);font:700 20px/1.1 Oswald,sans-serif}
+.ladder{display:grid;gap:10px;margin-top:4px}
+.ladder .card{padding:16px 18px}
+.ladder b{font:600 18px Oswald,sans-serif;text-transform:uppercase;display:block;margin-bottom:8px}
+.lmgrid{display:grid;gap:10px;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:28px}
+@media(max-width:900px){.lmgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}}
+@media(max-width:480px){.lmgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.lmgrid a{text-decoration:none;display:block;transition:transform .2s var(--ease)}
+.lmgrid a:hover{transform:translateY(-3px)}
+.lmgrid img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line)}
+.lmgrid span{display:block;font-size:12.5px;line-height:1.25;margin-top:5px;font-weight:500}
+.lmgrid span b{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--or)}
+.bigline{display:grid;gap:14px;grid-template-columns:auto 1fr;align-items:center;margin-top:24px}
+@media(max-width:700px){.bigline{grid-template-columns:1fr}}
+.huge{font:700 clamp(64px,10vw,128px)/.9 Oswald,sans-serif;color:var(--or);white-space:nowrap}
+.vs{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.vs .card{padding:16px}
+.vs b{display:block;font:600 17px Oswald,sans-serif;text-transform:uppercase;margin-bottom:6px}
+.vs ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.vs .hl{border-color:var(--or)}
+.fw{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;align-items:flex-start;margin-top:22px}
+.fw figure{flex:0 0 auto;width:178px;margin:0;scroll-snap-align:start}
+.fw img{width:100%;height:385px;object-fit:cover;object-position:top;border:1px solid var(--dline);border-radius:12px;background:#fff}
+.fw .ar{flex:0 0 30px;align-self:center;margin-top:-50px;text-align:center;color:var(--or);font:700 22px Oswald,sans-serif}
+.swipe{font-size:13px;color:var(--or);font-weight:600}
+.steps{counter-reset:s;display:grid;gap:8px;margin-top:10px}
+.steps div{counter-increment:s;display:flex;gap:12px;align-items:center;background:var(--dark2);border:1px solid var(--dline);border-radius:12px;padding:11px 14px;font-size:15px}
+.steps div:before{content:counter(s);flex:0 0 26px;height:26px;border-radius:50%;border:1.5px solid var(--or);color:var(--or2);display:grid;place-items:center;font:700 13px Oswald,sans-serif}
+.kgrid{display:grid;gap:8px;grid-template-columns:repeat(7,minmax(0,1fr));margin-top:24px}
+@media(max-width:800px){.kgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.kgrid>*:nth-child(n+13){display:none}}
+.kgrid img,.kgrid video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+.kgrid video{border:2px solid var(--or)}
+.bars{display:grid;gap:6px;margin-top:10px}
+.bars div{position:relative;display:flex;justify-content:space-between;padding:9px 12px;border-radius:9px;background:#f1ece5;font-size:14.5px;overflow:hidden}
+.bars div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#f6b79c,#f1916a);opacity:.55}
+.bars span,.bars b{position:relative}
+.sale{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 16px;background:var(--dark);color:#fff;border-radius:14px;padding:16px 18px}
+.sale b{font:700 clamp(30px,4vw,44px)/1 Oswald,sans-serif;color:var(--or2)}
+.sale span{font-size:14px;color:var(--dmuted)}
+.duo2{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.duo2 .card{padding:16px}
+.duo2 b{display:block;font:700 clamp(34px,4vw,48px)/1 Oswald,sans-serif;color:var(--or)}
+.duo2 span{font-size:14px;color:var(--muted)}
+.quote{font:600 clamp(19px,2.2vw,24px)/1.3 Inter,sans-serif;margin:0 0 4px}
+/* масштаб */
+.scale{display:grid;gap:1px;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--dline);border:1px solid var(--dline);border-radius:18px;overflow:hidden;margin-top:30px}
+@media(max-width:700px){.scale{grid-template-columns:1fr 1fr}}
+.scale div{background:var(--dark);padding:24px 18px;text-align:center}
+.scale b{display:block;font:700 clamp(40px,5.4vw,66px)/1 Oswald,sans-serif;color:#fff;white-space:nowrap}
+.scale b i{font-style:normal;color:var(--or)}
+.scale span{display:block;font-size:14px;color:var(--dmuted);margin-top:8px;line-height:1.3}
+.note{margin-top:16px;display:flex;gap:12px;align-items:flex-start;background:var(--dark2);border:1px solid var(--dline);border-radius:14px;padding:16px 18px;font-size:15px}
+.note:before{content:"i";flex:0 0 24px;height:24px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font:700 13px Oswald,sans-serif}
+/* таймлайн эксперта */
+.tl{position:relative;margin-top:30px;max-width:720px}
+.tl:before{content:"";position:absolute;left:17px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.tl div{position:relative;padding:0 0 26px 58px}
+.tl div:last-child{padding-bottom:0}
+.tl em{position:absolute;left:0;top:-2px;width:36px;height:36px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font:700 16px Oswald,sans-serif;font-style:normal}
+.tl b{display:block;font-size:18px;margin-bottom:3px}
+.tl p{margin:0;color:var(--muted)}
+.tl .tg{display:inline-block;font:600 12px Inter,sans-serif;background:var(--orbg);color:#b8421f;border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle}
+/* итоги */
+.res2{display:grid;gap:30px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+@media(max-width:860px){.res2{grid-template-columns:1fr}}
+.checks{display:grid;gap:0}
+.checks div{display:grid;grid-template-columns:28px auto 1fr;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--dline)}
+.checks div:last-child{border:0}
+.checks div:before{content:"✓";width:24px;height:24px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.checks b{font:700 26px/1 Oswald,sans-serif;color:#fff;white-space:nowrap}
+.checks span{color:var(--dmuted);font-size:15px;line-height:1.3}
+/* кейсы */
+.case{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center}
+@media(max-width:860px){.case{grid-template-columns:1fr}}
+.tagc{display:inline-block;font:600 12px Inter,sans-serif;background:var(--orbg);color:#b8421f;border-radius:999px;padding:4px 11px;margin-bottom:12px}
+/* телефон */
+.topics{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.topics span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 13px;font-size:14.5px;font-weight:500}
+/* команда */
+.team2{display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:30px}
+@media(max-width:860px){.team2{grid-template-columns:1fr}}
+.team2 .card{padding:24px}
+.who{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.who img{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:0 0 auto}
+.who b{display:block;font:700 26px/1.05 Oswald,sans-serif;text-transform:uppercase}
+.who span{font-size:14px;color:var(--muted)}
+.mini{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+.mini div{background:var(--light);border-radius:12px;padding:12px}
+.mini b{display:block;font:700 28px/1 Oswald,sans-serif;color:var(--or);white-space:nowrap}
+.mini span{font-size:13px;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+/* пакеты */
+.pk{display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:30px;align-items:stretch}
+@media(max-width:800px){.pk{grid-template-columns:1fr}}
+.pk .card{padding:26px}
+.pk .feat{background:var(--dark);color:#f3efe9;border-color:var(--dark)}
+.pk h3{font-size:clamp(28px,3.4vw,40px);font-weight:700;margin-bottom:6px}
+.pk .sub{font-size:14px;color:var(--muted);margin-bottom:16px}
+.pk .feat .sub{color:var(--dmuted)}
+.pk ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pk li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15.5px;line-height:1.35}
+.pk li:before{content:"✓";width:20px;height:20px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700;margin-top:1px}
+.pk .lbl{display:inline-block;font:700 11px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;background:var(--or);color:#fff;border-radius:999px;padding:5px 11px;margin-bottom:12px}
+/* faq */
+.faq{max-width:820px;margin:28px auto 0}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:16px 0;font-weight:600;font-size:16.5px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--or);font-size:22px;line-height:1;transition:transform .2s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq details p,.faq details ul{color:var(--muted);margin:0 0 16px}
+.faq ul{padding-left:18px}
+.faq li{margin-bottom:4px}
+.end{background:radial-gradient(60% 70% at 50% 100%,rgba(226,85,43,.25),transparent 70%),var(--dark)}
+.foot{font-size:12px;color:#6d6761;margin-top:40px}
+/* калькулятор в светлой теме */
+.calc .box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.calc .box.gold{border:1.5px solid var(--or)}
+.calc .two{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start}
+.calc b.t{display:block;font:600 18px Oswald,sans-serif;text-transform:uppercase;margin-bottom:8px}
+.calc .no{font:700 12px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--or);margin-bottom:14px}
+.calc .g{color:var(--or)}
 .calc label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
-.calc input[type=number],.calc input[type=text],.calc select{width:100%;background:#120c0e;border:1px solid var(--line);color:var(--fg);border-radius:10px;padding:10px;font:16px "Golos Text",sans-serif}
+.calc input[type=number],.calc input[type=text],.calc select{width:100%;background:#faf8f5;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px;font:16px Inter,sans-serif}
 .calc .row{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr))}
 .chk{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.chk label{display:inline-flex;gap:6px;align-items:center;margin:0;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--fg);font-size:14px;cursor:pointer}
-.seg{display:inline-flex;border:1px solid var(--gold);border-radius:999px;overflow:hidden;margin:6px 0 4px}
+.chk label{display:inline-flex;gap:6px;align-items:center;margin:0;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:14px;cursor:pointer}
+.seg{display:inline-flex;border:1px solid var(--or);border-radius:999px;overflow:hidden;margin:6px 0 4px}
 .seg button{all:unset;cursor:pointer;padding:8px 14px;font-size:14px}
-.seg button.on{background:var(--gold);color:#1a0f10;font-weight:600}
+.seg button.on{background:var(--or);color:#fff;font-weight:600}
 .fn{display:grid;gap:6px;margin:10px 0}
-.fn div{position:relative;display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-radius:10px;background:#2c1d22;font-size:14px;overflow:hidden}
-.fn div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#7a1420,#b3121f);opacity:.55}
+.fn div{position:relative;display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-radius:10px;background:#f1ece5;font-size:14px;overflow:hidden}
+.fn div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#f6b79c,#f1916a);opacity:.55}
 .fn span,.fn b{position:relative}
 .fn abbr{text-decoration:none;border-bottom:1px dotted var(--muted);cursor:help}
-.res{font:800 clamp(22px,3.4vw,32px)/1.15 Unbounded,sans-serif;color:var(--gold2)}
-.warn{color:#f3b27a;font-size:14px}
-.pill{display:inline-block;border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:5px 12px;margin:4px 4px 0 0;font-size:14px}
+.res{font:700 clamp(26px,3.4vw,36px)/1.1 Oswald,sans-serif;color:var(--or)}
+.warn{color:#b8421f;font-size:14px}
+.pill{display:inline-block;border:1px solid var(--line);background:#faf8f5;border-radius:999px;padding:5px 12px;margin:4px 4px 0 0;font-size:14px}
 .mag{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));margin-top:12px}
-.mag a,.mag div{display:block;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px;transition:border-color .2s,transform .2s var(--ease)}
-.mag a{border-color:#6b5532}.mag a:hover{border-color:var(--gold);transform:translateY(-2px)}
+.mag a,.mag div{display:block;text-decoration:none;color:var(--ink);background:#faf8f5;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px}
+.mag a{border-color:var(--or)}
 .mag small{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
-.tag2{display:inline-block;font:700 10.5px Unbounded,sans-serif;padding:3px 8px;border-radius:999px;background:var(--gold);color:#1a0f10;margin-bottom:6px}
-.tag2.idea{background:var(--line);color:var(--fg)}
-.ava{width:100%;max-width:400px;aspect-ratio:1;object-fit:cover;object-position:50% 20%;border:1px solid var(--line)}
-.cta{display:inline-block;margin-top:22px;padding:17px 28px;border-radius:14px;background:linear-gradient(95deg,#f2d6a2,#d9ae6b);color:#1a0f10;font:700 17px Unbounded,sans-serif;text-decoration:none}
-.lmgrid{display:grid;gap:12px;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:14px}
-@media(max-width:900px){.lmgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.lmgrid a{text-decoration:none;color:var(--fg);display:block;transition:transform .2s var(--ease)}
-.lmgrid a:hover{transform:translateY(-3px)}
-.lmgrid img{width:100%;aspect-ratio:390/520;max-height:24vh;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:12px}
-.lmgrid span{display:block;font-size:13px;line-height:1.3;margin-top:6px}
-.lmgrid span b{display:block;font:700 10.5px Unbounded,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
-.bars{display:grid;gap:7px;margin-top:10px}
-.bars div{position:relative;display:flex;justify-content:space-between;padding:9px 12px;border-radius:10px;background:#2c1d22;font-size:15px;overflow:hidden}
-.bars div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#8a6a35,#d9ae6b);opacity:.45}
-.bars span,.bars b{position:relative}
-.kgrid{display:grid;gap:10px;grid-template-columns:repeat(7,minmax(0,1fr));margin-top:14px}
-@media(max-width:900px){.kgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.kgrid img,.kgrid video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
-.kgrid video{border:1.5px solid var(--gold)}
-.res6{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media(max-width:700px){.res6{grid-template-columns:1fr 1fr}}
-.res6 .box{padding:14px 16px}
-.res6 .num{white-space:nowrap;font-size:clamp(22px,2.8vw,36px)}
-.topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.topics span{font:600 15px "Golos Text",sans-serif;padding:8px 14px;border-radius:12px;background:var(--card);border:1px solid #6b5532}
-.foot{font-size:12px;color:var(--dim)}
+.tag2{display:inline-block;font:700 10.5px Inter,sans-serif;padding:3px 8px;border-radius:999px;background:var(--or);color:#fff;margin-bottom:6px}
+.tag2.idea{background:var(--line);color:var(--ink)}
+.calc h2 span.g{color:var(--or)}
 </style>
 </head>
 <body>
 <div id="bar"></div>
-<div id="cnt"><button id="prev" aria-label="Назад">‹</button><span id="pos">1</span><button id="next" aria-label="Вперёд">›</button></div>
 
-<style>
-/* раскладка по цехам */
-.mods{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px}
-@media(max-width:700px){.mods{grid-template-columns:1fr 1fr;gap:8px}}
-.mods div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;gap:14px;align-items:center}
-.mods div:nth-child(4n+2),.mods div:nth-child(4n+3){background:var(--card2)}
-.mods div.hot{border-color:var(--gold);background:linear-gradient(160deg,#2a1c15,#1e1417 70%)}
-.mods em{font-style:normal;font-size:clamp(26px,3.4vw,40px);line-height:1}
-.mods small{display:block;font:700 11px Unbounded,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
-.mods b{display:block;font:800 clamp(15px,2.2vw,26px)/1.1 Unbounded,sans-serif;margin-top:4px}
-@media(max-width:700px){.mods div{padding:12px;gap:10px;flex-direction:column;align-items:flex-start}}
-.goal{font:700 clamp(17px,2vw,21px)/1.35 "Golos Text",sans-serif;color:var(--fg);margin:4px 0 0}
-.goal span{display:block;font:700 11px Unbounded,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.lessons{counter-reset:l;display:grid;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media(max-width:700px){.lessons{grid-template-columns:1fr;gap:6px}}
-.lessons div{counter-increment:l;display:flex;gap:10px;align-items:center;background:var(--paper);color:var(--ink);border-radius:12px;padding:10px 14px;font-weight:600;font-size:15.5px;line-height:1.3}
-.lessons div:before{content:counter(l);font:800 13px Unbounded,sans-serif;color:#9a6b2f;min-width:16px}
-.lt{font:700 11px Unbounded,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
-.resb{margin-top:14px;border-radius:16px;padding:16px 18px;background:linear-gradient(120deg,#8a2a1f,#b8421f);color:#fff}
-.resb b{display:block;font:800 13px Unbounded,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;color:#ffd9b0}
-.resb p{margin:0;font-size:16.5px;font-weight:600;line-height:1.35}
-.cehA{display:grid;gap:22px 34px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
-@media(max-width:860px){.cehA{grid-template-columns:1fr;gap:14px}}
-.shots{display:grid;gap:14px;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin-top:16px;align-items:start}
-@media(max-width:760px){.shots{grid-template-columns:1fr 1fr;gap:10px}}
-.shots figure{margin:0}
-.shots img{width:100%;height:min(48vh,440px);object-fit:cover;object-position:top;border:1px solid var(--line);background:#fff}
-@media(max-width:760px){.shots img{height:min(30vh,250px)}}
-.shots.ph img{aspect-ratio:9/16;width:auto;max-width:100%;margin:0 auto}
-.stat{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px}
-@media(max-width:700px){.stat{grid-template-columns:1fr 1fr;gap:8px}}
-.stat div{background:var(--paper);color:var(--ink);border-radius:16px;padding:16px;text-align:center}
-.stat b{display:block;font:800 clamp(30px,4.6vw,56px)/1 Unbounded,sans-serif;color:#9a3a1f;white-space:nowrap}
-.stat span{display:block;font-size:14.5px;line-height:1.3;margin-top:8px;font-weight:600}
-.get{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px}
-@media(max-width:700px){.get{grid-template-columns:1fr;gap:7px}}
-.get div{display:flex;gap:12px;align-items:center;background:var(--paper);color:var(--ink);border-radius:14px;padding:12px 16px;font-weight:600;font-size:16px;line-height:1.3}
-.get em{font-style:normal;font-size:26px}
-.pk{display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:18px;align-items:stretch}
-@media(max-width:760px){.pk{grid-template-columns:1fr;gap:10px}}
-.pk .box{padding:20px 22px}
-.pk h3{font-size:clamp(20px,2.6vw,30px);font-weight:800;margin-bottom:12px}
-.pk ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
-.pk li{padding-left:24px;position:relative;font-size:16px;line-height:1.3}
-.pk li:before{content:"●";position:absolute;left:0;color:var(--gold);font-size:12px;top:3px}
-.pk .plus{font:700 12px Unbounded,sans-serif;color:#1a0f10;background:var(--gold);display:inline-block;border-radius:999px;padding:5px 11px;margin-bottom:10px}
-.nf{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.nf span{background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:600;font-size:15px}
-.big-q{font:800 clamp(34px,7vw,90px)/1 Unbounded,sans-serif;text-align:center}
-.mate{display:grid;gap:22px;grid-template-columns:1fr 1fr;margin-top:16px}
-@media(max-width:760px){.mate{grid-template-columns:1fr;gap:12px}}
-.mate .who{display:flex;gap:14px;align-items:center;margin-bottom:12px}
-.mate .who img{width:78px;height:78px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex:0 0 auto}
-.mate .who b{font:800 clamp(18px,2.2vw,24px)/1.1 Unbounded,sans-serif;display:block}
-.mate .grid{grid-template-columns:1fr 1fr;gap:8px}
-.mate .grid .box{padding:12px}
-.mate .num{font-size:clamp(22px,2.6vw,32px);white-space:nowrap}
-@media(max-width:760px){
- .kgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.kgrid>*:nth-child(n+9){display:none}
- .lmgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.lmgrid span b{display:none}.lmgrid span{font-size:11.5px}.lmgrid img{max-height:none}
- .fw img{height:330px}.fw figure{width:152px}
- .lead{font-size:16px}
- .s{padding:40px 0}
-}
-</style>
+<!-- HERO -->
+<section class="sec hero dk"><div class="w">
+<span class="pillx">контент-завод на нейронках</span>
+<h1>Ставим контент-завод <span class="or">под ваш бизнес</span> и ведём его</h1>
+<p class="lead">Ресёрч рынка, продукты, лид-магниты, воронки и контент во все соцсети. Без штата и без ежедневных съёмок</p>
+<a class="btn" href="#paket">Смотреть пакеты</a>
+<div class="duo">
+<div><img src="img/elena.jpg" alt="Елена Курскова"><span><b>Елена Курскова</b><span>контент-завод, трафик, воронки</span></span></div>
+<div><img src="img/roma.jpg" alt="Роман Смирнов"><span><b>Роман Смирнов</b><span>смыслы, стратегии, вебинары</span></span></div>
+</div>
+</div></section>
+<div class="dk"><div class="w strip">
+<div><b>241</b><span>навык и агент у завода</span></div>
+<div><b>30&nbsp;290</b><span>текстов в одном калькуляторе</span></div>
+<div><b>12</b><span>живых лид-магнитов в 6 нишах</span></div>
+<div><b>8</b><span>площадок из одной очереди</span></div>
+</div></div>
 
-<!-- 1. Обложка -->
-<section class="s hero"><div class="w">
-<div class="no rv">контент-завод на нейронках</div>
-<h1 class="rv d1">Ставим контент-завод <span class="g">под ваш бизнес</span> и ведём его</h1>
-<p class="lead rv d2">Ресёрч рынка, продукты, воронки и контент во все соцсети. Без штата и без ежедневных съёмок</p>
-<div class="duo rv d3">
-<div><img src="img/elena.jpg" alt="Елена Курскова"><div><b>Елена Курскова</b><br><span class="small">контент-завод, трафик, воронки</span></div></div>
-<div><img src="img/roma.jpg" alt="Роман Смирнов" style="object-position:50% 20%"><div><b>Роман Смирнов</b><br><span class="small">смыслы, стратегии, вебинары, трафик, воронки</span></div></div>
+<!-- БОЛИ -->
+<section class="sec"><div class="w ct">
+<div class="eb">с чем к нам приходят</div>
+<h2>Контент делается,<br>а продаж <span class="or">так и нет</span></h2>
+<div class="pains" style="text-align:left">
+<div class="rv"><em>01</em><span><b>«Ищу SMM-щика, бюджет 30-40 тысяч»</b><p>Он закроет выкладку, тексты и монтаж. Это один кусок цепочки из шести</p></span></div>
+<div class="rv"><em>02</em><span><b>«Лайки есть, а продаж нет»</b><p>Контент не ведёт в воронку, и человек уходит после просмотра</p></span></div>
+<div class="rv"><em>03</em><span><b>«Не знаю, о чём писать»</b><p>Темы берутся из головы, а не из того, что уже залетело в нише</p></span></div>
+<div class="rv"><em>04</em><span><b>«Рилс - это кринж, сниматься не хочу»</b><p>Кажется, что без съёмок не будет и контента</p></span></div>
 </div>
 </div></section>
 
-<!-- 2. Облако мыслей -->
-<section class="s"><div class="w">
-<div class="no">с чем к нам приходят</div>
-<h2>Что из этого <span class="g">про вас?</span></h2>
-<div class="cloudwrap" id="cloud">
-<img src="img/geroinya.jpg" alt="Женщина вечером работает за ноутбуком">
-<div class="bubs">
-<div class="bub big" style="left:3%;top:6%;--r:-2deg">Ищу SMM-щика, бюджет 30-40 тысяч</div>
-<div class="bub" style="left:31%;top:15%;--r:1.5deg">Пишу хуки, а дальше пусть он сам</div>
-<div class="bub" style="left:69%;top:5%;--r:-1deg">Мне нужен оператор всего этого добра</div>
-<div class="bub" style="left:7%;top:29%;--r:1deg">Сейчас это я и волонтёры на выкладке</div>
-<div class="bub" style="left:79%;top:24%;--r:2deg">Не знаю, о чём писать</div>
-<div class="bub big" style="left:22%;top:43%;--r:-1.5deg">Лайки есть, а продаж нет</div>
-<div class="bub" style="left:3%;top:57%;--r:2deg">Визуала много, а делать некому</div>
-<div class="bub" style="left:80%;top:47%;--r:-2deg">Рилс - это кринж, сниматься не хочу</div>
-<div class="bub" style="left:9%;top:75%;--r:-1deg">Четыре маркетолога пришли, и никаких результатов</div>
-<div class="bub big" style="left:36%;top:87%;--r:1deg">Народ идёт, а заявок нет</div>
-<div class="bub" style="left:80%;top:76%;--r:1.5deg">Я не технарь, не разберусь</div>
+<!-- ЦЕПОЧКА -->
+<section class="sec dk"><div class="w ct">
+<h2>Контент - лишь <span class="or">1 цех из 6</span></h2>
+<p class="lead">Без рынка, продуктов, лид-магнитов и воронок он даёт просмотры, а не заявки</p>
+<div class="chainx"><span>Рынок</span><i>→</i><span>Продукты</span><i>→</i><span>Лид-магниты</span><i>→</i><span>Воронки</span><i>→</i><span class="hl">Контент</span><i>→</i><span>Аналитика</span></div>
+</div></section>
+
+<!-- ПОЧЕМУ НЕЙРОНКИ -->
+<section class="sec wh"><div class="w">
+<div class="ceh">
+<div>
+<div class="eb">почему нейронки</div>
+<h2>Воронки работают. <span class="or">Не хватает трафика</span></h2>
+<p class="lead">Я была куратором в школе воронок и постоянно видела одно и то же: у экспертов нет потока людей. Выдержать его бесплатно, на органике, тяжело всем. Без нейронок почти невозможно</p>
+<p class="small" style="margin-top:12px">Елена Курскова</p>
+</div>
+<div class="pains" style="margin-top:0">
+<div class="rv"><em>01</em><span><b>Сначала данные, потом воронка</b><p>Проверяем темы и подачи на рынке до того, как строить. Не угадываем месяцами</p></span></div>
+<div class="rv"><em>02</em><span><b>Скорость вместо перфекционизма</b><p>То, что раньше собирали неделями, завод делает за вечер. Больше попыток - быстрее находится рабочая связка</p></span></div>
+<div class="rv"><em>03</em><span><b>Трафик внутри системы</b><p>Контент выходит каждый день и сам ведёт людей в воронку</p></span></div>
 </div>
 </div>
 </div></section>
 
-<!-- 3. Что это -->
-<section class="s"><div class="w">
-<h2>Что это?</h2>
-<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:10px">
-<div class="box rv"><b class="t">Что это</b><p style="color:var(--fg);font-size:17px">Отдел маркетинга на нейросетях, который мы ставим под ваш проект и ведём каждую неделю</p></div>
-<div class="box gold rv d1"><b class="t">💎 Главная ценность</b><p style="color:var(--fg);font-size:17px">Контент, который приводит заявки, а не только просмотры</p></div>
-<div class="box rv d2"><b class="t">🎯 Главная цель</b><p style="color:var(--fg);font-size:17px">Система, где каждый пост ведёт в воронку, а воронка продаёт каждый день</p></div>
-</div>
-</div></section>
-
-<!-- 4. Как было раньше -->
-<section class="s"><div class="w">
-<div class="was-tag">Как было раньше</div>
-<h2>Чтобы контент продавал, нужна была <span class="g">команда из 5+ человек</span></h2>
-<div class="team">
+<!-- КАК БЫЛО РАНЬШЕ -->
+<section class="sec"><div class="w">
+<div class="eb">как было раньше</div>
+<h2>Нужна была команда <span class="or">из 5+ человек</span></h2>
+<p class="lead">Каждый делал свой кусок вручную и из своей головы. И каждому зарплата</p>
+<div class="roles">
 <div><b>Аналитик</b><small>искал темы, которые залетают</small></div>
 <div><b>Маркетолог</b><small>стратегия, воронка, продукты</small></div>
 <div><b>Продюсер</b><small>смыслы и упаковка эксперта</small></div>
@@ -326,389 +334,322 @@ a{color:var(--gold2)}
 <div><b>Монтажёр</b><small>ролики, субтитры, вставки</small></div>
 <div><b>Технарь</b><small>боты, автоответы, рассылки</small></div>
 <div><b>Программист</b><small>калькуляторы и тесты</small></div>
-<div class="smm"><b>SMM-щик</b><small>выкладка, тексты, монтаж. Всего один кусок цепочки</small></div>
-</div>
-<p class="q">Сейчас всю цепочку забирает контент-завод на нейронках</p>
-</div></section>
-
-<!-- 5. Карта завода -->
-<section class="s"><div class="w">
-<div class="no">как устроен завод</div>
-<h2>6 цехов, <span class="g">одна цепочка</span></h2>
-<div class="mods">
-<div class="rv"><em>🔎</em><span><small>цех 1</small><b>Рынок и стратегия</b></span></div>
-<div class="rv d1"><em>📦</em><span><small>цех 2</small><b>Продукты</b></span></div>
-<div class="rv d1"><em>🧲</em><span><small>цех 3</small><b>Лид-магниты</b></span></div>
-<div class="rv d2"><em>🌀</em><span><small>цех 4</small><b>Воронки</b></span></div>
-<div class="rv d2"><em>🎬</em><span><small>цех 5</small><b>Контент</b></span></div>
-<div class="hot rv d3"><em>📊</em><span><small>цех 6</small><b>Выкладка и аналитика</b></span></div>
+<div class="smm"><b>SMM-щик</b><small>выкладка, тексты, монтаж. Один кусок цепочки</small></div>
 </div>
 </div></section>
 
-<!-- Цех 1 -->
-<section class="s"><div class="w">
-<div class="belt"><span class="on">рынок</span><i></i><span>продукты</span><i></i><span>лид-магниты</span><i></i><span>воронки</span><i></i><span>контент</span><i></i><span>аналитика</span></div>
-<div class="cehA">
-<div><div class="no">цех 1</div><h2>Рынок <span class="g">и стратегия</span></h2>
-<p class="goal"><span>цель</span>Найти темы и подачи, которые уже доказали спрос в вашей нише</p>
-<div class="resb"><b>Результат</b><p>Темы не из головы: ваша тема в подаче, которая уже залетела у рынка</p></div></div>
-<div><p class="lt">что внутри</p><div class="lessons">
-<div>Разбор ваших соцсетей: что уже набирает</div>
-<div>Сотни постов конкурентов за один заход</div>
-<div>Telegram-каналы конкурентов: что и почём продают</div>
-<div>Банк заголовков, которые залетели</div>
-<div>Зарубежный рынок: форматы на месяцы раньше</div>
-<div>Стратегия к первой встрече</div>
-</div></div>
+<!-- ЧТО ЭТО -->
+<section class="sec wh"><div class="w ct">
+<div class="eb">что это</div>
+<h2>Отдел маркетинга <span class="or">на нейросетях</span></h2>
+<div class="cards3" style="text-align:left">
+<div class="card rv"><b>Что это</b><p class="small" style="font-size:15px">Завод, который мы ставим под ваш проект и ведём каждую неделю</p></div>
+<div class="card hl rv"><b class="or">Главная ценность</b><p class="small" style="font-size:15px">Контент, который приводит заявки, а не только просмотры</p></div>
+<div class="card rv"><b>Главная цель</b><p class="small" style="font-size:15px">Каждый пост ведёт в воронку, а воронка продаёт каждый день</p></div>
 </div>
 </div></section>
 
-<section class="s"><div class="w">
-<div class="no">цех 1 · как это выглядит</div>
-<h2>Стратегия <span class="g">за часы, а не за месяцы</span></h2>
-<div class="shots" style="--n:4">
-<figure><img loading="lazy" decoding="async" src="img/o-strategiya.jpg" alt="Стратегия к первой встрече"><div class="cap"><b>Стратегия к первой встрече</b>рынок, конкуренты, цены</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/a-rynok.jpg" alt="Что набирает у конкурентов"><div class="cap"><b>582 поста конкурентов</b>в одном срезе</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/r-rozhd.jpg" alt="Залетевшая карусель"><div class="cap"><b>в 27 раз</b>больше лайков, чем обычно у автора</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/r-vodoley.jpg" alt="Залетевшая карусель"><div class="cap"><b>в 11 раз</b>больше обычного у автора</div></figure>
-</div>
-<p class="small" style="margin-top:8px">Срезы для астролога, ноябрь 2026</p>
-</div></section>
-
-<!-- Цех 2 -->
-<section class="s"><div class="w">
-<div class="belt"><span>рынок</span><i></i><span class="on">продукты</span><i></i><span>лид-магниты</span><i></i><span>воронки</span><i></i><span>контент</span><i></i><span>аналитика</span></div>
-<div class="cehA">
-<div><div class="no">цех 2</div><h2>Продукты</h2>
-<p class="goal"><span>цель</span>Линейка, где каждый мини-продукт ведёт к флагману</p>
-<div class="resb"><b>Результат</b><p>Ваши услуги пересобраны по данным рынка, под каждую своя воронка</p></div></div>
-<div><p class="lt">что внутри</p><div class="lessons">
-<div>Распаковка эксперта: смыслы и голос</div>
-<div>Флагман: курс, наставничество, сопровождение</div>
-<div>Мини-продукты: консультация, клуб, разбор</div>
-<div>Цены по рынку за каждую позицию</div>
-<div>Страницы продуктов до кнопки оплаты</div>
-</div></div>
+<!-- 6 ЦЕХОВ -->
+<section class="sec"><div class="w ct">
+<div class="eb">как устроен завод</div>
+<h2>Шесть цехов -<br>одна цепочка</h2>
+<div class="mods" style="text-align:left">
+<a href="#c1" class="rv"><div class="ic">🔎</div><em>01</em><b>Рынок и стратегия</b><p>темы и подачи, которые уже доказали спрос</p></a>
+<a href="#c2" class="rv"><div class="ic">📦</div><em>02</em><b>Продукты</b><p>линейка от мини-продукта к флагману</p></a>
+<a href="#c3" class="rv"><div class="ic">🧲</div><em>03</em><b>Лид-магниты</b><p>калькуляторы и тесты за вечер</p></a>
+<a href="#c4" class="rv"><div class="ic">🌀</div><em>04</em><b>Воронки</b><p>от ролика до оплаты без эксперта</p></a>
+<a href="#c5" class="rv"><div class="ic">🎬</div><em>05</em><b>Контент</b><p>каждый день во все соцсети</p></a>
+<a href="#c6" class="rv"><div class="ic">📊</div><em>06</em><b>Выкладка и аналитика</b><p>цифры по каждому шагу</p></a>
 </div>
 </div></section>
 
-<section class="s"><div class="w">
-<div class="no">цех 2 · как это выглядит</div>
-<h2>Продукт <span class="g">прямо в боте</span></h2>
-<div class="shots ph" style="--n:2;max-width:620px">
-<figure><img loading="lazy" decoding="async" src="img/v7-produkt.jpg" alt="Предложение продукта в боте"><div class="cap"><b>Следующий шаг</b>после лид-магнита</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/v8-ceny.jpg" alt="Страница продукта"><div class="cap"><b>Страница продукта</b>состав, цена, срочность</div></figure>
+<!-- ЦЕХ 1 -->
+<section class="sec wh" id="c1"><div class="w ceh">
+<div>
+<div class="num-tag"><em>1</em><span>цех · рынок и стратегия</span></div>
+<h2>Стратегия за часы, <span class="or">а не за месяцы</span></h2>
+<p class="goal"><b>Цель:</b> найти темы и подачи, которые уже доказали спрос в вашей нише</p>
+<div class="chips"><span>разбор ваших соцсетей</span><span>сотни постов конкурентов</span><span>Telegram-каналы конкурентов</span><span>банк залетевших заголовков</span><span>зарубежный рынок</span><span>стратегия к первой встрече</span></div>
+<div class="resp"><span><b>результат</b><p>Темы не из головы: ваша тема в подаче, которая уже залетела у рынка</p></span></div>
+</div>
+<div>
+<div class="shots" style="--ar:1/1">
+<figure><img src="img/o-strategiya.jpg" alt="Стратегия к первой встрече"><div class="cap"><b>Стратегия к первой встрече</b>рынок, конкуренты, цены</div></figure>
+<figure><img loading="lazy" src="img/a-rynok.jpg" alt="Что набирает у конкурентов"><div class="cap"><b class="o">582 поста</b>конкурентов в одном срезе</div></figure>
+<figure><img loading="lazy" src="img/r-rozhd.jpg" alt="Залетевшая карусель"><div class="cap"><b class="o">в 27 раз</b>больше лайков, чем обычно у автора</div></figure>
+<figure><img loading="lazy" src="img/r-vodoley.jpg" alt="Залетевшая карусель"><div class="cap"><b class="o">в 11 раз</b>больше обычного у автора</div></figure>
+</div>
+<p class="small" style="margin-top:8px">Срезы для астролога, ноябрь 2026. «Обычно» = медиана последних постов того же аккаунта</p>
 </div>
 </div></section>
 
-<!-- Цех 3 -->
-<section class="s"><div class="w">
-<div class="belt"><span>рынок</span><i></i><span>продукты</span><i></i><span class="on">лид-магниты</span><i></i><span>воронки</span><i></i><span>контент</span><i></i><span>аналитика</span></div>
-<div class="cehA">
-<div><div class="no">цех 3</div><h2>Лид-магниты</h2>
-<p class="goal"><span>цель</span>Дать человеку личный результат и привести к продукту</p>
-<div class="resb"><b>Результат</b><p>Несколько лид-магнитов под каждый продукт, каждый собран за вечер</p></div></div>
-<div><p class="lt">что внутри</p><div class="lessons">
-<div>Калькуляторы по дате рождения</div>
-<div>Тесты и диагностики</div>
-<div>Расчёты и меню по анкете</div>
-<div>Вайбкод-страницы под любую нишу</div>
-<div>Метрика на каждом шаге</div>
-</div></div>
+<!-- ЦЕХ 2 -->
+<section class="sec" id="c2"><div class="w ceh">
+<div>
+<div class="num-tag"><em>2</em><span>цех · продукты</span></div>
+<h2>Линейка <span class="or">на стыке вашего и рынка</span></h2>
+<p class="goal"><b>Цель:</b> линейка, где каждый мини-продукт ведёт к флагману</p>
+<div class="chips"><span>распаковка эксперта</span><span>офферы</span><span>цены по рынку</span><span>страницы продуктов до кнопки оплаты</span></div>
+<div class="ladder" style="margin-top:14px">
+<div class="card"><b class="or">Флагман</b><div class="chips"><span>курс</span><span>наставничество</span><span>годовое сопровождение</span></div></div>
+<div class="card"><b>Мини-продукты</b><div class="chips"><span>консультация</span><span>клуб по подписке</span><span>личный разбор</span><span>практикум в записи</span></div></div>
+</div>
+<div class="resp"><span><b>результат</b><p>Ваши услуги пересобраны по данным рынка, под каждую своя воронка</p></span></div>
+</div>
+<div class="shots" style="--ar:9/16;max-width:460px;margin:0 auto">
+<figure><img loading="lazy" src="img/v7-produkt.jpg" alt="Предложение продукта в боте"><div class="cap"><b>Продукт в боте</b>следующий шаг после лид-магнита</div></figure>
+<figure><img loading="lazy" src="img/v8-ceny.jpg" alt="Страница продукта"><div class="cap"><b>Страница продукта</b>состав, цена, срочность</div></figure>
 </div>
 </div></section>
 
-<section class="s"><div class="w">
-<div class="no">цех 3 · как это выглядит</div>
-<h2>12 живых лид-магнитов. <span class="g">Нажмите и попробуйте</span></h2>
+<!-- ЦЕХ 3 -->
+<section class="sec wh" id="c3"><div class="w">
+<div class="ceh">
+<div>
+<div class="num-tag"><em>3</em><span>цех · лид-магниты</span></div>
+<h2>Лид-магнит <span class="or">за вечер</span></h2>
+<p class="goal"><b>Цель:</b> дать человеку личный результат и привести к продукту</p>
+<div class="chips"><span>калькуляторы по дате рождения</span><span>тесты и диагностики</span><span>расчёты по анкете</span><span>несколько под каждый продукт</span><span>Метрика на каждом шаге</span></div>
+</div>
+<div>
+<div class="bigline" style="margin-top:0"><div class="huge">30 290</div><p style="margin:0;font-weight:500">уникальных текстов под каждую дату рождения в одном калькуляторе. Написаны за вечер<br><span class="small">«Кармическая задача 2027», все даты с 1930 по 2012 год</span></p></div>
+<div class="vs" style="margin-top:14px"><div class="card"><b>PDF из бота</b><ul><li>один текст для всех</li><li>скачал и забыл</li></ul></div><div class="card hl"><b class="or">Интерактив</b><ul><li>личный результат</li><li>расчёт делают 78% зашедших</li></ul></div></div>
+<p class="small" style="margin-top:6px">78%: Метрика калькулятора астролога, 25.10-12.11.2026</p>
+</div>
+</div>
 <div class="lmgrid">
-<a href="https://kursk-24.github.io/karma-2027/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-karma.jpg" alt="Кармическая задача 2027"><span><b>астролог</b>Кармическая задача 2027</span></a>
-<a href="https://kursk-24.github.io/prognoz-oksana-smirnova/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-prognoz-oksana.jpg" alt="Прогноз на месяц"><span><b>астролог</b>Прогноз на месяц</span></a>
-<a href="https://kursk-24.github.io/kod-deneg/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-kod-deneg.jpg" alt="Код ваших денег"><span><b>астролог</b>Код ваших денег</span></a>
-<a href="https://kursk-24.github.io/prognoz-sekretnaya/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-prognoz-sekretnaya.jpg" alt="Прогноз астрошколы"><span><b>астрошкола</b>Что ждёт в этом месяце</span></a>
-<a href="https://kursk-24.github.io/kod-lyubvi-denezhnyj-kod/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-num-dengi.jpg" alt="Денежный код"><span><b>нумеролог</b>Денежный код</span></a>
-<a href="https://kursk-24.github.io/kod-lyubvi-sovmestimost/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-num-sovm.jpg" alt="Совместимость по датам"><span><b>нумеролог</b>Совместимость</span></a>
-<a href="https://kursk-24.github.io/test-zhelezo/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-zhelezo.jpg" alt="Хватает ли железа"><span><b>нутрициолог</b>Хватает ли железа?</span></a>
-<a href="https://ovcinnikoval330-pixel.github.io/menu/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-menu.jpg" alt="Меню для ленивых"><span><b>нутрициолог</b>Меню для ленивых</span></a>
-<a href="https://kursk-24.github.io/esh-i-hudey/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-esh-hudey.jpg" alt="Ешь и худей"><span><b>нутрициолог</b>Ешь и худей</span></a>
-<a href="https://kursk-24.github.io/vahta-podmoskovie/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-vahta.jpg" alt="Вахта"><span><b>рекрутинг</b>Набор на вахту</span></a>
-<a href="https://kursk-24.github.io/repetitor-vinogradova/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-repetitor.jpg" alt="Репетитор"><span><b>репетитор</b>ОГЭ и ЕГЭ</span></a>
-<a href="https://kursk-24.github.io/diagnostika-krug/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="img/lm-krug.jpg" alt="Диагностика Круг"><span><b>маркетинг</b>Диагностика «Круг»</span></a>
+<a href="https://kursk-24.github.io/karma-2027/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-karma.jpg" alt="Кармическая задача 2027"><span><b>астролог</b>Кармическая задача</span></a>
+<a href="https://kursk-24.github.io/prognoz-oksana-smirnova/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-prognoz-oksana.jpg" alt="Прогноз на месяц"><span><b>астролог</b>Прогноз на месяц</span></a>
+<a href="https://kursk-24.github.io/kod-deneg/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-kod-deneg.jpg" alt="Код ваших денег"><span><b>астролог</b>Код ваших денег</span></a>
+<a href="https://kursk-24.github.io/prognoz-sekretnaya/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-prognoz-sekretnaya.jpg" alt="Прогноз астрошколы"><span><b>астрошкола</b>Прогноз месяца</span></a>
+<a href="https://kursk-24.github.io/kod-lyubvi-denezhnyj-kod/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-num-dengi.jpg" alt="Денежный код"><span><b>нумеролог</b>Денежный код</span></a>
+<a href="https://kursk-24.github.io/kod-lyubvi-sovmestimost/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-num-sovm.jpg" alt="Совместимость"><span><b>нумеролог</b>Совместимость</span></a>
+<a href="https://kursk-24.github.io/test-zhelezo/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-zhelezo.jpg" alt="Хватает ли железа"><span><b>нутрициолог</b>Хватает ли железа?</span></a>
+<a href="https://ovcinnikoval330-pixel.github.io/menu/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-menu.jpg" alt="Меню для ленивых"><span><b>нутрициолог</b>Меню для ленивых</span></a>
+<a href="https://kursk-24.github.io/esh-i-hudey/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-esh-hudey.jpg" alt="Ешь и худей"><span><b>нутрициолог</b>Ешь и худей</span></a>
+<a href="https://kursk-24.github.io/vahta-podmoskovie/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-vahta.jpg" alt="Вахта"><span><b>рекрутинг</b>Набор на вахту</span></a>
+<a href="https://kursk-24.github.io/repetitor-vinogradova/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-repetitor.jpg" alt="Репетитор"><span><b>репетитор</b>ОГЭ и ЕГЭ</span></a>
+<a href="https://kursk-24.github.io/diagnostika-krug/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-krug.jpg" alt="Диагностика Круг"><span><b>маркетинг</b>Диагностика «Круг»</span></a>
 </div>
+<p class="small ct" style="margin-top:10px">12 живых лид-магнитов. Нажмите любой и попробуйте</p>
 </div></section>
 
-<section class="s"><div class="w">
-<div class="no">цех 3 · под капотом</div>
-<div class="two" style="align-items:center">
-<div><div class="huge g">30 290</div><p class="lead" style="color:var(--fg);margin-top:8px">уникальных текстов под каждую дату рождения в одном калькуляторе. За вечер</p><p class="small">«Кармическая задача 2027», все даты с 1930 по 2012 год</p></div>
-<div class="vs" style="margin-top:0">
-<div class="box"><b class="t">PDF из бота</b><ul><li>один текст для всех</li><li>скачал и забыл</li></ul></div>
-<div class="box gold"><b class="t">Интерактив</b><ul><li>личный результат</li><li>расчёт делают 78% зашедших</li></ul></div>
+<!-- ЦЕХ 4 -->
+<section class="sec dk" id="c4"><div class="w">
+<div class="ceh">
+<div>
+<div class="num-tag"><em>4</em><span>цех · воронки</span></div>
+<h2>От ролика до оплаты <span class="or">без эксперта</span></h2>
+<p class="goal"><b>Цель:</b> провести человека по шагам до покупки</p>
+<div class="chips"><span>кодовое слово и автоответ</span><span>бот с проверкой подписки</span><span>прогрев и дожим</span><span>лендинги и оплата</span></div>
+<div class="resp"><span><b>результат</b><p>Из директа в бот переходят 87%. Оплаты приходят на автомате</p></span></div>
+<p class="small" style="margin-top:8px">87%: замер воронки астролога, 25.10-09.11.2026</p>
 </div>
-</div>
-<p class="small" style="margin-top:10px">78%: Метрика калькулятора астролога, 25.10-12.11.2026</p>
-</div></section>
-
-<!-- Цех 4 -->
-<section class="s"><div class="w">
-<div class="belt"><span>рынок</span><i></i><span>продукты</span><i></i><span>лид-магниты</span><i></i><span class="on">воронки</span><i></i><span>контент</span><i></i><span>аналитика</span></div>
-<div class="cehA">
-<div><div class="no">цех 4</div><h2>Воронки</h2>
-<p class="goal"><span>цель</span>Довести человека от ролика до оплаты без участия эксперта</p>
-<div class="resb"><b>Результат</b><p>Из директа в бот переходят 87%. Оплаты приходят на автомате</p></div></div>
-<div><p class="lt">что внутри</p><div class="lessons">
-<div>Кодовое слово и автоответ в директ</div>
-<div>Бот с проверкой подписки на канал</div>
-<div>Лид-магнит в боте</div>
-<div>Прогрев и дожим по шагам</div>
-<div>Воронки на мини-продукты параллельно</div>
-<div>Лендинги и страницы оплаты</div>
-</div></div>
-</div>
-<p class="small" style="margin-top:12px">87%: замер воронки астролога, 25.10-09.11.2026</p>
-</div></section>
-
-<section class="s"><div class="w">
-<div class="no">цех 4 · как это выглядит</div>
-<h2>Путь человека <span class="g">от карусели до продукта</span></h2>
-<div class="swipe">листайте →</div>
-<div class="fw">
-<figure><img loading="lazy" decoding="async" src="img/vv-14.jpg" alt="Карусель"><figcaption class="cap"><b>1. Контент</b>карусель или ролик</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/v1-komment.jpg" alt="Кодовое слово" style="object-fit:contain;background:#fff"><figcaption class="cap"><b>2. Кодовое слово</b>в комментариях</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/v2-direct.jpg" alt="Директ"><figcaption class="cap"><b>3. Директ</b>ответ за полминуты</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/v3-bot.jpg" alt="Бот"><figcaption class="cap"><b>4. Бот</b>приветствие эксперта</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/v4-podpiska.jpg" alt="Проверка подписки"><figcaption class="cap"><b>5. Подписка</b>на канал</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/v5-forma.jpg" alt="Калькулятор"><figcaption class="cap"><b>6. Калькулятор</b>дата рождения</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/v6-rezultat.jpg" alt="Личный разбор"><figcaption class="cap"><b>7. Личный разбор</b>свой у каждого</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/vv-155.jpg" alt="Прогрев"><figcaption class="cap"><b>8. Прогрев</b>что было в 9, 18, 27 лет</figcaption></figure><div class="ar">→</div>
-<figure><img loading="lazy" decoding="async" src="img/v7-produkt.jpg" alt="Продукт"><figcaption class="cap"><b>9. Продукт</b>следующий шаг</figcaption></figure>
-</div>
-</div></section>
-
-<!-- Индивидуальные воронки -->
-<section class="s"><div class="w">
-<div class="no">индивидуальные воронки</div>
-<h2>Воронка под ваш продукт, <span class="g">а не шаблон</span></h2>
-<div class="chain">
+<div>
+<p style="font:600 20px Oswald,sans-serif;text-transform:uppercase;margin:0 0 4px">Воронка под ваш продукт, <span class="or">а не шаблон</span></p>
+<div class="steps">
 <div>Что вы продаёте и кому</div>
 <div>Какой лид-магнит ведёт именно к этому продукту</div>
 <div>Откуда люди: рилс, карусели, Telegram, статьи</div>
 <div>Где прогрев: бот, канал или вебинар</div>
-<div class="hk">Сколько воронок параллельно: на флагман и на каждый мини-продукт</div>
+<div>Сколько воронок параллельно: на флагман и на каждый мини-продукт</div>
 </div>
+</div>
+</div>
+<div class="fw">
+<figure><img loading="lazy" src="img/vv-14.jpg" alt="Карусель"><figcaption class="cap"><b>1. Контент</b>карусель или ролик</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/v1-komment.jpg" alt="Кодовое слово" style="object-fit:contain"><figcaption class="cap"><b>2. Кодовое слово</b>в комментариях</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/v2-direct.jpg" alt="Директ"><figcaption class="cap"><b>3. Директ</b>ответ за полминуты</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/v3-bot.jpg" alt="Бот"><figcaption class="cap"><b>4. Бот</b>приветствие эксперта</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/v4-podpiska.jpg" alt="Подписка"><figcaption class="cap"><b>5. Подписка</b>на канал</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/v5-forma.jpg" alt="Калькулятор"><figcaption class="cap"><b>6. Калькулятор</b>дата рождения</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/v6-rezultat.jpg" alt="Личный разбор"><figcaption class="cap"><b>7. Личный разбор</b>свой у каждого</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/vv-155.jpg" alt="Прогрев"><figcaption class="cap"><b>8. Прогрев</b>что было в 9, 18, 27 лет</figcaption></figure><div class="ar">→</div>
+<figure><img loading="lazy" src="img/v7-produkt.jpg" alt="Продукт"><figcaption class="cap"><b>9. Продукт</b>следующий шаг</figcaption></figure>
+</div>
+<div class="swipe">листайте путь человека →</div>
 </div></section>
 
-<!-- Цех 5 -->
-<section class="s"><div class="w">
-<div class="belt"><span>рынок</span><i></i><span>продукты</span><i></i><span>лид-магниты</span><i></i><span>воронки</span><i></i><span class="on">контент</span><i></i><span>аналитика</span></div>
-<div class="cehA">
-<div><div class="no">цех 5</div><h2>Контент</h2>
-<p class="goal"><span>цель</span>Контент каждый день во все соцсети вашим голосом</p>
-<div class="resb"><b>Результат</b><p>23 формата постов и 9 структур копирайтинга вместо копирайтера, дизайнера и монтажёра</p></div></div>
-<div><p class="lt">что внутри</p><div class="lessons">
-<div>Карусели в любом стиле, в том числе живые</div>
-<div>Reels 5-50 секунд</div>
-<div>Говорящие ролики из вашей записи</div>
-<div>Ролики без лица: ленивые рилс, двойник, мультики</div>
-<div>Посты в Telegram, Threads, ВКонтакте</div>
-<div>Статьи в Яндекс и Дзен</div>
-<div>Заголовки по 12 условиям</div>
-<div>Нейроописания, чтобы ролик нашли в поиске</div>
-</div></div>
+<!-- ЦЕХ 5 -->
+<section class="sec" id="c5"><div class="w">
+<div class="ceh">
+<div>
+<div class="num-tag"><em>5</em><span>цех · контент</span></div>
+<h2>Каждый день <span class="or">во все соцсети</span></h2>
+<p class="goal"><b>Цель:</b> контент вашим голосом по темам, которые уже залетели</p>
+<div class="resp"><span><b>результат</b><p>10 каруселей за день вместе с ресёрчем рынка. 23 формата постов и 9 структур копирайтинга</p></span></div>
 </div>
-</div></section>
-
-<section class="s"><div class="w">
-<div class="no">цех 5 · карусели</div>
-<h2>10 каруселей за день <span class="g">вместе с ресёрчем рынка</span></h2>
+<div class="chips" style="align-content:flex-start"><span>карусели в любом стиле</span><span>анимированные карусели</span><span>Reels 5-50 секунд</span><span>говорящие ролики из вашей записи</span><span>ленивые рилс без лица</span><span>цифровой двойник</span><span>мультики</span><span>посты Telegram</span><span>Threads</span><span>ВКонтакте</span><span>статьи в Яндекс и Дзен</span><span>заголовки по 12 условиям</span><span>нейроописания для поиска</span></div>
+</div>
 <div class="kgrid">
 <video src="img/ka1.mp4" poster="img/ka1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Анимированная карусель"></video>
 <video src="img/ka2.mp4" poster="img/ka2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Анимированная карусель"></video>
-<img loading="lazy" decoding="async" src="img/k00.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k03.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k05.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k06.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k07.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k08.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k09.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k10.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k11.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k01.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k02.jpg" alt="Карусель"><img loading="lazy" decoding="async" src="img/k04.jpg" alt="Карусель">
+<img loading="lazy" src="img/k00.jpg" alt="Карусель"><img loading="lazy" src="img/k03.jpg" alt="Карусель"><img loading="lazy" src="img/k05.jpg" alt="Карусель"><img loading="lazy" src="img/k06.jpg" alt="Карусель"><img loading="lazy" src="img/k07.jpg" alt="Карусель"><img loading="lazy" src="img/k08.jpg" alt="Карусель"><img loading="lazy" src="img/k09.jpg" alt="Карусель"><img loading="lazy" src="img/k10.jpg" alt="Карусель"><img loading="lazy" src="img/k11.jpg" alt="Карусель"><img loading="lazy" src="img/k01.jpg" alt="Карусель"><img loading="lazy" src="img/k02.jpg" alt="Карусель"><img loading="lazy" src="img/k04.jpg" alt="Карусель">
 </div>
-<p class="small" style="margin-top:8px">Первые две анимированные. Карусели астролога на 2027 год, 12.11.2026</p>
-</div></section>
-
-<section class="s"><div class="w">
-<div class="no">цех 5 · ролики и telegram</div>
-<h2>Ролики с охватами <span class="g">и канал по правилам</span></h2>
-<div class="shots ph" style="--n:4">
-<figure><img loading="lazy" decoding="async" src="img/o-reels1.jpg" alt="Ролики с охватами"><div class="cap"><b>Reels октября</b>охваты в Instagram*</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/o-reels2.jpg" alt="Ролики с охватами"><div class="cap"><b>Reels октября</b>темы, которые залетели</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/o-tg1.jpg" alt="Пост в Telegram"><div class="cap"><b>Telegram-канал</b>посты на автомате</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/o-tg2.jpg" alt="Пост в Telegram"><div class="cap"><b>Telegram-канал</b>прогрев к продукту</div></figure>
+<p class="small" style="margin-top:8px">Карусели астролога на 2027 год, 12.11.2026. Первые две анимированные</p>
+<div class="shots" style="--n:4;--ar:9/16;margin-top:24px">
+<figure><img loading="lazy" src="img/o-reels1.jpg" alt="Ролики с охватами"><div class="cap"><b>Reels октября</b>охваты в Instagram*</div></figure>
+<figure><img loading="lazy" src="img/o-reels2.jpg" alt="Ролики с охватами"><div class="cap"><b>Reels октября</b>темы, которые залетели</div></figure>
+<figure><img loading="lazy" src="img/o-tg1.jpg" alt="Пост в Telegram"><div class="cap"><b>Telegram-канал</b>посты на автомате</div></figure>
+<figure><img loading="lazy" src="img/o-tg2.jpg" alt="Пост в Telegram"><div class="cap"><b>Telegram-канал</b>прогрев к продукту</div></figure>
 </div>
 </div></section>
 
-<!-- Цех 6 -->
-<section class="s"><div class="w">
-<div class="belt"><span>рынок</span><i></i><span>продукты</span><i></i><span>лид-магниты</span><i></i><span>воронки</span><i></i><span>контент</span><i></i><span class="on">аналитика</span></div>
-<div class="cehA">
-<div><div class="no">цех 6</div><h2>Выкладка <span class="g">и аналитика</span></h2>
-<p class="goal"><span>цель</span>Видеть, что приносит деньги, и усиливать это</p>
-<div class="resb"><b>Результат</b><p>Цифры вместо ощущений. Отчёт: что растёт и что делаем дальше</p></div></div>
-<div><p class="lt">что внутри</p><div class="lessons">
-<div>Выкладка в 8 площадок из одной очереди</div>
-<div>Метрика по каждому шагу воронки</div>
-<div>Сквозная аналитика: соцсети, бот, продажи</div>
-<div>Отчёт через 2 недели и через месяц</div>
+<!-- ЦЕХ 6 -->
+<section class="sec wh" id="c6"><div class="w">
+<div class="ceh">
+<div>
+<div class="num-tag"><em>6</em><span>цех · выкладка и аналитика</span></div>
+<h2>Цифры <span class="or">вместо ощущений</span></h2>
+<p class="goal"><b>Цель:</b> видеть, что приносит деньги, и усиливать это</p>
+<div class="chips"><span>Instagram*</span><span>Telegram</span><span>ВКонтакте</span><span>YouTube Shorts</span><span>TikTok</span><span>Threads</span><span>Дзен</span><span>Яндекс</span></div>
+<div class="resp"><span><b>результат</b><p>Выкладка в 8 площадок из одной очереди. Отчёт через 2 недели и через месяц</p></span></div>
 </div>
-<div class="nf"><span>Instagram*</span><span>Telegram</span><span>ВКонтакте</span><span>YouTube Shorts</span><span>TikTok</span><span>Threads</span><span>Дзен</span><span>Яндекс</span></div></div>
+<div class="card">
+<b style="font:600 18px Oswald,sans-serif;text-transform:uppercase">Кармическая задача · с одного поста в канале</b>
+<div class="bars"><div style="--p:100%"><span>Зашли</span><b>44</b></div><div style="--p:89%"><span>Посчитали задачу</span><b>89%</b></div><div style="--p:86%"><span>Дочитали до своей задачи</span><b>86%</b></div><div style="--p:70%"><span>Дошли до продукта</span><b>70%</b></div><div style="--p:41%"><span>Открыли страницу продукта</span><b>41%</b></div></div>
+<div class="sale"><span>Продажи с одного поста<br>4 PDF-прогноза и 1 личный разбор</span><b>22 950 ₽</b></div>
 </div>
-</div></section>
-
-<section class="s"><div class="w">
-<div class="no">цех 6 · яндекс метрика</div>
-<h2>Доходимость <span class="g">по каждому шагу</span></h2>
-<div class="box" style="max-width:640px"><b class="t">Кармическая задача · с одного поста в канале</b>
-<div class="bars"><div style="--p:100%"><span>Зашли</span><b>44</b></div><div style="--p:89%"><span>Посчитали задачу</span><b>89%</b></div><div style="--p:86%"><span>Дочитали до своей задачи</span><b>86%</b></div><div style="--p:70%"><span>Дошли до продукта</span><b>70%</b></div><div style="--p:41%"><span>Открыли страницу продукта</span><b>41%</b></div></div></div>
-<div class="box gold" style="margin-top:12px;max-width:640px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between"><div><b class="t" style="margin:0">Продажи с одного поста</b><p>4 PDF-прогноза и 1 личный разбор</p></div><div class="num" style="margin:0">22 950 ₽</div></div>
-</div></section>
-
-<section class="s"><div class="w">
-<div class="no">цех 6 · сквозная аналитика</div>
-<div class="two" style="align-items:center">
-<div><p class="q" style="margin-top:0;color:var(--muted)">«Последний месяц Instagram* очень плохо работает»</p>
+</div>
+<div class="case" style="margin-top:34px">
+<div>
+<p class="quote">«Последний месяц Instagram* очень плохо работает»</p>
 <p class="small">ощущение клиента</p>
-<div class="grid" style="grid-template-columns:1fr 1fr;margin-top:14px"><div class="box gold"><div class="num">+38%</div><p>просмотров в день</p></div><div class="box gold"><div class="num">+78%</div><p>реакций в день</p></div></div>
-<p class="small" style="margin-top:8px">Было 11 540 просмотров в день до старта, стало 15 877. Реакций было 296, стало 527</p></div>
-<figure style="margin:0"><img loading="lazy" decoding="async" src="img/a-panel-7d.jpg" alt="Панель Instagram: 111 139 просмотров за 7 дней" style="border:1px solid var(--line);max-height:52vh;width:100%;object-fit:cover;object-position:top"><div class="cap"><b>111 139 просмотров за 7 дней</b>÷ 7 = 15 877 в день</div></figure>
+<div class="duo2" style="margin-top:14px"><div class="card"><b>+38%</b><span>просмотров в день: было 11 540, стало 15 877</span></div><div class="card"><b>+78%</b><span>реакций в день: было 296, стало 527</span></div></div>
+</div>
+<figure style="margin:0"><img loading="lazy" src="img/a-panel-7d.jpg" alt="Панель Instagram: 111 139 просмотров за 7 дней" style="border-radius:14px;border:1px solid var(--line)"><div class="cap"><b>111 139 просмотров за 7 дней ÷ 7 = 15 877 в день</b>до старта 11 540 в день, панель 20.09-05.10</div></figure>
 </div>
 </div></section>
 
-<!-- Масштаб -->
-<section class="s"><div class="w">
-<div class="no">масштаб</div>
-<h2>Что умеет завод <span class="g">в цифрах</span></h2>
-<div class="stat">
-<div class="rv"><b>241</b><span>навык и агент у завода</span></div>
-<div class="rv d1"><b>23</b><span>формата постов</span></div>
-<div class="rv d1"><b>9</b><span>структур копирайтинга</span></div>
-<div class="rv d2"><b>10</b><span>каруселей за день вместе с ресёрчем</span></div>
-<div class="rv d2"><b>30 290</b><span>текстов в одном калькуляторе</span></div>
-<div class="rv d3"><b>8</b><span>площадок из одной очереди</span></div>
+<!-- МАСШТАБ -->
+<section class="sec dk"><div class="w ct">
+<div class="eb">масштаб</div>
+<h2>Что умеет завод <span class="or">в цифрах</span></h2>
+<div class="scale">
+<div><b>241</b><span>навык и агент</span></div>
+<div><b>23</b><span>формата постов</span></div>
+<div><b>9</b><span>структур копирайтинга</span></div>
+<div><b>10</b><span>каруселей за день вместе с ресёрчем</span></div>
+<div><b>30 290</b><span>текстов в одном калькуляторе</span></div>
+<div><b>8</b><span>площадок из одной очереди</span></div>
 </div>
-<p class="lead" style="margin-top:16px;color:var(--fg)">Статьи пишем десятками, а выкладываем 1-2 в день: так сайт растёт в поиске, а не попадает под фильтр</p>
+<div class="note" style="text-align:left;max-width:760px;margin-left:auto;margin-right:auto"><span>Статьи пишем десятками, а выкладываем 1-2 в день: так сайт растёт в поиске, а не попадает под фильтр</span></div>
 </div></section>
 
-<!-- Эксперт -->
-<section class="s"><div class="w">
-<div class="no">сколько нужно от эксперта</div>
-<h2>Вы нужны <span class="g">в трёх точках</span></h2>
-<div class="week">
-<div class="rv"><span><b>Старт: распаковка голосом</b><small>рассказываете о себе и методе, завод берёт ваши слова и смыслы</small></span></div>
-<div class="rv d1"><span><b>Стратегия: одобряете продукты и воронки</b><small>что продаём, кому и каким путём</small></span></div>
-<div class="hl rv d2"><span><b>Каждую неделю: одобряете готовое</b><small>без вашего «да» ничего не публикуется и никому не пишется</small></span></div>
+<!-- ЭКСПЕРТ -->
+<section class="sec"><div class="w">
+<div class="ceh">
+<div>
+<div class="eb">сколько нужно от вас</div>
+<h2>Вы нужны <span class="or">в трёх точках</span></h2>
+<div class="tl">
+<div class="rv"><em>1</em><b>Распаковка голосом <span class="tg">старт</span></b><p>Рассказываете о себе и методе, завод берёт ваши слова и смыслы</p></div>
+<div class="rv"><em>2</em><b>Одобряете стратегию <span class="tg">1-я неделя</span></b><p>Что продаём, кому и каким путём</p></div>
+<div class="rv"><em>3</em><b>Одобряете готовое <span class="tg">каждую неделю</span></b><p>Без вашего «да» ничего не публикуется и никому не пишется</p></div>
 </div>
-<p class="lt" style="margin-top:20px">сниматься не обязательно</p>
-<div class="nf"><span>ленивые рилс без лица</span><span>цифровой двойник</span><span>мультики</span><span>ролики на белом листе</span><span>говорящие ролики из любой вашей записи</span></div>
-</div></section>
-
-<!-- Итог -->
-<section class="s"><div class="w">
-<div class="two" style="align-items:start">
-<div><h2>Что вы получаете <span class="g">по итогу</span></h2></div>
-<div class="box gold"><b class="t" style="font-size:clamp(17px,2.2vw,24px)">Контент - лишь 1 цех из 6</b><p>Без продуктов, лид-магнитов и воронок он даёт просмотры, а не заявки</p></div>
 </div>
-<div class="get">
-<div class="rv"><em>🎯</em>Темы, которые уже доказали спрос</div>
-<div class="rv d1"><em>📦</em>Линейку продуктов от мини к флагману</div>
-<div class="rv d1"><em>🧲</em>Интерактивные лид-магниты под каждый продукт</div>
-<div class="rv d2"><em>🌀</em>Воронки, которые продают без вас</div>
-<div class="rv d2"><em>🎬</em>Контент каждый день во все соцсети</div>
-<div class="rv d3"><em>📊</em>Цифры по каждому шагу и регулярный отчёт</div>
+<div>
+<div class="card"><b style="font:600 22px Oswald,sans-serif;text-transform:uppercase">Сниматься <span class="or">не обязательно</span></b>
+<div class="chips" style="margin-top:12px"><span>ленивые рилс без лица</span><span>цифровой двойник</span><span>мультики</span><span>ролики на белом листе</span><span>говорящие ролики из любой вашей записи</span></div>
+<div class="shots" style="--ar:9/16;margin-top:14px"><figure><img loading="lazy" src="img/t5-lenivye.jpg" alt="Ленивый рилс"><div class="cap"><b>Ленивый рилс</b>без съёмки</div></figure><figure><img loading="lazy" src="img/t7-govoryashchiy.jpg" alt="Говорящий ролик"><div class="cap"><b>Говорящий ролик</b>паузы вырезаны, вставки добавлены</div></figure></div>
+</div>
+</div>
 </div>
 </div></section>
 
-<!-- Карманный отдел маркетинга -->
-<section class="s"><div class="w">
-<div class="no">карманный отдел маркетинга</div>
-<h2>Завод <span class="g">в вашем Telegram</span></h2>
+<!-- КАРМАННЫЙ ОТДЕЛ -->
+<section class="sec wh"><div class="w">
+<div class="ceh">
+<div>
+<div class="eb">карманный отдел маркетинга</div>
+<h2>Завод <span class="or">в вашем Telegram</span></h2>
 <p class="lead">Задачу даёте голосом, правите с телефона, как будто пишете сотруднику</p>
-<div class="topics">
-<span>🎠 Карусели</span><span>✍️ Контент Telegram</span><span>🎬 Reels</span><span>📊 Аналитика</span><span>🗓 Планировщик</span><span>🧵 Threads</span><span>💬 ВКонтакте</span><span>▶️ YouTube</span><span>🧑‍💼 Аватар</span>
+<div class="topics"><span>🎠 Карусели</span><span>✍️ Контент Telegram</span><span>🎬 Reels</span><span>📊 Аналитика</span><span>🗓 Планировщик</span><span>🧵 Threads</span><span>💬 ВКонтакте</span><span>▶️ YouTube</span><span>🧑‍💼 Аватар</span></div>
 </div>
-<div class="shots ph" style="--n:4">
-<figure><img loading="lazy" decoding="async" src="img/t1-temy.jpg" alt="Темы"><div class="cap"><b>Темы</b>по задачам</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/t2-plan.jpg" alt="План дня"><div class="cap"><b>План дня</b>и отчёт вечером</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/t3-karusel.jpg" alt="Карусель"><div class="cap"><b>Готовая карусель</b>с описанием</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/t5-lenivye.jpg" alt="Ленивые рилс"><div class="cap"><b>Ленивый рилс</b>правки в чате</div></figure>
+<div class="shots" style="--n:3;--ar:9/16">
+<figure><img loading="lazy" src="img/t1-temy.jpg" alt="Темы"><div class="cap"><b>Темы</b>по задачам</div></figure>
+<figure><img loading="lazy" src="img/t2-plan.jpg" alt="План дня"><div class="cap"><b>План дня</b>и отчёт вечером</div></figure>
+<figure><img loading="lazy" src="img/t3-karusel.jpg" alt="Карусель"><div class="cap"><b>Готовая карусель</b>с описанием</div></figure>
 </div>
-</div></section>
-
-<!-- Команда -->
-<section class="s"><div class="w">
-<div class="no">кто ставит завод</div>
-<h2>Команда</h2>
-<div class="mate">
-<div class="box"><div class="who"><img loading="lazy" decoding="async" src="img/elena.jpg" alt="Елена Курскова"><div><b>Елена Курскова</b><span class="small">контент-завод, трафик, воронки</span></div></div>
-<div class="grid"><div class="box"><div class="num">12</div><p>лид-магнитов в разных нишах</p></div><div class="box"><div class="num">241</div><p>навык в заводе</p></div></div></div>
-<div class="box"><div class="who"><img loading="lazy" decoding="async" src="img/roma.jpg" alt="Роман Смирнов" style="object-position:50% 20%"><div><b>Роман Смирнов</b><span class="small">смыслы, стратегии, вебинары, трафик, воронки</span></div></div>
-<div class="grid"><div class="box"><div class="num">100+</div><p>вебинаров продюсером</p></div><div class="box"><div class="num">45%</div><p>рекордная конверсия живого вебинара</p></div><div class="box"><div class="num">10 000</div><p>часов в вебинарах</p></div><div class="box"><div class="num">16-20%</div><p>автовебинар на дистанции месяца</p></div></div>
-<p class="small" style="margin-top:10px">Работал с Маричевой, Аязом, Настей Pixy, Катрин Форс, Ромой и Илоной Дрожь</p></div>
 </div>
 </div></section>
 
-<!-- Кейс Оксана -->
-<section class="s"><div class="w">
-<div class="no">кейс · астролог со своей школой, 48 тысяч в Instagram*</div>
-<h2>Первые цифры <span class="g">через 2-3 недели</span></h2>
-<div class="grid res6" style="margin-top:12px">
-<div class="box gold"><div class="num">6 990 ₽</div><p>первая продажа на 1-й неделе</p></div>
-<div class="box gold"><div class="num">22 950 ₽</div><p>с одного поста</p></div>
-<div class="box"><div class="num">+18%</div><p>просмотров аккаунта в день</p></div>
-<div class="box"><div class="num">+26%</div><p>просмотров роликов в день</p></div>
-<div class="box"><div class="num">×5</div><p>взаимодействий с роликами</p></div>
-<div class="box"><div class="num">×4</div><p>реакций на 100 просмотров</p></div>
-</div>
+<!-- РЕЗУЛЬТАТ ЧЕРЕЗ 2-3 НЕДЕЛИ -->
+<section class="sec dk"><div class="w res2">
+<div>
+<div class="eb">кейс · астролог со своей школой</div>
+<h2>Первые цифры - <span class="or">через 2-3 недели</span></h2>
+<p class="lead">48 тысяч подписчиков в Instagram*. Она сама прекрасно ведёт соцсети, а пришла за системой</p>
+<div class="shots" style="--ar:640/350;margin-top:16px"><figure><img loading="lazy" src="img/o-14d-prosm.jpg" alt="Просмотры за 14 дней"></figure><figure><img loading="lazy" src="img/o-14d-vzaim.jpg" alt="Взаимодействия за 14 дней"></figure></div>
 <p class="small" style="margin-top:8px">Первые 14 дней с нами против 16 дней до старта, в пересчёте на день</p>
-</div></section>
-
-<!-- Кейс Прядко -->
-<section class="s"><div class="w">
-<div class="no">кейс · астролог, трафик</div>
-<h2>С 140 до <span class="g">3 477 подписчиков</span></h2>
-<div class="grid" style="margin:12px 0;grid-template-columns:1fr 1fr"><div class="box"><div class="num">323 тыс.</div><p>просмотров у одного ролика</p></div><div class="box"><div class="num">863</div><p>кодовых слова под одним роликом</p></div></div>
-<div class="shots ph" style="--n:4">
-<figure><img loading="lazy" decoding="async" src="img/p-profil.jpg" alt="Профиль"><div class="cap"><b>3 477</b>подписчиков</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/p-deva.jpg" alt="Ролик Дева"><div class="cap"><b>863</b>комментария</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/p-rak.jpg" alt="Ролик Рак"><div class="cap"><b>346</b>комментариев</div></figure>
-<figure><img loading="lazy" decoding="async" src="img/p-vodoley.jpg" alt="Ролик Водолей"><div class="cap"><b>310</b>комментариев</div></figure>
+</div>
+<div class="checks">
+<div><b>6 990 ₽</b><span>первая продажа на 1-й неделе, годовой прогноз с постов в канале</span></div>
+<div><b>22 950 ₽</b><span>с одного поста: 4 PDF-прогноза и личный разбор</span></div>
+<div><b>+18%</b><span>просмотров аккаунта в день: было 11 540, стало 13 672</span></div>
+<div><b>+26%</b><span>просмотров роликов в день: было 9 970, стало 12 565</span></div>
+<div><b>×5</b><span>взаимодействий с роликами в день: было 39, стало 199</span></div>
+<div><b>×4</b><span>реакций на 100 просмотров: было 0,39, стало 1,58</span></div>
 </div>
 </div></section>
 
-<!-- Как вам -->
-<section class="s hero"><div class="w">
-<div class="big-q">Как вам <span class="g">такой завод?</span></div>
+<!-- КЕЙС ПРЯДКО -->
+<section class="sec"><div class="w case">
+<div>
+<span class="tagc">кейс · астролог, трафик</span>
+<h2>С 140 до <span class="or">3&nbsp;477 подписчиков</span></h2>
+<div class="duo2" style="margin-top:14px"><div class="card"><b>323 тыс.</b><span>просмотров у одного ролика</span></div><div class="card"><b>863</b><span>кодовых слова под одним роликом: 863 человека в воронку</span></div></div>
+</div>
+<div class="shots" style="--n:4;--ar:9/16">
+<figure><img loading="lazy" src="img/p-profil.jpg" alt="Профиль"><div class="cap"><b class="o">3 477</b>подписчиков</div></figure>
+<figure><img loading="lazy" src="img/p-deva.jpg" alt="Ролик Дева"><div class="cap"><b class="o">863</b>комментария</div></figure>
+<figure><img loading="lazy" src="img/p-rak.jpg" alt="Ролик Рак"><div class="cap"><b class="o">346</b>комментариев</div></figure>
+<figure><img loading="lazy" src="img/p-vodoley.jpg" alt="Ролик Водолей"><div class="cap"><b class="o">310</b>комментариев</div></figure>
+</div>
 </div></section>
 
-<!-- Пакеты -->
-<section class="s"><div class="w">
-<div class="no">форматы работы</div>
+<!-- КОМАНДА -->
+<section class="sec wh"><div class="w ct">
+<div class="eb">кто ставит завод</div>
+<h2>Команда</h2>
+<div class="team2" style="text-align:left">
+<div class="card"><div class="who"><img loading="lazy" src="img/elena.jpg" alt="Елена Курскова"><span><b>Елена Курскова</b><span>контент-завод, трафик, воронки</span></span></div>
+<div class="mini"><div><b>12</b><span>живых лид-магнитов в 6 нишах</span></div><div><b>241</b><span>навык в заводе</span></div></div></div>
+<div class="card"><div class="who"><img loading="lazy" src="img/roma.jpg" alt="Роман Смирнов"><span><b>Роман Смирнов</b><span>смыслы, стратегии, вебинары, трафик, воронки</span></span></div>
+<div class="mini"><div><b>100+</b><span>вебинаров продюсером</span></div><div><b>45%</b><span>рекордная конверсия живого вебинара</span></div><div><b>10 000</b><span>часов в вебинарах</span></div><div><b>16-20%</b><span>автовебинар на дистанции месяца</span></div></div>
+<p class="small" style="margin-top:12px">Работал с Маричевой, Аязом, Настей Pixy, Катрин Форс, Ромой и Илоной Дрожь</p></div>
+</div>
+</div></section>
+
+<!-- ПАКЕТЫ -->
+<section class="sec" id="paket"><div class="w ct">
+<div class="eb">форматы работы</div>
 <h2>Два пакета</h2>
-<div class="pk">
-<div class="box"><h3>Контент + воронки</h3><ul>
-<li>Рынок и стратегия</li>
-<li>Контент во все соцсети</li>
-<li>Воронка: кодовое слово, бот, лид-магнит</li>
-<li>Интерактивные лид-магниты</li>
-<li>Выкладка по расписанию</li>
-<li>Отчёт по цифрам</li>
-</ul></div>
-<div class="box gold"><span class="plus">всё из первого, плюс</span><h3>Под ключ</h3><ul>
-<li>Переупаковка продуктов и линейки</li>
-<li>Воронки на мини-продукты параллельно</li>
-<li>Лендинги и страницы продуктов</li>
-<li>Ролики без вашей съёмки</li>
-<li>Статьи в Яндекс и Дзен</li>
-<li>Карманный отдел маркетинга в Telegram</li>
-<li>Зарубежный рынок</li>
-</ul></div>
+<p class="lead">Просто контент не делаем: без воронки он не продаёт</p>
+<div class="pk" style="text-align:left">
+<div class="card"><h3>Контент + воронки</h3><p class="sub">завод, который приводит заявки</p><ul>
+<li>Рынок и стратегия</li><li>Контент во все соцсети</li><li>Воронка: кодовое слово, бот, лид-магнит</li><li>Интерактивные лид-магниты</li><li>Выкладка по расписанию</li><li>Отчёт по цифрам</li></ul></div>
+<div class="card feat"><span class="lbl">всё из первого, плюс</span><h3>Под ключ</h3><p class="sub">весь маркетинг проекта на заводе</p><ul>
+<li>Переупаковка продуктов и линейки</li><li>Воронки на мини-продукты параллельно</li><li>Лендинги и страницы продуктов</li><li>Ролики без вашей съёмки</li><li>Статьи в Яндекс и Дзен</li><li>Карманный отдел маркетинга в Telegram</li><li>Зарубежный рынок</li></ul></div>
 </div>
 </div></section>
 
-<!-- Калькулятор -->
-<section class="s" id="calc"><div class="w calc">
+<!-- FAQ -->
+<section class="sec wh"><div class="w ct">
+<div class="eb">вопросы</div>
+<h2>Частые вопросы</h2>
+<div class="faq" style="text-align:left">
+<details><summary>Нам нужны только хуки</summary><p>Хуки отдельно не работают. Хук остановил человека, а дальше он должен увидеть пост, кодовое слово, бот и продукт. Когда хуки пишет один человек, а остальное другие, начинается «нам не нравится», «мы так не пишем», «это не наши смыслы»</p></details>
+<details><summary>Нам нужна только выкладка</summary><p>Выкладка - последний шаг из десяти: тема, заголовок, формат, текст, визуал, кодовое слово, бот, лид-магнит, продукт и только потом выкладка. Без остальных девяти она даёт просмотры, а не заявки</p></details>
+<details><summary>Я не хочу сниматься</summary><p>Не обязательно. Ленивые рилс без лица, цифровой двойник, мультики, ролики на белом листе. Если запись есть, монтируем её: паузы вырезаны, вставки добавлены</p></details>
+<details><summary>Сколько времени нужно от меня?</summary><p>Три точки: распаковка голосом на старте, одобрение стратегии и каждую неделю «да» на готовое. Всё остальное делает завод</p></details>
+<details><summary>Тексты будут звучать как я?</summary><p>Завод пишет по вашей распаковке и вашим словам. Без вашего «да» ничего не публикуется и никому не пишется</p></details>
+<details><summary>Что происходит в первую неделю?</summary><ul><li>Разбираем все ваши соцсети</li><li>Анонсируем аудитории новую движуху</li><li>Параллельно анализ рынка и ваших продуктов</li><li>Начинаем переупаковку</li><li>Создаём интерактивные лид-магниты</li><li>Упаковываем всё в воронку</li><li>Апгрейдим продукты, которые уже есть</li></ul></details>
+<details><summary>Чем это отличается от курса?</summary><p>На курсе вы учитесь и собираете сами. Здесь мы ставим завод под ваш проект и ведём его, а вы только одобряете</p></details>
+</div>
+</div></section>
+
+<section class="sec" id="calc"><div class="w calc">
 <div class="no">ваш расчёт</div>
 <h2>Ваша воронка <span class="g">и ваш доход</span></h2>
 <div class="two" style="margin-top:10px">
@@ -737,32 +678,23 @@ a{color:var(--gold2)}
 <div class="box" style="margin-top:14px"><b class="t">Интерактивные лид-магниты для вашей ниши</b><div class="mag" id="mags"></div></div>
 <p class="small" style="margin-top:12px">Расчёт по нашим замерам и цифрам практиков, источник каждой конверсии виден по наведению. По вебинару и отделу продаж надёжной средней цифры рынка нет, поэтому туда вводятся ваши. Точные цифры вашего проекта покажет аналитика</p>
 </div></section>
-<!-- Следующий шаг -->
-<section class="s"><div class="w" style="text-align:center">
-<div class="no" style="justify-content:center">следующий шаг</div>
-<h2>Разбор <span class="g">вашего проекта</span></h2>
-<p class="lead" style="margin:0 auto">Посмотрим ваши соцсети, воронку и цифры и покажем, где лежат деньги</p>
-<a class="cta" href="https://t.me/komanda_sreda?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0" target="_blank" rel="noopener">Записаться на разбор</a>
-<p id="ig" class="foot" style="margin-top:40px">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена в РФ</p>
+
+<!-- ФИНАЛ -->
+<section class="sec dk end"><div class="w ct">
+<div class="eb">следующий шаг</div>
+<h2>Разбор <span class="or">вашего проекта</span></h2>
+<p class="lead">Посмотрим ваши соцсети, воронку и цифры и покажем, где лежат деньги</p>
+<a class="btn" style="margin-top:16px" href="https://t.me/komanda_sreda?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0" target="_blank" rel="noopener">Записаться на разбор</a>
+<p class="foot">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена в РФ</p>
 </div></section>
 
 <script>
 (function(){
-var S=[].slice.call(document.querySelectorAll('.s')),pos=document.getElementById('pos'),bar=document.getElementById('bar');
-function cur(){var y=window.scrollY+window.innerHeight*0.35,i=0;S.forEach(function(s,k){if(s.offsetTop<=y)i=k});return i}
-function go(d){var i=Math.max(0,Math.min(S.length-1,cur()+d));S[i].scrollIntoView({behavior:'smooth'})}
-function upd(){var i=cur();pos.textContent=(i+1)+' / '+S.length;bar.style.width=((i+1)/S.length*100)+'%'}
-window.addEventListener('scroll',upd,{passive:true});upd();
-document.getElementById('prev').onclick=function(){go(-1)};document.getElementById('next').onclick=function(){go(1)};
-document.addEventListener('keydown',function(e){var t=e.target.tagName;if(t==='INPUT'||t==='SELECT'||t==='TEXTAREA')return;
-if(['ArrowDown','ArrowRight','PageDown',' '].indexOf(e.key)>=0){e.preventDefault();go(1)}
-if(['ArrowUp','ArrowLeft','PageUp'].indexOf(e.key)>=0){e.preventDefault();go(-1)}});
-/* появление слайдов и облака */
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.25});
-S.forEach(function(s){io.observe(s)});
-var bubs=[].slice.call(document.querySelectorAll('.bub'));bubs.forEach(function(b,i){b.style.transitionDelay=(i*0.11)+'s'});
-var cl=document.getElementById('cloud');new IntersectionObserver(function(e){if(e[0].isIntersecting)cl.classList.add('in')},{threshold:.3}).observe(cl);
-
+var bar=document.getElementById('bar');
+function upd(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+'%'}
+addEventListener('scroll',upd,{passive:true});upd();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.sec').forEach(function(s){io.observe(s)});
 /* калькулятор */
 var $=function(i){return document.getElementById(i)},fmt=function(n){return Math.round(n).toLocaleString('ru-RU')};
 var SC=[{sub:.31,mag:.60,mini:.01,main:.05,web:.30},{sub:.45,mag:.78,mini:.03,main:.10,web:.40},{sub:.60,mag:.85,mini:.05,main:.15,web:.60}],sc=1;
