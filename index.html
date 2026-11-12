@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Контент-завод на нейронках</title>
+<title>АСП 2.0 на нейронках</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-:root{--dark:#141211;--dark2:#1f1c1a;--light:#f0ede8;--card:#fff;--ink:#1b1916;--muted:#6f6a63;--dmuted:#a8a29a;--or:#e2552b;--or2:#ff7d4a;--orbg:#fbe6dc;--line:#e3ddd4;--dline:#2f2b28;--ease:cubic-bezier(.23,1,.32,1)}
+:root{--dark:#141211;--dark2:#1f1c1a;--light:#f0ede8;--card:#fff;--ink:#1b1916;--muted:#6f6a63;--dmuted:#a8a29a;--or:#c98a3a;--or2:#f2d6a2;--orbg:#f6ecdc;--gr:linear-gradient(95deg,#c48a2e,#e0603f 55%,#d6334a);--grd:linear-gradient(95deg,#f2d6a2,#d9ae6b 45%,#e8604f);--line:#e3ddd4;--dline:#2f2b28;--ease:cubic-bezier(.23,1,.32,1)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--light);color:var(--ink);font:400 16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -32,8 +32,8 @@ p{margin:0 0 10px;text-wrap:pretty}
 .dk .small{color:var(--dmuted)}
 img{max-width:100%;display:block}
 a{color:inherit}
-.btn{display:inline-block;background:var(--or);color:#fff;text-decoration:none;font:600 16px Inter,sans-serif;padding:15px 28px;border-radius:12px;box-shadow:0 10px 30px -10px rgba(226,85,43,.7);transition:transform .2s var(--ease),background .2s}
-.btn:hover{background:#cc4721;transform:translateY(-2px)}
+.btn{display:inline-block;background:var(--or);color:#fff;text-decoration:none;font:600 16px Inter,sans-serif;padding:15px 28px;border-radius:12px;box-shadow:0 10px 30px -10px rgba(217,120,70,.6);transition:transform .2s var(--ease),background .2s}
+.btn:hover{background:#c4552f;transform:translateY(-2px)}
 .pillx{display:inline-flex;gap:8px;align-items:center;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--dline);border-radius:999px;padding:8px 14px;color:#e9e3dc}
 .pillx:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--or)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
@@ -43,7 +43,7 @@ a{color:inherit}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 #bar{position:fixed;top:0;left:0;height:3px;background:var(--or);z-index:30;width:0}
 /* hero */
-.hero{min-height:92vh;min-height:92svh;display:flex;align-items:center;background:radial-gradient(60% 55% at 50% 35%,rgba(226,85,43,.22),transparent 70%),var(--dark);overflow:hidden}
+.hero{min-height:92vh;min-height:92svh;display:flex;align-items:center;background:radial-gradient(60% 55% at 50% 35%,rgba(160,30,50,.35),transparent 70%),var(--dark);overflow:hidden}
 .hero .w{text-align:center}
 .hero h1{margin:22px auto 18px;max-width:980px}
 .hero .lead{margin:0 auto 26px}
@@ -96,15 +96,15 @@ a{color:inherit}
 @media(max-width:900px){.ceh{grid-template-columns:1fr;gap:20px}}
 .num-tag{display:inline-flex;gap:10px;align-items:center;margin-bottom:12px}
 .num-tag em{width:38px;height:38px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font:700 17px Oswald,sans-serif;font-style:normal}
-.num-tag span{font:600 12.5px Inter,sans-serif;background:var(--orbg);color:#b8421f;border-radius:999px;padding:5px 11px}
-.dk .num-tag span{background:#3a2219;color:var(--or2)}
+.num-tag span{font:600 12.5px Inter,sans-serif;background:var(--orbg);color:#9a6420;border-radius:999px;padding:5px 11px}
+.dk .num-tag span{background:#3a2a1a;color:var(--or2)}
 .goal{font-size:17px;margin:0 0 16px}
 .goal b{color:var(--or)}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chips span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:500}
 .dk .chips span{background:var(--dark2);border-color:var(--dline)}
 .resp{margin-top:18px;display:flex;gap:12px;align-items:flex-start;background:var(--dark);color:#f3efe9;border-radius:14px;padding:16px 18px}
-.dk .resp{background:#2a1a14;border:1px solid #5a2b1b}
+.dk .resp{background:#2a1c15;border:1px solid #6b5532}
 .resp:before{content:"✓";flex:0 0 26px;height:26px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
 .resp b{display:block;font:700 11px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--or2);margin-bottom:3px}
 .resp p{margin:0;font-weight:500;line-height:1.4}
@@ -151,7 +151,7 @@ a{color:inherit}
 .kgrid video{border:2px solid var(--or)}
 .bars{display:grid;gap:6px;margin-top:10px}
 .bars div{position:relative;display:flex;justify-content:space-between;padding:9px 12px;border-radius:9px;background:#f1ece5;font-size:14.5px;overflow:hidden}
-.bars div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#f6b79c,#f1916a);opacity:.55}
+.bars div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#f2d6a2,#e8a07a);opacity:.55}
 .bars span,.bars b{position:relative}
 .sale{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 16px;background:var(--dark);color:#fff;border-radius:14px;padding:16px 18px}
 .sale b{font:700 clamp(30px,4vw,44px)/1 Oswald,sans-serif;color:var(--or2)}
@@ -178,7 +178,7 @@ a{color:inherit}
 .tl em{position:absolute;left:0;top:-2px;width:36px;height:36px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font:700 16px Oswald,sans-serif;font-style:normal}
 .tl b{display:block;font-size:18px;margin-bottom:3px}
 .tl p{margin:0;color:var(--muted)}
-.tl .tg{display:inline-block;font:600 12px Inter,sans-serif;background:var(--orbg);color:#b8421f;border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle}
+.tl .tg{display:inline-block;font:600 12px Inter,sans-serif;background:var(--orbg);color:#9a6420;border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle}
 /* итоги */
 .res2{display:grid;gap:30px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
 @media(max-width:860px){.res2{grid-template-columns:1fr}}
@@ -191,7 +191,7 @@ a{color:inherit}
 /* кейсы */
 .case{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center}
 @media(max-width:860px){.case{grid-template-columns:1fr}}
-.tagc{display:inline-block;font:600 12px Inter,sans-serif;background:var(--orbg);color:#b8421f;border-radius:999px;padding:4px 11px;margin-bottom:12px}
+.tagc{display:inline-block;font:600 12px Inter,sans-serif;background:var(--orbg);color:#9a6420;border-radius:999px;padding:4px 11px;margin-bottom:12px}
 /* телефон */
 .topics{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
 .topics span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 13px;font-size:14.5px;font-weight:500}
@@ -229,7 +229,7 @@ a{color:inherit}
 .faq details p,.faq details ul{color:var(--muted);margin:0 0 16px}
 .faq ul{padding-left:18px}
 .faq li{margin-bottom:4px}
-.end{background:radial-gradient(60% 70% at 50% 100%,rgba(226,85,43,.25),transparent 70%),var(--dark)}
+.end{background:radial-gradient(60% 70% at 50% 100%,rgba(160,30,50,.35),transparent 70%),var(--dark)}
 .foot{font-size:12px;color:#6d6761;margin-top:40px}
 /* калькулятор в светлой теме */
 .calc .box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
@@ -248,11 +248,11 @@ a{color:inherit}
 .seg button.on{background:var(--or);color:#fff;font-weight:600}
 .fn{display:grid;gap:6px;margin:10px 0}
 .fn div{position:relative;display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-radius:10px;background:#f1ece5;font-size:14px;overflow:hidden}
-.fn div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#f6b79c,#f1916a);opacity:.55}
+.fn div:before{content:"";position:absolute;inset:0;width:var(--p);background:linear-gradient(90deg,#f2d6a2,#e8a07a);opacity:.55}
 .fn span,.fn b{position:relative}
 .fn abbr{text-decoration:none;border-bottom:1px dotted var(--muted);cursor:help}
 .res{font:700 clamp(26px,3.4vw,36px)/1.1 Oswald,sans-serif;color:var(--or)}
-.warn{color:#b8421f;font-size:14px}
+.warn{color:#9a6420;font-size:14px}
 .pill{display:inline-block;border:1px solid var(--line);background:#faf8f5;border-radius:999px;padding:5px 12px;margin:4px 4px 0 0;font-size:14px}
 .mag{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));margin-top:12px}
 .mag a,.mag div{display:block;text-decoration:none;color:var(--ink);background:#faf8f5;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px}
@@ -261,6 +261,15 @@ a{color:inherit}
 .tag2{display:inline-block;font:700 10.5px Inter,sans-serif;padding:3px 8px;border-radius:999px;background:var(--or);color:#fff;margin-bottom:6px}
 .tag2.idea{background:var(--line);color:var(--ink)}
 .calc h2 span.g{color:var(--or)}
+
+/* разноцветная палитра */
+.or,.huge,.cap b.o,.duo2 b,.mini b,.res,.calc .g,.calc h2 span.g,.mods em,.pains em{background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dk .or,.dk .huge,.dk .cap b.o,.dk .duo2 b,.sale b,.scale b i{background:var(--grd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{background:var(--grd);color:#1a0f10}.btn:hover{background:var(--grd);filter:brightness(1.07)}
+.num-tag em,.tl em,.resp:before,.checks div:before,.pk li:before,.note:before,.pk .lbl,.pillx:before,.tag2,.seg button.on{background:var(--gr)}
+.pk .feat li:before,.dk .num-tag em,.dk .resp:before,.dk .checks div:before{background:var(--grd);color:#1a0f10}
+#bar{background:var(--grd)}
+.kgrid video{border-color:#d9ae6b}
 </style>
 </head>
 <body>
@@ -268,8 +277,8 @@ a{color:inherit}
 
 <!-- HERO -->
 <section class="sec hero dk"><div class="w">
-<span class="pillx">контент-завод на нейронках</span>
-<h1>Ставим контент-завод <span class="or">под ваш бизнес</span> и ведём его</h1>
+<span class="pillx">АСП 2.0 на нейронках</span>
+<h1>Ставим АСП 2.0 <span class="or">на нейронках</span> под ваш бизнес и ведём его</h1>
 <p class="lead">Ресёрч рынка, продукты, лид-магниты, воронки и контент во все соцсети. Без штата и без ежедневных съёмок</p>
 <a class="btn" href="#paket">Смотреть пакеты</a>
 <div class="duo">
@@ -614,7 +623,8 @@ a{color:inherit}
 <h2>Команда</h2>
 <div class="team2" style="text-align:left">
 <div class="card"><div class="who"><img loading="lazy" src="img/elena.jpg" alt="Елена Курскова"><span><b>Елена Курскова</b><span>контент-завод, трафик, воронки</span></span></div>
-<div class="mini"><div><b>12</b><span>живых лид-магнитов в 6 нишах</span></div><div><b>241</b><span>навык в заводе</span></div></div></div>
+<div class="mini"><div><b>1 000+</b><span>учеников</span></div><div><b>6+ лет</b><span>в маркетинге</span></div><div><b>12,5 млн</b><span>запуски</span></div><div><b>12</b><span>живых лид-магнитов в 6 нишах</span></div></div>
+<p class="small" style="margin-top:12px">Была куратором в школе автоворонок. Сейчас ставит АСП 2.0 экспертам и онлайн-школам</p></div>
 <div class="card"><div class="who"><img loading="lazy" src="img/roma.jpg" alt="Роман Смирнов"><span><b>Роман Смирнов</b><span>смыслы, стратегии, вебинары, трафик, воронки</span></span></div>
 <div class="mini"><div><b>100+</b><span>вебинаров продюсером</span></div><div><b>45%</b><span>рекордная конверсия живого вебинара</span></div><div><b>10 000</b><span>часов в вебинарах</span></div><div><b>16-20%</b><span>автовебинар на дистанции месяца</span></div></div>
 <p class="small" style="margin-top:12px">Работал с Маричевой, Аязом, Настей Pixy, Катрин Форс, Ромой и Илоной Дрожь</p></div>
