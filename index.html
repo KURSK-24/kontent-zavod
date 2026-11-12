@@ -299,6 +299,7 @@ a{color:inherit}
 .tgtopics{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
 .tgtopics span{padding:11px 14px;border-bottom:1px solid var(--line);font-size:15px;font-weight:500}
 .tgtopics span:nth-child(odd){border-right:1px solid var(--line)}
+.calm{margin-top:10px;padding:12px 14px;border-radius:12px;background:var(--orbg);font-size:14.5px;line-height:1.45;color:var(--ink)}
 /* разноцветная палитра */
 .or,.huge,.cap b.o,.duo2 b,.mini b,.res,.calc .g,.calc h2 span.g,.mods em,.pains em{background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
 .dk .or,.dk .huge,.dk .cap b.o,.dk .duo2 b,.sale b,.scale b i{background:var(--grd);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -852,7 +853,7 @@ function calc(){
  var L=gap>0&&perLead>0?Math.ceil(gap/perLead):0;
  var bot=L*kBot,sub=bot*s.sub,mag=sub*s.mag,mb=mag*s.mini,mainb=mb*s.main;
  $('fnA').innerHTML=row('кодовое слово',L,100)+row('перешли в бот',bot,bot/L*100||0,SRC.bot)+row('подписались на канал',sub,sub/L*100||0,SRC.sub[sc])+row('забрали лид-магнит',mag,mag/L*100||0,SRC.mag[sc])+row('купили мини-продукт',mb,mb/L*100||0,SRC.mini)+row('купили основной продукт',mainb,mainb/L*100||0,SRC.main);
- $('resA').innerHTML=gap>0?'<p style="color:var(--fg)">Чтобы закрыть разрыв, нужно <b>'+fmt(L)+'</b> человек в месяц с кодовым словом, это <b>'+fmt(L/30)+'</b> в день</p>':'';
+ $('resA').innerHTML=gap>0?'<p style="color:var(--fg)">Чтобы закрыть разрыв, нужно <b>'+fmt(L)+'</b> человек в месяц с кодовым словом, это <b>'+fmt(L/30)+'</b> в день</p><div class="calm"><b>Это не страшно.</b> Поток идёт сразу из 5 соцсетей: это около <b>'+fmt(L/30/5)+'</b> кодовых слов в день с каждой. А один залетевший ролик даёт сотни сразу: у нашего астролога под одним роликом 863 кодовых слова. Такой контент каждый день и в нужном объёме выпускает контент-завод</div>':'';
  $('aud').textContent=aud>0&&L>0?'Это '+fmt(L/aud*100)+'% от ваших '+fmt(aud)+' подписчиков каждый месяц, поэтому нужен постоянный поток новых людей из контента':'';
  var cw=v('cWeb')/100;
  if(cw>0&&check>0&&gap>0){var paid=Math.ceil(gap/check),came=paid/cw,reg=came/s.web;
