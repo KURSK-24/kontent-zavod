@@ -120,7 +120,7 @@ a{color:inherit}
 .ladder{display:grid;gap:10px;margin-top:4px}
 .ladder .card{padding:16px 18px}
 .ladder b{font:600 18px Oswald,sans-serif;text-transform:uppercase;display:block;margin-bottom:8px}
-.lmgrid{display:grid;gap:10px;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:28px}
+.lmgrid{display:grid;gap:10px;grid-template-columns:repeat(7,minmax(0,1fr));margin-top:28px}
 @media(max-width:900px){.lmgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}}
 @media(max-width:480px){.lmgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .lmgrid a{text-decoration:none;display:block;transition:transform .2s var(--ease)}
@@ -283,6 +283,22 @@ a{color:inherit}
 @media(max-width:760px){.pains2{grid-template-columns:1fr}}
 .pains2 div:last-child{border-bottom:1px solid var(--line)}
 .loopq{margin:14px 0 4px;padding:14px 18px;border-radius:14px;background:var(--dark);color:#fff;font:600 clamp(18px,2vw,22px)/1.3 Oswald,sans-serif;text-transform:uppercase;border-left:4px solid #e0603f}
+.vs2 .card{position:relative;overflow:hidden}
+.vs2 .dead{background:#ecebea;border-color:#d6d3cf;filter:grayscale(1)}
+.vs2 .dead b,.vs2 .dead ul{color:#8d8a86}
+.vs2 .dead ul{text-decoration:line-through;text-decoration-color:rgba(0,0,0,.25)}
+.vs2 .rib{position:absolute;top:0;right:0;width:46px;height:46px;background:linear-gradient(45deg,transparent 46%,#111 46%,#111 64%,transparent 64%)}
+.vs2 .rip{margin:10px 0 0;font:700 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#555;border-top:1px dashed #bdb9b3;padding-top:8px}
+.vs2 .top{background:linear-gradient(150deg,#2a1c15,#141211 70%);border:1.5px solid #d9ae6b;color:#fff;box-shadow:0 14px 36px -14px rgba(224,96,63,.7)}
+.vs2 .top b{color:#f2d6a2;padding-right:44px}
+@media(max-width:520px){.vs2{grid-template-columns:1fr}}.vs2 .top ul{color:#d8d1c8}
+.vs2 .topb{position:absolute;top:10px;right:10px;font:700 11px Inter,sans-serif;letter-spacing:.12em;background:var(--grd);color:#1a0f10;border-radius:999px;padding:4px 9px}
+.vs2 .wow{margin:10px 0 0;display:flex;gap:8px;align-items:baseline;color:#d8d1c8;font-size:14px}
+.vs2 .wow em{font:700 34px/1 Oswald,sans-serif;font-style:normal;background:var(--grd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lt2{font:700 11.5px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9a6420;margin:16px 0 8px}
+.tgtopics{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.tgtopics span{padding:11px 14px;border-bottom:1px solid var(--line);font-size:15px;font-weight:500}
+.tgtopics span:nth-child(odd){border-right:1px solid var(--line)}
 /* разноцветная палитра */
 .or,.huge,.cap b.o,.duo2 b,.mini b,.res,.calc .g,.calc h2 span.g,.mods em,.pains em{background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
 .dk .or,.dk .huge,.dk .cap b.o,.dk .duo2 b,.sale b,.scale b i{background:var(--grd);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -442,9 +458,13 @@ a{color:inherit}
 </div>
 <div class="resp"><span><b>результат</b><p>Ваши услуги пересобраны по данным рынка, под каждую своя воронка</p></span></div>
 </div>
-<div class="shots" style="--ar:9/16;max-width:460px;margin:0 auto">
-<figure><img loading="lazy" src="img/v7-produkt.jpg" alt="Предложение продукта в боте"><div class="cap"><b>Продукт в боте</b>следующий шаг после лид-магнита</div></figure>
-<figure><img loading="lazy" src="img/v8-ceny.jpg" alt="Страница продукта"><div class="cap"><b>Страница продукта</b>состав, цена, срочность</div></figure>
+<div>
+<div class="shots" style="--n:3;--ar:740/1180">
+<figure><img loading="lazy" src="img/tar1.jpg" alt="Тариф: одна сфера на 2027 год, 990 рублей"><div class="cap"><b class="o">990 ₽</b>PDF по одной сфере</div></figure>
+<figure><img loading="lazy" src="img/tar2.jpg" alt="Тариф: все сферы на 2027 год, 3 990 рублей"><div class="cap"><b class="o">3 990 ₽</b>PDF по всем сферам</div></figure>
+<figure><img loading="lazy" src="img/tar3.jpg" alt="Тариф: прогноз на 2027 год лично с Оксаной, 7 990 рублей"><div class="cap"><b class="o">7 990 ₽</b>лично с экспертом</div></figure>
+</div>
+<p class="small" style="margin-top:8px">Тарифы астролога на странице после калькулятора. Следующая ступень - «Мой денежный год 2027» за 13 990 ₽</p>
 </div>
 </div></section>
 
@@ -459,7 +479,7 @@ a{color:inherit}
 </div>
 <div>
 <div class="bigline" style="margin-top:0"><div class="huge">30 290</div><p style="margin:0;font-weight:500">уникальных текстов под каждую дату рождения в одном калькуляторе. Написаны за вечер<br><span class="small">«Кармическая задача 2027», все даты с 1930 по 2012 год</span></p></div>
-<div class="vs" style="margin-top:14px"><div class="card"><b>PDF из бота</b><ul><li>один текст для всех</li><li>скачал и забыл</li></ul></div><div class="card hl"><b class="or">Интерактив</b><ul><li>личный результат</li><li>расчёт делают 78% зашедших</li></ul></div></div>
+<div class="vs vs2" style="margin-top:14px"><div class="card dead"><span class="rib"></span><b>PDF из бота</b><ul><li>один текст для всех</li><li>скачал и забыл</li><li>не видно, открыл ли</li></ul><p class="rip">баннерная слепота</p></div><div class="card top"><span class="topb">ТОП</span><b>Интерактивный лид-магнит</b><ul><li>личный результат под дату</li><li>человек сам вводит данные</li></ul><p class="wow"><em>78%</em>зашедших делают расчёт</p></div></div>
 <p class="small" style="margin-top:6px">78%: Метрика калькулятора астролога, 25.10-12.11.2026</p>
 </div>
 </div>
@@ -467,7 +487,7 @@ a{color:inherit}
 <a href="https://kursk-24.github.io/karma-2027/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-karma.jpg" alt="Кармическая задача 2027"><span><b>астролог</b>Кармическая задача</span></a>
 <a href="https://kursk-24.github.io/prognoz-oksana-smirnova/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-prognoz-oksana.jpg" alt="Прогноз на месяц"><span><b>астролог</b>Прогноз на месяц</span></a>
 <a href="https://kursk-24.github.io/kod-deneg/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-kod-deneg.jpg" alt="Код ваших денег"><span><b>астролог</b>Код ваших денег</span></a>
-<a href="https://kursk-24.github.io/prognoz-sekretnaya/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-prognoz-sekretnaya.jpg" alt="Прогноз астрошколы"><span><b>астрошкола</b>Прогноз месяца</span></a>
+<a href="https://kursk-24.github.io/seiko-boeva/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-seiko.jpg" alt="Подбор японских БАДов за 1 минуту"><span><b>сетевой бизнес</b>Подбор продуктов за 1 минуту</span></a>
 <a href="https://kursk-24.github.io/kod-lyubvi-denezhnyj-kod/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-num-dengi.jpg" alt="Денежный код"><span><b>нумеролог</b>Денежный код</span></a>
 <a href="https://kursk-24.github.io/kod-lyubvi-sovmestimost/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-num-sovm.jpg" alt="Совместимость"><span><b>нумеролог</b>Совместимость</span></a>
 <a href="https://kursk-24.github.io/test-zhelezo/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-zhelezo.jpg" alt="Хватает ли железа"><span><b>нутрициолог</b>Хватает ли железа?</span></a>
@@ -475,9 +495,11 @@ a{color:inherit}
 <a href="https://kursk-24.github.io/esh-i-hudey/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-esh-hudey.jpg" alt="Ешь и худей"><span><b>нутрициолог</b>Ешь и худей</span></a>
 <a href="https://kursk-24.github.io/vahta-podmoskovie/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-vahta.jpg" alt="Вахта"><span><b>рекрутинг</b>Набор на вахту</span></a>
 <a href="https://kursk-24.github.io/repetitor-vinogradova/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-repetitor.jpg" alt="Репетитор"><span><b>репетитор</b>ОГЭ и ЕГЭ</span></a>
+<a href="https://kursk-24.github.io/prognoz-shakirova/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-shakirova.jpg" alt="Что ждёт вас в этом месяце"><span><b>астролог</b>Прогноз по дате рождения</span></a>
+<a href="https://kursk-24.github.io/klienty-s-faceless-bloga/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-faceless.jpg" alt="Статья Клиенты с Faceless блога"><span><b>статья-лид-магнит</b>Клиенты с Faceless блога</span></a>
 <a href="https://kursk-24.github.io/diagnostika-krug/" target="_blank" rel="noopener"><img loading="lazy" src="img/lm-krug.jpg" alt="Диагностика Круг"><span><b>маркетинг</b>Диагностика «Круг»</span></a>
 </div>
-<p class="small ct" style="margin-top:10px">12 живых лид-магнитов. Нажмите любой и попробуйте</p>
+<p class="small ct" style="margin-top:10px">14 живых лид-магнитов. Нажмите любой и попробуйте</p>
 </div></section>
 
 <!-- ЦЕХ 4 -->
@@ -523,13 +545,16 @@ a{color:inherit}
 <div class="num-tag"><em>3</em><span>цех · воронки: автоматизация процесса</span></div>
 <h2>Всё на автомате <span class="or">и в вашем Telegram</span></h2>
 <p class="lead">Автоответы, бот, прогрев и выкладка по расписанию. Задачи заводу даёте голосом с телефона, как сотруднику</p>
-<div class="chips" style="margin-top:14px"><span>автоответ на кодовое слово</span><span>бот с проверкой подписки</span><span>прогрев и дожим по расписанию</span><span>выкладка в 8 соцсетей</span><span>план дня и отчёт в Telegram</span></div>
-<div class="topics"><span>🎠 Карусели</span><span>✍️ Контент Telegram</span><span>🎬 Reels</span><span>📊 Аналитика</span><span>🗓 Планировщик</span><span>🧵 Threads</span><span>💬 ВКонтакте</span><span>▶️ YouTube</span><span>🧑‍💼 Аватар</span></div>
+<p class="lt2">работает на автомате</p>
+<div class="chips"><span>автоответ на кодовое слово</span><span>бот с проверкой подписки</span><span>прогрев и дожим по расписанию</span><span>выкладка в 8 соцсетей</span><span>план дня и отчёт в Telegram</span></div>
+<p class="lt2" style="margin-top:20px">темы в вашей Telegram-группе: одна задача - одна тема</p>
+<div class="tgtopics"><span>🎠 Карусели</span><span>✍️ Контент Telegram</span><span>🎬 Reels</span><span>📊 Аналитика</span><span>🗓 Планировщик</span><span>🧵 Threads</span><span>💬 ВКонтакте</span><span>▶️ YouTube</span><span>🧑‍💼 Аватар</span></div>
 </div>
-<div class="shots" style="--n:3;--ar:9/16">
-<figure><img loading="lazy" src="img/t1-temy.jpg" alt="Темы"><div class="cap"><b>Темы</b>по задачам</div></figure>
+<div class="shots" style="--n:2;--ar:9/16">
+<figure><img loading="lazy" src="img/t1-temy.jpg" alt="Список тем в Telegram-группе"><div class="cap"><b>Темы в Telegram</b>у каждой задачи своя</div></figure>
 <figure><img loading="lazy" src="img/t2-plan.jpg" alt="План дня"><div class="cap"><b>План дня</b>и отчёт вечером</div></figure>
 <figure><img loading="lazy" src="img/t3-karusel.jpg" alt="Карусель"><div class="cap"><b>Готовая карусель</b>с описанием</div></figure>
+<figure><img loading="lazy" src="img/t3b-karuseli-tema.jpg" alt="Тема Карусели в Telegram-группе"><div class="cap"><b>Тема «Карусели»</b>готовые карусели клиента</div></figure>
 </div>
 </div>
 </div></section>
@@ -707,7 +732,7 @@ a{color:inherit}
 <h2>Команда</h2>
 <div class="team2" style="text-align:left">
 <div class="card"><div class="who"><img loading="lazy" src="img/elena.jpg" alt="Елена Курскова"><span><b>Елена Курскова</b><span>продюсер, маркетолог, автор АСП</span></span></div>
-<div class="mini"><div><b>1 000+</b><span>проектов через мои руки</span></div><div><b>6+ лет</b><span>в маркетинге и продюсировании</span></div><div><b>12,5 млн</b><span>запуски</span></div><div><b>12</b><span>живых лид-магнитов в 6 нишах</span></div></div>
+<div class="mini"><div><b>1 000+</b><span>проектов через мои руки</span></div><div><b>6+ лет</b><span>в маркетинге и продюсировании</span></div><div><b>12,5 млн</b><span>запуски</span></div><div><b>14</b><span>живых лид-магнитов в 7 нишах</span></div></div>
 <p class="small" style="margin-top:12px">Продюсер и маркетолог, автор программы АСП по воронкам. Выстраивали воронки экспертам и бизнесу. Сейчас ставит АСП 2.0 на нейронках</p></div>
 <div class="card"><div class="who"><img loading="lazy" src="img/roma.jpg" alt="Роман Смирнов"><span><b>Роман Смирнов</b><span>смыслы, стратегии, вебинары, трафик, воронки</span></span></div>
 <div class="mini"><div><b>100+</b><span>вебинаров продюсером</span></div><div><b>45%</b><span>рекордная конверсия живого вебинара</span></div><div><b>10 000</b><span>часов в вебинарах</span></div><div><b>16-20%</b><span>автовебинар на дистанции месяца</span></div></div>
